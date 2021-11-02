@@ -1,10 +1,16 @@
 <template>
-  <div>
-    <span>帳號</span>
-    <input type="text" v-model="account" />
-    <span>密碼</span>
-    <input type="password" v-model="password" />
-    <button @click="login">登入</button>
+  <div class="login">
+    <div class="loginBox">
+      <div>
+        <span>帳號</span>
+        <input type="text" v-model="account" />
+      </div>
+      <div>
+        <span>密碼</span>
+        <input type="password" v-model="password" />
+      </div>
+      <button @click="login">登入</button>
+    </div>
   </div>
 </template>
 
@@ -27,6 +33,7 @@ export default {
         .then((res) => {
           document.cookie = `session.uid=${res.data.result.uid}`;
           sessionStorage.setItem("uid", res.data.result.uid);
+          this.$store.commit("SET_MEMBER_INFO", res.data.result);
           this.$router.push("/");
         })
         .catch((err) => {
@@ -41,4 +48,10 @@ export default {
 </script>
 
 <style>
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 </style>
