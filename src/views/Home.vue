@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>HOME</h1>
+    <h3>{{ $t("LC_ACCOUNT") }}</h3>
     <button @click="logout">登出</button>
     <button @click="getTest()">取得測試</button>
     <button @click="setTest()">編輯測試</button>
