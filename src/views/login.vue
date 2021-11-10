@@ -33,7 +33,7 @@ export default {
         .then((res) => {
           // document.cookie = `session.uid=${res.data.result.uid}`;
           sessionStorage.setItem("uid", res.data.result.uid);
-          this.$store.commit("SET_MEMBER_INFO", res.data.result);
+          // this.$store.commit("memberInfo/SET_MEMBER_INFO", res.data.result);
           this.$router.push("/home");
         })
         .catch((err) => {

@@ -1,4 +1,4 @@
-// import axios from "axios";
+import axios from "axios";
 
 const state = {
   memberInfo: {
@@ -17,9 +17,20 @@ const mutations = {
   },
 };
 
-const actions = {};
+const actions = {
+  getMemberInfo(context) {
+    const uid = sessionStorage.getItem("uid");
+    axios
+      .get(`${process.env.VUE_APP_API_PATH}/api/member/getMemberInfo/${uid}`)
+      .then((res) => {
+        context.commit("SET_MEMBER_INFO", res.data.Result);
+        console.log(res, context);
+      });
+  },
+};
 
 export default {
+  namespaced: true,
   state,
   getters,
   mutations,

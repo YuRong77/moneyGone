@@ -25,7 +25,7 @@ let messagesObj = {
 let currentLang = window.localStorage.getItem("lang") || "zh-TW";
 var html = document.documentElement;
 html.setAttribute("lang", currentLang);
-export var i18n = new VueI18n({
+export const i18n = new VueI18n({
   locale: currentLang,
   fallbackLocale: currentLang,
   messages: messagesObj,

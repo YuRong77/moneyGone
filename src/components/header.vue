@@ -1,21 +1,33 @@
 <template>
   <div class="header">
-    <div class="name">123</div>
+    <div class="name">{{ memberInfo.name }}</div>
     <div class="spendInfo">
       <div>
-        <h3>spendToday</h3>
-        <p class="spend">100</p>
+        <h3>{{ $t("LC_SPEND_TODAY") }}</h3>
+        <p class="spend">{{ memberInfo.spendToday }}</p>
       </div>
       <div>
-        <h3>spendMonth</h3>
-        <p class="spend">1000</p>
+        <h3>{{ $t("LC_SPEND_MONTH") }}</h3>
+        <p class="spend">{{ memberInfo.spendMonth }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+export default {
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState("memberInfo", ["memberInfo"]),
+  },
+  methods: {},
+  created() {
+    this.$store.dispatch("memberInfo/getMemberInfo");
+  },
+};
 </script>
 
 <style lang="scss" scoped>

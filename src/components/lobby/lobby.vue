@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content lobby">
     <h1>HOME</h1>
     <h3>{{ $t("LC_ACCOUNT") }}</h3>
     <button @click="logout">登出</button>

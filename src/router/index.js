@@ -5,10 +5,35 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/home",
-    name: "Home",
-    meta: { requiresAuth: true },
-    component: () => import("@/views/home.vue"),
+    path: "*",
+    redirect: "/index/lobby",
+  },
+  {
+    path: "/index",
+    name: "Index",
+    component: () => import("@/views/index.vue"),
+    children: [
+      {
+        path: "lobby",
+        name: "Lobby",
+        component: () => import("@/components/lobby/lobby.vue"),
+      },
+      {
+        path: "record",
+        name: "Record",
+        component: () => import("@/components/record/record.vue"),
+      },
+      {
+        path: "chart",
+        name: "Chart",
+        component: () => import("@/components/chart/chart.vue"),
+      },
+      {
+        path: "setting",
+        name: "Setting",
+        component: () => import("@/components/setting/setting.vue"),
+      },
+    ],
   },
   {
     path: "/login",
@@ -22,7 +47,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth) {
+  if (to.path !== "/login") {
     const uid = sessionStorage.getItem("uid");
     return uid ? next() : next({ path: "/login" });
   } else {

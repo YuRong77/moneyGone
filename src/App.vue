@@ -1,28 +1,13 @@
 <template>
   <div id="app">
-    <Header v-if="currentPage !== 'Login'" />
     <router-view />
-    <Footer v-if="currentPage !== 'Login'" />
   </div>
 </template>
 
 <script>
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 export default {
-  components: {
-    Header,
-    Footer,
-  },
   data() {
-    return {
-      currentPage: null,
-    };
-  },
-  watch: {
-    $route(val) {
-      this.currentPage = val.name;
-    },
+    return {};
   },
 };
 </script>
