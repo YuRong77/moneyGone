@@ -17,10 +17,10 @@ export default {
   data() {
     return {
       footerItem: [
-        { name: "大廳", path: "Lobby" },
-        { name: "test", path: "Record" },
-        { name: "test2", path: "Chart" },
-        { name: "test3", path: "Setting" },
+        { name: this.$t("LC_MAIN"), path: "Lobby" },
+        { name: this.$t("LC_RECORD"), path: "Record" },
+        { name: this.$t("LC_CHART"), path: "Chart" },
+        { name: this.$t("LC_SETTING"), path: "Setting" },
       ],
       currentPath: this.$route.name,
     };
