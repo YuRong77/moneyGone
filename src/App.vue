@@ -16,6 +16,7 @@ export default {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   background: rgb(175, 175, 175);

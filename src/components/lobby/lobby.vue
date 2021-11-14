@@ -10,12 +10,23 @@
       </div>
       <div class="spendType">
         <div class="type">123</div>
+        <div class="type">456</div>
+      </div>
+      <div class="spendType">
         <div class="type">123</div>
-        <div class="type">123</div>
-        <div class="type">123</div>
+        <div class="type">456</div>
       </div>
     </div>
-    <div class="spendList">3</div>
+    <div class="spendList">
+      <h4>123</h4>
+      <div class="list">
+        <div class="listItem">1</div>
+        <div class="listItem">1</div>
+        <div class="listItem">1</div>
+        <div class="listItem">1</div>
+        <div class="listItem">1</div>
+      </div>
+    </div>
     <!-- <h1>HOME</h1>
     <h3>{{ $t("LC_ACCOUNT") }}</h3>
     <button @click="logout">登出</button>
@@ -60,16 +71,14 @@ export default {
   flex-direction: column;
   position: relative;
   height: 100%;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   padding: 5% 5%;
   .main {
     display: flex;
     flex-direction: column;
-    flex: 1;
     .memoList {
       display: flex;
-      flex: 1;
-      background: rgba(244, 255, 149, 0.397);
+      margin-bottom: 6%;
       .memo {
         margin-right: 20px;
         div {
@@ -97,17 +106,37 @@ export default {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      flex: 4;
-      background: rgba(255, 228, 187, 0.39);
+      flex: 1;
       .type {
-        width: 50%;
-        background: rgba(128, 255, 0, 0.295);
+        background: #ffffff;
+        width: 47%;
+        height: 65px;
+        border-radius: 20px;
+        margin-bottom: 20px;
       }
     }
   }
   .spendList {
     flex: 1;
-    background: rgba(220, 253, 159, 0.445);
+    position: relative;
+    h4 {
+      margin-bottom: 15px;
+    }
+    .list {
+      position: absolute;
+      left: 0;
+      top: 30px;
+      right: 0;
+      bottom: 0;
+      overflow-y: auto;
+      .listItem {
+        border-radius: 20px;
+        height: 60px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+      }
+    }
   }
 }
 </style>
