@@ -2,9 +2,9 @@
   <div class="content lobby">
     <div class="main">
       <div class="memoList">
-        <div class="memo">
-          <div>777</div>
-          <p>123</p>
+        <div class="memo" v-for="item in memo" :key="item.id">
+          <div>icon</div>
+          <p>{{ item.title }}</p>
         </div>
         <div class="addMemo">+</div>
       </div>
@@ -20,11 +20,20 @@
     <div class="spendList">
       <h4>123</h4>
       <div class="list">
-        <div class="listItem">1</div>
-        <div class="listItem">1</div>
-        <div class="listItem">1</div>
-        <div class="listItem">1</div>
-        <div class="listItem">1</div>
+        <div
+          class="listItem"
+          v-for="(item, index) in memberInfo.spendList"
+          :key="index"
+        >
+          <div class="itemInfo">
+            <div>icon</div>
+            <div>
+              <h3>{{ item.name }}</h3>
+              <span>{{ item.type }}</span>
+            </div>
+          </div>
+          <div class="itemSpend">NT {{ item.spend }}</div>
+        </div>
       </div>
     </div>
     <!-- <h1>HOME</h1>
@@ -36,19 +45,27 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState("memberInfo", ["memberInfo"]),
+    ...mapState("memo", ["memo"]),
+  },
   methods: {
     logout() {
       sessionStorage.removeItem("uid");
       document.cookie = `session.uid= `;
     },
     getTest() {
-      const uid = sessionStorage.getItem("uid");
-      this.axios
-        .get(`${process.env.VUE_APP_API_PATH}/api/member/getMemberInfo/${uid}`)
-        .then((res) => {
-          console.log(res.data);
-        });
+      // const uid = sessionStorage.getItem("uid");
+      // this.axios
+      //   .get(`${process.env.VUE_APP_API_PATH}/api/member/getMemberInfo/${uid}`)
+      //   .then((res) => {
+      //     console.log(res.data);
+      //   });
     },
     setTest() {
       // const data = {};
@@ -130,11 +147,22 @@ export default {
       bottom: 0;
       overflow-y: auto;
       .listItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         border-radius: 20px;
         height: 60px;
         margin-bottom: 15px;
+        padding: 0 20px;
         background: #ffffff;
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        .itemInfo {
+          display: flex;
+          align-items: center;
+          div {
+            margin-right: 15px;
+          }
+        }
       }
     }
   }

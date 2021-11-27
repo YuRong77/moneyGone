@@ -23,8 +23,7 @@ const actions = {
     axios
       .get(`${process.env.VUE_APP_API_PATH}/api/member/getMemberInfo/${uid}`)
       .then((res) => {
-        context.commit("SET_MEMBER_INFO", res.data.Result);
-        console.log(res, context);
+        context.commit("SET_MEMBER_INFO", res.data.result);
       });
   },
 };

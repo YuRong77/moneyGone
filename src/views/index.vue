@@ -14,6 +14,10 @@ export default {
     Header,
     Footer,
   },
+  created() {
+    this.$store.dispatch("memberInfo/getMemberInfo");
+    this.$store.dispatch("memo/getMemo");
+  },
 };
 </script>
 

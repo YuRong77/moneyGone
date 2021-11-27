@@ -24,9 +24,6 @@ export default {
     ...mapState("memberInfo", ["memberInfo"]),
   },
   methods: {},
-  created() {
-    this.$store.dispatch("memberInfo/getMemberInfo");
-  },
 };
 </script>
 
