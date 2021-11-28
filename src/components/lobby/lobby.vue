@@ -2,19 +2,26 @@
   <div class="content lobby">
     <div class="main">
       <div class="memoList">
-        <div class="memo" v-for="item in memo" :key="item.id">
+        <div
+          class="memo"
+          v-for="item in memoList"
+          :key="item.id"
+          @click="openMemo(item)"
+        >
           <div>icon</div>
           <p>{{ item.title }}</p>
         </div>
-        <div class="addMemo">+</div>
+        <div class="addMemo" v-if="memoList.length < 5" @click="openMemo(null)">
+          +
+        </div>
       </div>
       <div class="spendType">
-        <div class="type">123</div>
-        <div class="type">456</div>
+        <div class="type" @click="addSpend(1)">生活</div>
+        <div class="type" @click="addSpend(2)">休閒娛樂</div>
       </div>
       <div class="spendType">
-        <div class="type">123</div>
-        <div class="type">456</div>
+        <div class="type" @click="addSpend(3)">學習</div>
+        <div class="type" @click="addSpend(4)">其他</div>
       </div>
     </div>
     <div class="spendList">
@@ -36,25 +43,49 @@
         </div>
       </div>
     </div>
-    <!-- <h1>HOME</h1>
-    <h3>{{ $t("LC_ACCOUNT") }}</h3>
-    <button @click="logout">登出</button>
-    <button @click="getTest()">取得測試</button>
-    <button @click="setTest()">編輯測試</button> -->
+    <MemoPopup
+      v-if="memoPopup"
+      :memoPopup.sync="memoPopup"
+      :currentMemo="currentMemo"
+    />
+    <SpendPopup
+      v-if="spendPopup"
+      :spendPopup.sync="spendPopup"
+      :spendType="spendType"
+    />
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import MemoPopup from "@/components/popup/memoPopup";
+import SpendPopup from "@/components/popup/spendPopup";
 export default {
+  components: {
+    MemoPopup,
+    SpendPopup,
+  },
   data() {
-    return {};
+    return {
+      memoPopup: false,
+      currentMemo: {},
+      spendPopup: false,
+      spendType: null,
+    };
   },
   computed: {
     ...mapState("memberInfo", ["memberInfo"]),
-    ...mapState("memo", ["memo"]),
+    ...mapState("memo", ["memoList"]),
   },
   methods: {
+    openMemo(item) {
+      this.currentMemo = item;
+      this.memoPopup = true;
+    },
+    addSpend(type) {
+      this.spendType = type;
+      this.spendPopup = true;
+    },
     logout() {
       sessionStorage.removeItem("uid");
       document.cookie = `session.uid= `;
