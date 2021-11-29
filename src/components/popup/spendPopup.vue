@@ -36,6 +36,9 @@ export default {
       this.$emit("update:spendPopup", false);
     },
   },
+  created() {
+    this.$store.dispatch("system/getSpendOptions", { type: this.spendType });
+  },
 };
 </script>
 

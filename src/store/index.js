@@ -3,6 +3,7 @@ import Vuex from "vuex";
 import memberInfo from "./memberInfo";
 import memo from "./memo";
 import spend from "./spend";
+import system from "./system";
 
 Vue.use(Vuex);
 
@@ -11,5 +12,6 @@ export default new Vuex.Store({
     memberInfo,
     memo,
     spend,
+    system,
   },
 });
