@@ -23,6 +23,6 @@ export default {
 
 <style>
 .content {
-  min-height: calc(100vh - 90px - 60px);
+  min-height: calc(100vh - 100px - 65px);
 }
 </style>

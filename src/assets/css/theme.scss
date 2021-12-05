@@ -1,0 +1,73 @@
+$whiteBg: #f8f9fc;
+$whiteSubBg: #ffffff;
+$blackTitle: rgba(0, 0, 0, 0.9);
+$blackSubTitle: rgba(0, 0, 0, 0.6);
+
+$darkBg: #28333d;
+$darkSubBg: #37434e;
+$whiteTitle: rgba(255, 255, 255, 0.9);
+$whiteSubTitle: rgba(255, 255, 255, 0.75);
+
+/* lightMode */
+.lightMode {
+  &#app {
+    background: $whiteBg;
+  }
+  .header {
+    background: $whiteSubBg;
+    box-shadow: 0px 3px 3px -2px rgb(214, 214, 214);
+    h3 {
+      color: $blackSubTitle;
+    }
+    .spend {
+      color: $blackTitle;
+    }
+  }
+  .memo div,
+  .addMemo {
+    background: $whiteSubBg;
+    box-shadow: 0 2px 2px rgb(214, 214, 214);
+  }
+  .memo p {
+    color: $blackSubTitle;
+  }
+  .spendType {
+    .type {
+      background: linear-gradient(to left, $whiteSubBg, $whiteBg);
+    }
+    .text {
+      color: $blackTitle;
+    }
+  }
+}
+
+/* darkMode */
+.darkMode {
+  &#app {
+    background: $darkBg;
+  }
+  .header {
+    background: $darkSubBg;
+    h3 {
+      color: $whiteSubTitle;
+    }
+    .spend {
+      color: $whiteTitle;
+    }
+  }
+  .memo div,
+  .addMemo {
+    background: $darkSubBg;
+  }
+  .memo p {
+    color: $whiteSubTitle;
+  }
+  .spendType {
+    .type {
+      background: linear-gradient(to left, $darkSubBg, $darkBg);
+    }
+    .text {
+      color: $whiteTitle;
+    }
+  }
+}

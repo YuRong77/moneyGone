@@ -16,12 +16,24 @@
         </div>
       </div>
       <div class="spendType">
-        <div class="type" @click="addSpend(1)">生活</div>
-        <div class="type" @click="addSpend(2)">休閒娛樂</div>
+        <div class="type" @click="addSpend(1)">
+          <img src="@/assets/img/life.png" alt="" />
+          <div class="text">生活</div>
+        </div>
+        <div class="type" @click="addSpend(2)">
+          <img src="@/assets/img/fun.png" alt="" />
+          <div class="text">休閒娛樂</div>
+        </div>
       </div>
       <div class="spendType">
-        <div class="type" @click="addSpend(3)">學習</div>
-        <div class="type" @click="addSpend(4)">其他</div>
+        <div class="type" @click="addSpend(3)">
+          <img src="@/assets/img/study.png" alt="" />
+          <div class="text">學習</div>
+        </div>
+        <div class="type" @click="addSpend(4)">
+          <img src="@/assets/img/other.png" alt="" />
+          <div class="text">其他</div>
+        </div>
       </div>
     </div>
     <div class="spendList">
@@ -119,35 +131,36 @@ export default {
   flex-direction: column;
   position: relative;
   height: 100%;
-  // box-sizing: border-box;
   padding: 5% 5%;
   .main {
     display: flex;
     flex-direction: column;
     .memoList {
       display: flex;
-      margin-bottom: 6%;
+      margin-bottom: 10%;
       .memo {
         margin-right: 20px;
         div {
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 50px;
-          height: 50px;
-          background: #ffffff;
+          border-radius: 8px;
+          width: 48px;
+          height: 48px;
         }
         p {
           text-align: center;
+          margin-top: 10px;
+          font-size: 12px;
         }
       }
       .addMemo {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 50px;
-        height: 50px;
-        background: #456988;
+        border-radius: 8px;
+        width: 48px;
+        height: 48px;
       }
     }
     .spendType {
@@ -156,11 +169,24 @@ export default {
       flex-wrap: wrap;
       flex: 1;
       .type {
-        background: #ffffff;
-        width: 47%;
-        height: 65px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 45%;
+        height: 60px;
         border-radius: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+        img {
+          position: absolute;
+          bottom: 8px;
+          left: 10px;
+        }
+        .text {
+          font-size: 14px;
+          position: relative;
+          left: 30px;
+        }
       }
     }
   }

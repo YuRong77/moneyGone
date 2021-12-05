@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="lightMode">
     <router-view />
   </div>
 </template>
@@ -12,19 +12,19 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "~@/assets/css/theme.scss";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  background: rgb(175, 175, 175);
+  background: rgb(235, 235, 235);
 }
 #app {
   max-width: 768px;
   height: 100vh;
-  background: rgb(236, 236, 236);
   margin: auto;
 }
 </style>

@@ -4,11 +4,11 @@
     <div class="spendInfo">
       <div>
         <h3>{{ $t("LC_SPEND_TODAY") }}</h3>
-        <p class="spend">{{ memberInfo.spendToday }}</p>
+        <p class="spend">NT${{ memberInfo.spendToday }}</p>
       </div>
       <div>
         <h3>{{ $t("LC_SPEND_MONTH") }}</h3>
-        <p class="spend">{{ memberInfo.spendMonth }}</p>
+        <p class="spend">NT${{ memberInfo.spendMonth }}</p>
       </div>
     </div>
   </div>
@@ -32,21 +32,22 @@ export default {
   display: flex;
   align-items: center;
   text-align: center;
-  height: 90px;
-  background: #456988;
-  color: white;
+  height: 100px;
   .name {
     flex: 1;
   }
   .spendInfo {
     display: flex;
     justify-content: space-around;
-    flex: 2;
+    flex: 1;
+    h3 {
+      font-size: 12px;
+    }
     .spend {
       padding: 3px 5px;
-      margin-top: 5px;
+      margin-top: 15px;
       border-radius: 8px;
-      background: #3b5871;
+      font-weight: bold;
     }
   }
 }

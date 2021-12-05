@@ -41,7 +41,7 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 60px;
+  height: 65px;
   background: #ffffff;
 }
 </style>
