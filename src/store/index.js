@@ -4,6 +4,7 @@ import memberInfo from "./memberInfo";
 import memo from "./memo";
 import spend from "./spend";
 import system from "./system";
+import setting from "./setting";
 
 Vue.use(Vuex);
 
@@ -13,5 +14,6 @@ export default new Vuex.Store({
     memo,
     spend,
     system,
+    setting,
   },
 });

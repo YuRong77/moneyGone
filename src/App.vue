@@ -1,13 +1,17 @@
 <template>
-  <div id="app" class="lightMode">
+  <div id="app" :class="theme">
     <router-view />
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {};
+  },
+  computed: {
+    ...mapState("setting", ["theme"]),
   },
 };
 </script>
