@@ -14,6 +14,7 @@ export default {
 
 <style lang="scss">
 @import "~@/assets/css/theme.scss";
+@import "~@/assets/css/common.scss";
 * {
   margin: 0;
   padding: 0;

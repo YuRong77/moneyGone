@@ -6,7 +6,7 @@
       :key="item.path"
       @click="changeViews(item.path)"
     >
-      <div></div>
+      <div class="icon"><i :class="item.icon"></i></div>
       <div class="text">{{ item.name }}</div>
     </div>
   </div>
@@ -17,10 +17,10 @@ export default {
   data() {
     return {
       footerItem: [
-        { name: this.$t("LC_MAIN"), path: "Lobby" },
-        { name: this.$t("LC_RECORD"), path: "Record" },
-        { name: this.$t("LC_CHART"), path: "Chart" },
-        { name: this.$t("LC_SETTING"), path: "Setting" },
+        { name: this.$t("LC_MAIN"), path: "Lobby", icon: "fas fa-home" },
+        { name: this.$t("LC_RECORD"), path: "Record", icon: "fas fa-list-ul" },
+        { name: this.$t("LC_CHART"), path: "Chart", icon: "far fa-chart-bar" },
+        { name: this.$t("LC_SETTING"), path: "Setting", icon: "fas fa-cogs" },
       ],
       currentPath: this.$route.name,
     };
@@ -42,6 +42,14 @@ export default {
   justify-content: space-around;
   align-items: center;
   height: 65px;
-  background: #ffffff;
+  .footer_item {
+    text-align: center;
+    .icon {
+      font-size: 24px;
+    }
+    .text {
+      font-size: 14px;
+    }
+  }
 }
 </style>

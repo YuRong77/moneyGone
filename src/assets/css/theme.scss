@@ -15,7 +15,7 @@ $whiteSubTitle: rgba(255, 255, 255, 0.75);
   }
   .header {
     background: $whiteSubBg;
-    box-shadow: 0px 3px 3px -2px rgb(214, 214, 214);
+    box-shadow: 0px 3px 3px -2px rgba(214, 214, 214, 0.5);
     h3 {
       color: $blackSubTitle;
     }
@@ -26,7 +26,7 @@ $whiteSubTitle: rgba(255, 255, 255, 0.75);
   .memo div,
   .addMemo {
     background: $whiteSubBg;
-    box-shadow: 0 2px 2px rgb(214, 214, 214);
+    box-shadow: 0 2px 2px rgba(214, 214, 214, 0.5);
   }
   .memo p {
     color: $blackSubTitle;
@@ -37,6 +37,31 @@ $whiteSubTitle: rgba(255, 255, 255, 0.75);
     }
     .text {
       color: $blackTitle;
+    }
+  }
+  .spendList {
+    h4 {
+      color: $blackSubTitle;
+    }
+    .listItem {
+      background: $whiteSubBg;
+      box-shadow: 0 2px 2px rgba(214, 214, 214, 0.5);
+      h3 {
+        color: $blackTitle;
+      }
+      span {
+        color: $blackSubTitle;
+      }
+      .itemSpend {
+        color: $blackTitle;
+      }
+    }
+  }
+  .footer {
+    background: $whiteSubBg;
+    .icon,
+    .text {
+      color: $blackSubTitle;
     }
   }
 }
@@ -68,6 +93,30 @@ $whiteSubTitle: rgba(255, 255, 255, 0.75);
     }
     .text {
       color: $whiteTitle;
+    }
+  }
+  .spendList {
+    h4 {
+      color: $whiteSubTitle;
+    }
+    .listItem {
+      background: $darkSubBg;
+      h3 {
+        color: $whiteTitle;
+      }
+      span {
+        color: $whiteSubTitle;
+      }
+      .itemSpend {
+        color: $whiteTitle;
+      }
+    }
+  }
+  .footer {
+    background: $darkSubBg;
+    .icon,
+    .text {
+      color: $whiteSubTitle;
     }
   }
 }

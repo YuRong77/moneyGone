@@ -1,5 +1,5 @@
 <template>
-  <div class="content lobby">
+  <div class="lobby">
     <div class="main">
       <div class="memoList">
         <div
@@ -17,27 +17,27 @@
       </div>
       <div class="spendType">
         <div class="type" @click="addSpend(1)">
-          <img src="@/assets/img/life.png" alt="" />
+          <img src="@/assets/img/life.svg" alt="" />
           <div class="text">生活</div>
         </div>
         <div class="type" @click="addSpend(2)">
-          <img src="@/assets/img/fun.png" alt="" />
+          <img src="@/assets/img/fun.svg" alt="" />
           <div class="text">休閒娛樂</div>
         </div>
       </div>
       <div class="spendType">
         <div class="type" @click="addSpend(3)">
-          <img src="@/assets/img/study.png" alt="" />
+          <img src="@/assets/img/study.svg" alt="" />
           <div class="text">學習</div>
         </div>
         <div class="type" @click="addSpend(4)">
-          <img src="@/assets/img/other.png" alt="" />
+          <img src="@/assets/img/other.svg" alt="" />
           <div class="text">其他</div>
         </div>
       </div>
     </div>
     <div class="spendList">
-      <h4>123</h4>
+      <h4>今日花費</h4>
       <div class="list">
         <div
           class="listItem"
@@ -45,7 +45,7 @@
           :key="index"
         >
           <div class="itemInfo">
-            <div>icon</div>
+            <div class="icon"></div>
             <div>
               <h3>{{ item.name }}</h3>
               <span>{{ item.type }}</span>
@@ -195,6 +195,7 @@ export default {
     position: relative;
     h4 {
       margin-bottom: 15px;
+      font-size: 12px;
     }
     .list {
       position: absolute;
@@ -207,17 +208,25 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-radius: 20px;
-        height: 60px;
+        border-radius: 10px;
+        height: 55px;
         margin-bottom: 15px;
         padding: 0 20px;
-        background: #ffffff;
-        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
         .itemInfo {
           display: flex;
           align-items: center;
-          div {
-            margin-right: 15px;
+          .icon {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            margin-right: 10px;
+          }
+          h3 {
+            font-size: 14px;
+          }
+          span {
+            font-size: 12px;
           }
         }
       }
