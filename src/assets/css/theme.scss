@@ -1,10 +1,10 @@
-$whiteBg: #f8f9fc;
+$whiteBg: #f2f4f8;
 $whiteSubBg: #ffffff;
 $blackTitle: rgba(0, 0, 0, 0.9);
 $blackSubTitle: rgba(0, 0, 0, 0.6);
 
 $darkBg: #28333d;
-$darkSubBg: #37434e;
+$darkSubBg: #414f5c;
 $whiteTitle: rgba(255, 255, 255, 0.9);
 $whiteSubTitle: rgba(255, 255, 255, 0.75);
 
@@ -89,7 +89,7 @@ $whiteSubTitle: rgba(255, 255, 255, 0.75);
   }
   .spendType {
     .type {
-      background: linear-gradient(to left, $darkSubBg, $darkBg);
+      background: linear-gradient(to left, $darkSubBg 25%, $darkBg);
     }
     .text {
       color: $whiteTitle;

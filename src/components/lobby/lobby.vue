@@ -18,26 +18,26 @@
       <div class="spendType">
         <div class="type" @click="addSpend(1)">
           <img src="@/assets/img/life.svg" alt="" />
-          <div class="text">生活</div>
+          <div class="text">{{ $t("LC_LIFE") }}</div>
         </div>
         <div class="type" @click="addSpend(2)">
           <img src="@/assets/img/fun.svg" alt="" />
-          <div class="text">休閒娛樂</div>
+          <div class="text">{{ $t("LC_FUN") }}</div>
         </div>
       </div>
       <div class="spendType">
         <div class="type" @click="addSpend(3)">
           <img src="@/assets/img/study.svg" alt="" />
-          <div class="text">學習</div>
+          <div class="text">{{ $t("LC_STUDY") }}</div>
         </div>
         <div class="type" @click="addSpend(4)">
           <img src="@/assets/img/other.svg" alt="" />
-          <div class="text">其他</div>
+          <div class="text">{{ $t("LC_OTHER") }}</div>
         </div>
       </div>
     </div>
     <div class="spendList">
-      <h4>今日花費</h4>
+      <h4>{{ $t("LC_SPEND_TODAY") }}</h4>
       <div class="list">
         <div
           class="listItem"
@@ -48,7 +48,7 @@
             <div class="icon"></div>
             <div>
               <h3>{{ item.name }}</h3>
-              <span>{{ item.type }}</span>
+              <span>{{ getType(item.type) }}</span>
             </div>
           </div>
           <div class="itemSpend">NT {{ item.spend }}</div>
@@ -97,6 +97,12 @@ export default {
     addSpend(type) {
       this.spendType = type;
       this.spendPopup = true;
+    },
+    getType(type) {
+      if (type === 1) return this.$t("LC_LIFE");
+      if (type === 2) return this.$t("LC_FUN");
+      if (type === 3) return this.$t("LC_STUDY");
+      if (type === 4) return this.$t("LC_OTHER");
     },
     logout() {
       sessionStorage.removeItem("uid");
