@@ -62,7 +62,7 @@ export default {
 
 <style lang="scss" scoped>
 .memoPopup {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -73,7 +73,8 @@ export default {
   background: rgba(0, 0, 0, 0.1);
   .memoCard {
     width: 300px;
-    height: 400px;
+    height: 450px;
+    border-radius: 15px;
     background: white;
   }
 }

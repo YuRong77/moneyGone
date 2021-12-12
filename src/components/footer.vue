@@ -20,7 +20,7 @@ export default {
         { name: this.$t("LC_MAIN"), path: "Lobby", icon: "fas fa-home" },
         { name: this.$t("LC_RECORD"), path: "Record", icon: "fas fa-list-ul" },
         { name: this.$t("LC_CHART"), path: "Chart", icon: "far fa-chart-bar" },
-        { name: this.$t("LC_SETTING"), path: "Setting", icon: "fas fa-cogs" },
+        { name: this.$t("LC_SETTING"), path: "Setting", icon: "fas fa-cog" },
       ],
       currentPath: this.$route.name,
     };

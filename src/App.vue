@@ -19,14 +19,6 @@ export default {
 <style lang="scss">
 @import "~@/assets/css/theme.scss";
 @import "~@/assets/css/common.scss";
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  background: rgb(235, 235, 235);
-}
 #app {
   max-width: 768px;
   height: 100vh;
