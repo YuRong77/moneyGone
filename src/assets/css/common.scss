@@ -19,7 +19,7 @@ body {
 input {
   font-size: 18px;
   border: none;
-  border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
+  border-radius: 0;
   &:focus {
     outline: none;
   }
@@ -32,6 +32,7 @@ input {
   label {
     display: block;
     font-size: 14px;
+    margin-bottom: 3px;
   }
 }
 .loading {

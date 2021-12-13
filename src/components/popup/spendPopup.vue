@@ -12,10 +12,19 @@
           <div class="hotKeyList" v-if="!spendItemLoading">
             <div
               class="hotKeyItem"
+              :class="{ shake: openDeleteSpendItem }"
               v-for="item in spendItemOptions"
               :key="item.id"
+              @click="useHotKey(item.name)"
             >
-              {{ item.name }}
+              <div
+                class="deleteHotKey"
+                v-if="openDeleteSpendItem"
+                @click="deleteSpendItem(item)"
+              >
+                x
+              </div>
+              <span>{{ item.name }}</span>
             </div>
           </div>
           <div v-else class="loading">
@@ -34,27 +43,42 @@
               v-if="openNewSpendItem"
               @click="addNewSpendItem()"
             >
-              新增
+              加入
             </div>
             <div
               class="hotKeyBtn"
-              v-if="openNewSpendItem"
-              @click="openNewSpendItem = false"
-            >
-              取消
-            </div>
-            <div
-              class="hotKeyBtn"
-              v-if="!openNewSpendItem"
-              @click="openAddSpendItem()"
+              v-if="!openNewSpendItem && !openDeleteSpendItem"
+              @click="openNewSpendItem = true"
             >
               +
+            </div>
+            <div
+              class="hotKeyBtn"
+              v-if="!openNewSpendItem && !openDeleteSpendItem"
+              @click="openDeleteSpendItem = true"
+            >
+              -
+            </div>
+            <div
+              class="hotKeyBtn"
+              v-if="openNewSpendItem || openDeleteSpendItem"
+              @click="
+                openNewSpendItem = false;
+                openDeleteSpendItem = false;
+              "
+            >
+              取消
             </div>
           </div>
         </div>
         <div class="inputBox">
           <label for="spend">金額</label>
-          <input class="inputBox" type="text" id="spend" v-model="spend" />
+          <input
+            class="inputBox"
+            type="number"
+            id="spend"
+            v-model.number="spend"
+          />
         </div>
         <div class="inputBox">
           <label for="remark">備註</label>
@@ -62,8 +86,8 @@
         </div>
       </div>
       <div class="formBtn">
-        <div @click="addSpend()">addSpend</div>
-        <div @click="closeSpend()">close</div>
+        <div @click="addSpend()">新增</div>
+        <div @click="closeSpend()">關閉</div>
       </div>
     </div>
   </div>
@@ -80,6 +104,7 @@ export default {
       remark: null,
       newSpendItem: null,
       openNewSpendItem: false,
+      openDeleteSpendItem: false,
     };
   },
   computed: {
@@ -92,6 +117,10 @@ export default {
       if (type === 3) return this.$t("LC_STUDY");
       if (type === 4) return this.$t("LC_OTHER");
     },
+    useHotKey(val) {
+      if (this.openDeleteSpendItem) return;
+      this.name = val;
+    },
     addSpend() {
       const data = {
         name: this.name,
@@ -102,9 +131,6 @@ export default {
       this.$store.dispatch("spend/addSpend", data);
       this.closeSpend();
     },
-    openAddSpendItem() {
-      this.openNewSpendItem = true;
-    },
     addNewSpendItem() {
       const data = {
         name: this.newSpendItem,
@@ -113,6 +139,14 @@ export default {
       this.$store.dispatch("system/addSpendOptions", data);
       this.newSpendItem = null;
       this.openNewSpendItem = false;
+    },
+    deleteSpendItem(item) {
+      const data = {
+        id: item.id,
+        type: this.spendType,
+      };
+      this.$store.dispatch("system/deleteSpendOptions", data);
+      this.openDeleteSpendItem = false;
     },
     closeSpend() {
       this.$emit("update:spendPopup", false);
@@ -134,13 +168,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.1);
   .spendCard {
-    width: 300px;
-    height: 410px;
+    width: 320px;
     border-radius: 15px;
     padding: 20px 20px;
-    background: white;
     h3 {
       text-align: center;
       margin-bottom: 30px;
@@ -158,11 +189,23 @@ export default {
           flex-wrap: wrap;
           margin-bottom: 5px;
           .hotKeyItem {
+            position: relative;
             padding: 6px 15px;
             border-radius: 5px;
-            background: blanchedalmond;
             margin: 0 6px 6px 0;
             font-size: 12px;
+            .deleteHotKey {
+              position: absolute;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              left: 50%;
+              top: -10px;
+              transform: translateX(-50%);
+              font-size: 12px;
+              display: flex;
+              justify-content: center;
+            }
           }
         }
         .addHotKey {
@@ -176,7 +219,6 @@ export default {
             margin-right: 5px;
             font-size: 12px;
             border-radius: 5px;
-            background: #f8f9fc;
           }
         }
       }
@@ -189,22 +231,8 @@ export default {
         margin-left: 5px;
         font-size: 12px;
         border-radius: 5px;
-        background: #f8f9fc;
       }
     }
   }
-}
-// vue transition
-.hotKeyOpen-enter,
-.hotKeyOpen-leave-to {
-  max-width: 0;
-}
-.hotKeyOpen-enter-active,
-.hotKeyOpen-leave-active {
-  transition: max-width 0.5s;
-}
-.hotKeyOpen-enter-to,
-.hotKeyOpen-leave {
-  max-width: 130px;
 }
 </style>

@@ -1,0 +1,27 @@
+.hotKeyOpen-enter,
+.hotKeyOpen-leave-to {
+  max-width: 0;
+}
+.hotKeyOpen-enter-active {
+  transition: max-width 0.4s;
+}
+.hotKeyOpen-leave-active {
+  transition: max-width 0.2s;
+}
+.hotKeyOpen-enter-to,
+.hotKeyOpen-leave {
+  max-width: 130px;
+}
+
+.shake {
+  animation: shake 0.3s;
+  animation-iteration-count: infinite;
+}
+@keyframes shake {
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}

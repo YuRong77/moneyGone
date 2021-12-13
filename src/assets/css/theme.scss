@@ -2,11 +2,16 @@ $whiteBg: #f2f4f8;
 $whiteSubBg: #ffffff;
 $blackTitle: rgba(0, 0, 0, 0.9);
 $blackSubTitle: rgba(0, 0, 0, 0.6);
+$blackPopupBg: rgba(0, 0, 0, 0.3);
+$blackBorder: rgba(0, 0, 0, 0.1);
+$lightModeShadow: 0 2px 2px rgba(214, 214, 214, 0.5);
 
 $darkBg: #28333d;
 $darkSubBg: #414f5c;
 $whiteTitle: rgba(255, 255, 255, 0.9);
 $whiteSubTitle: rgba(255, 255, 255, 0.75);
+$darkPopupBg: rgba(0, 0, 0, 0.7);
+$whiteBorder: rgba(255, 255, 255, 0.9);
 
 /* lightMode */
 .lightMode {
@@ -15,7 +20,7 @@ $whiteSubTitle: rgba(255, 255, 255, 0.75);
   }
   .header {
     background: $whiteSubBg;
-    box-shadow: 0px 3px 3px -2px rgba(214, 214, 214, 0.5);
+    box-shadow: $lightModeShadow;
     h3 {
       color: $blackSubTitle;
     }
@@ -26,7 +31,7 @@ $whiteSubTitle: rgba(255, 255, 255, 0.75);
   .memo div,
   .addMemo {
     background: $whiteSubBg;
-    box-shadow: 0 2px 2px rgba(214, 214, 214, 0.5);
+    box-shadow: $lightModeShadow;
   }
   .memo p {
     color: $blackSubTitle;
@@ -45,7 +50,7 @@ $whiteSubTitle: rgba(255, 255, 255, 0.75);
     }
     .listItem {
       background: $whiteSubBg;
-      box-shadow: 0 2px 2px rgba(214, 214, 214, 0.5);
+      box-shadow: $lightModeShadow;
       h3 {
         color: $blackTitle;
       }
@@ -63,6 +68,36 @@ $whiteSubTitle: rgba(255, 255, 255, 0.75);
     .text {
       color: $blackSubTitle;
     }
+  }
+  .spendPopup {
+    background: $blackPopupBg;
+    .spendCard {
+      background: $whiteSubBg;
+      h3 {
+        color: $blackTitle;
+      }
+      h5,
+      .loading {
+        color: $blackSubTitle;
+      }
+      .hotKeyItem,
+      .hotKeyBtn,
+      .formBtn div {
+        background: $whiteBg;
+        box-shadow: $lightModeShadow;
+        color: $blackSubTitle;
+      }
+      .deleteHotKey {
+        background: $blackBorder;
+        color: $whiteSubBg;
+      }
+    }
+  }
+  label {
+    color: $blackSubTitle;
+  }
+  input {
+    border-bottom: $blackBorder solid 1px;
   }
 }
 
@@ -118,5 +153,36 @@ $whiteSubTitle: rgba(255, 255, 255, 0.75);
     .text {
       color: $whiteSubTitle;
     }
+  }
+  .spendPopup {
+    background: $darkPopupBg;
+    .spendCard {
+      background: $darkBg;
+      h3 {
+        color: $whiteTitle;
+      }
+      h5,
+      .loading {
+        color: $whiteSubTitle;
+      }
+      .hotKeyItem,
+      .hotKeyBtn,
+      .formBtn div {
+        background: $darkSubBg;
+        color: $whiteSubTitle;
+      }
+      .deleteHotKey {
+        background: $whiteBorder;
+        color: $darkSubBg;
+      }
+    }
+  }
+  label {
+    color: $whiteSubTitle;
+  }
+  input {
+    border-bottom: $whiteBorder solid 1px;
+    background: none;
+    color: $whiteTitle;
   }
 }

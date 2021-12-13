@@ -19,6 +19,7 @@ export default {
 <style lang="scss">
 @import "~@/assets/css/theme.scss";
 @import "~@/assets/css/common.scss";
+@import "~@/assets/css/transtion.scss";
 #app {
   max-width: 768px;
   height: 100vh;
