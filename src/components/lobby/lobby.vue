@@ -70,10 +70,12 @@
 
 <script>
 import { mapState } from "vuex";
+import Header from "@/components/header";
 import MemoPopup from "@/components/popup/memoPopup";
 import SpendPopup from "@/components/popup/spendPopup";
 export default {
   components: {
+    Header,
     MemoPopup,
     SpendPopup,
   },

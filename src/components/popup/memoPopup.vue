@@ -1,12 +1,18 @@
 <template>
   <div class="memoPopup">
     <div class="memoCard">
-      <input type="text" v-model="title" />
-      <textarea v-model="content" />
-      <button v-if="!isAddMemo" @click="updateMemo()">update</button>
-      <button v-if="isAddMemo" @click="createMemo()">create</button>
-      <button @click="closeMemo()">close</button>
-      <button v-if="!isAddMemo" @click="deleteMemo()">delete</button>
+      <div class="inputBox">
+        <input type="text" v-model="title" />
+      </div>
+      <div class="inputBox">
+        <textarea class="inputBox" rows="12" v-model="content" />
+      </div>
+      <div class="formBtn">
+        <button v-if="!isAddMemo" @click="updateMemo()">update</button>
+        <button v-if="isAddMemo" @click="createMemo()">create</button>
+        <button @click="closeMemo()">close</button>
+        <button v-if="!isAddMemo" @click="deleteMemo()">delete</button>
+      </div>
     </div>
   </div>
 </template>
@@ -72,8 +78,8 @@ export default {
   align-items: center;
   background: rgba(0, 0, 0, 0.1);
   .memoCard {
-    width: 300px;
-    height: 450px;
+    width: 340px;
+    padding: 30px 20px;
     border-radius: 15px;
     background: white;
   }

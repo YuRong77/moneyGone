@@ -16,17 +16,20 @@ html body {
 body {
   background: rgb(235, 235, 235);
 }
-input {
+input,
+textarea {
   font-size: 18px;
   border: none;
   border-radius: 0;
+  resize: none;
   &:focus {
     outline: none;
   }
 }
 .inputBox {
   margin-bottom: 5px;
-  input {
+  input,
+  textarea {
     width: 100%;
   }
   label {
@@ -37,5 +40,4 @@ input {
 }
 .loading {
   text-align: center;
-  color: rgba(0, 0, 0, 0.2);
 }

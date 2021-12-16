@@ -73,11 +73,13 @@ $whiteBorder: rgba(255, 255, 255, 0.9);
     background: $blackPopupBg;
     .spendCard {
       background: $whiteSubBg;
+      .loading {
+        color: $whiteBg;
+      }
       h3 {
         color: $blackTitle;
       }
-      h5,
-      .loading {
+      h5 {
         color: $blackSubTitle;
       }
       .hotKeyItem,
@@ -96,7 +98,8 @@ $whiteBorder: rgba(255, 255, 255, 0.9);
   label {
     color: $blackSubTitle;
   }
-  input {
+  input,
+  textarea {
     border-bottom: $blackBorder solid 1px;
   }
 }
@@ -180,7 +183,8 @@ $whiteBorder: rgba(255, 255, 255, 0.9);
   label {
     color: $whiteSubTitle;
   }
-  input {
+  input,
+  textarea {
     border-bottom: $whiteBorder solid 1px;
     background: none;
     color: $whiteTitle;
