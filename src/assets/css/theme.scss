@@ -18,48 +18,89 @@ $whiteBorder: rgba(255, 255, 255, 0.9);
   &#app {
     background: $whiteBg;
   }
-  .header {
-    background: $whiteSubBg;
-    box-shadow: $lightModeShadow;
-    h3 {
-      color: $blackSubTitle;
-    }
-    .spend {
-      color: $blackTitle;
-    }
-  }
-  .memo div,
-  .addMemo {
-    background: $whiteSubBg;
-    box-shadow: $lightModeShadow;
-  }
-  .memo p {
-    color: $blackSubTitle;
-  }
-  .spendType {
-    .type {
-      background: linear-gradient(to left, $whiteSubBg, $whiteBg);
-    }
-    .text {
-      color: $blackTitle;
-    }
-  }
-  .spendList {
-    h4 {
-      color: $blackSubTitle;
-    }
-    .listItem {
+  .lobby {
+    .header {
       background: $whiteSubBg;
       box-shadow: $lightModeShadow;
       h3 {
-        color: $blackTitle;
-      }
-      span {
         color: $blackSubTitle;
       }
-      .itemSpend {
+      .spend {
         color: $blackTitle;
       }
+    }
+    .memo div,
+    .addMemo {
+      background: $whiteSubBg;
+      box-shadow: $lightModeShadow;
+    }
+    .memo p {
+      color: $blackSubTitle;
+    }
+    .spendType {
+      .type {
+        background: linear-gradient(to left, $whiteSubBg, $whiteBg);
+      }
+      .text {
+        color: $blackTitle;
+      }
+    }
+    .spendList {
+      h4 {
+        color: $blackSubTitle;
+      }
+      .listItem {
+        background: $whiteSubBg;
+        box-shadow: $lightModeShadow;
+        h3 {
+          color: $blackTitle;
+        }
+        span {
+          color: $blackSubTitle;
+        }
+        .itemSpend {
+          color: $blackTitle;
+        }
+      }
+    }
+    .spendPopup {
+      background: $blackPopupBg;
+      .spendCard {
+        background: $whiteSubBg;
+        .loading {
+          color: $whiteBg;
+        }
+        h3 {
+          color: $blackTitle;
+        }
+        h5 {
+          color: $blackSubTitle;
+        }
+        .hotKeyItem,
+        .hotKeyBtn,
+        .formBtn div {
+          background: $whiteBg;
+          box-shadow: $lightModeShadow;
+          color: $blackSubTitle;
+        }
+        .deleteHotKey {
+          background: $blackBorder;
+          color: $whiteSubBg;
+        }
+      }
+    }
+  }
+  .record {
+    .header {
+      background: $whiteSubBg;
+      box-shadow: $lightModeShadow;
+      h3 {
+        color: $blackSubTitle;
+      }
+    }
+    .recordItem {
+      background: $whiteSubBg;
+      box-shadow: $lightModeShadow;
     }
   }
   .footer {
@@ -67,32 +108,6 @@ $whiteBorder: rgba(255, 255, 255, 0.9);
     .icon,
     .text {
       color: $blackSubTitle;
-    }
-  }
-  .spendPopup {
-    background: $blackPopupBg;
-    .spendCard {
-      background: $whiteSubBg;
-      .loading {
-        color: $whiteBg;
-      }
-      h3 {
-        color: $blackTitle;
-      }
-      h5 {
-        color: $blackSubTitle;
-      }
-      .hotKeyItem,
-      .hotKeyBtn,
-      .formBtn div {
-        background: $whiteBg;
-        box-shadow: $lightModeShadow;
-        color: $blackSubTitle;
-      }
-      .deleteHotKey {
-        background: $blackBorder;
-        color: $whiteSubBg;
-      }
     }
   }
   label {
@@ -109,44 +124,69 @@ $whiteBorder: rgba(255, 255, 255, 0.9);
   &#app {
     background: $darkBg;
   }
-  .header {
-    background: $darkSubBg;
-    h3 {
-      color: $whiteSubTitle;
-    }
-    .spend {
-      color: $whiteTitle;
-    }
-  }
-  .memo div,
-  .addMemo {
-    background: $darkSubBg;
-  }
-  .memo p {
-    color: $whiteSubTitle;
-  }
-  .spendType {
-    .type {
-      background: linear-gradient(to left, $darkSubBg 25%, $darkBg);
-    }
-    .text {
-      color: $whiteTitle;
-    }
-  }
-  .spendList {
-    h4 {
-      color: $whiteSubTitle;
-    }
-    .listItem {
+  .lobby {
+    .header {
       background: $darkSubBg;
       h3 {
-        color: $whiteTitle;
-      }
-      span {
         color: $whiteSubTitle;
       }
-      .itemSpend {
+      .spend {
         color: $whiteTitle;
+      }
+    }
+    .memo div,
+    .addMemo {
+      background: $darkSubBg;
+    }
+    .memo p {
+      color: $whiteSubTitle;
+    }
+    .spendType {
+      .type {
+        background: linear-gradient(to left, $darkSubBg 25%, $darkBg);
+      }
+      .text {
+        color: $whiteTitle;
+      }
+    }
+    .spendList {
+      h4 {
+        color: $whiteSubTitle;
+      }
+      .listItem {
+        background: $darkSubBg;
+        h3 {
+          color: $whiteTitle;
+        }
+        span {
+          color: $whiteSubTitle;
+        }
+        .itemSpend {
+          color: $whiteTitle;
+        }
+      }
+    }
+    .spendPopup {
+      background: $darkPopupBg;
+      .spendCard {
+        background: $darkBg;
+        h3 {
+          color: $whiteTitle;
+        }
+        h5,
+        .loading {
+          color: $whiteSubTitle;
+        }
+        .hotKeyItem,
+        .hotKeyBtn,
+        .formBtn div {
+          background: $darkSubBg;
+          color: $whiteSubTitle;
+        }
+        .deleteHotKey {
+          background: $whiteBorder;
+          color: $darkSubBg;
+        }
       }
     }
   }
@@ -155,29 +195,6 @@ $whiteBorder: rgba(255, 255, 255, 0.9);
     .icon,
     .text {
       color: $whiteSubTitle;
-    }
-  }
-  .spendPopup {
-    background: $darkPopupBg;
-    .spendCard {
-      background: $darkBg;
-      h3 {
-        color: $whiteTitle;
-      }
-      h5,
-      .loading {
-        color: $whiteSubTitle;
-      }
-      .hotKeyItem,
-      .hotKeyBtn,
-      .formBtn div {
-        background: $darkSubBg;
-        color: $whiteSubTitle;
-      }
-      .deleteHotKey {
-        background: $whiteBorder;
-        color: $darkSubBg;
-      }
     }
   }
   label {
