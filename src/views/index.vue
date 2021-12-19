@@ -1,17 +1,14 @@
 <template>
   <div>
-    <Header />
     <router-view class="content" />
     <Footer />
   </div>
 </template>
 
 <script>
-import Header from "@/components/header";
 import Footer from "@/components/footer";
 export default {
   components: {
-    Header,
     Footer,
   },
   created() {
@@ -23,6 +20,6 @@ export default {
 
 <style>
 .content {
-  min-height: calc(100vh - 100px - 65px);
+  min-height: calc(100vh - 65px);
 }
 </style>

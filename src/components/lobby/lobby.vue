@@ -1,57 +1,64 @@
 <template>
   <div class="lobby">
+    <Header />
     <div class="main">
-      <div class="memoList">
-        <div
-          class="memo"
-          v-for="item in memoList"
-          :key="item.id"
-          @click="openMemo(item)"
-        >
-          <div>icon</div>
-          <p>{{ item.title }}</p>
-        </div>
-        <div class="addMemo" v-if="memoList.length < 5" @click="openMemo(null)">
-          +
-        </div>
-      </div>
-      <div class="spendType">
-        <div class="type" @click="addSpend(1)">
-          <img src="@/assets/img/life.svg" alt="" />
-          <div class="text">{{ $t("LC_LIFE") }}</div>
-        </div>
-        <div class="type" @click="addSpend(2)">
-          <img src="@/assets/img/fun.svg" alt="" />
-          <div class="text">{{ $t("LC_FUN") }}</div>
-        </div>
-      </div>
-      <div class="spendType">
-        <div class="type" @click="addSpend(3)">
-          <img src="@/assets/img/study.svg" alt="" />
-          <div class="text">{{ $t("LC_STUDY") }}</div>
-        </div>
-        <div class="type" @click="addSpend(4)">
-          <img src="@/assets/img/other.svg" alt="" />
-          <div class="text">{{ $t("LC_OTHER") }}</div>
-        </div>
-      </div>
-    </div>
-    <div class="spendList">
-      <h4>{{ $t("LC_SPEND_TODAY") }}</h4>
-      <div class="list">
-        <div
-          class="listItem"
-          v-for="(item, index) in memberInfo.spendList"
-          :key="index"
-        >
-          <div class="itemInfo">
-            <div class="icon"></div>
-            <div>
-              <h3>{{ item.name }}</h3>
-              <span>{{ getType(item.type) }}</span>
-            </div>
+      <div class="operate">
+        <div class="memoList">
+          <div
+            class="memo"
+            v-for="item in memoList"
+            :key="item.id"
+            @click="openMemo(item)"
+          >
+            <div>icon</div>
+            <p>{{ item.title }}</p>
           </div>
-          <div class="itemSpend">NT {{ item.spend }}</div>
+          <div
+            class="addMemo"
+            v-if="memoList.length < 5"
+            @click="openMemo(null)"
+          >
+            +
+          </div>
+        </div>
+        <div class="spendType">
+          <div class="type" @click="addSpend(1)">
+            <img src="@/assets/img/life.svg" alt="" />
+            <div class="text">{{ $t("LC_LIFE") }}</div>
+          </div>
+          <div class="type" @click="addSpend(2)">
+            <img src="@/assets/img/fun.svg" alt="" />
+            <div class="text">{{ $t("LC_FUN") }}</div>
+          </div>
+        </div>
+        <div class="spendType">
+          <div class="type" @click="addSpend(3)">
+            <img src="@/assets/img/study.svg" alt="" />
+            <div class="text">{{ $t("LC_STUDY") }}</div>
+          </div>
+          <div class="type" @click="addSpend(4)">
+            <img src="@/assets/img/other.svg" alt="" />
+            <div class="text">{{ $t("LC_OTHER") }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="spendList">
+        <h4>{{ $t("LC_SPEND_TODAY") }}</h4>
+        <div class="list">
+          <div
+            class="listItem"
+            v-for="(item, index) in memberInfo.spendList"
+            :key="index"
+          >
+            <div class="itemInfo">
+              <div class="icon"></div>
+              <div>
+                <h3>{{ item.name }}</h3>
+                <span>{{ getType(item.type) }}</span>
+              </div>
+            </div>
+            <div class="itemSpend">NT {{ item.spend }}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -137,18 +144,32 @@ export default {
 .lobby {
   display: flex;
   flex-direction: column;
-  position: relative;
-  height: 100%;
-  padding: 5% 5%;
   .main {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    .memoList {
-      display: flex;
-      margin-bottom: 10%;
-      .memo {
-        margin-right: 20px;
-        div {
+    padding: 5% 5%;
+    .operate {
+      .memoList {
+        display: flex;
+        margin-bottom: 10%;
+        .memo {
+          margin-right: 20px;
+          div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            width: 48px;
+            height: 48px;
+          }
+          p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 12px;
+          }
+        }
+        .addMemo {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -156,85 +177,70 @@ export default {
           width: 48px;
           height: 48px;
         }
-        p {
-          text-align: center;
-          margin-top: 10px;
-          font-size: 12px;
-        }
       }
-      .addMemo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 8px;
-        width: 48px;
-        height: 48px;
-      }
-    }
-    .spendType {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      flex: 1;
-      .type {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        width: 45%;
-        height: 60px;
-        border-radius: 20px;
-        margin-bottom: 30px;
-        img {
-          position: absolute;
-          bottom: 8px;
-          left: 10px;
-        }
-        .text {
-          font-size: 14px;
-          position: relative;
-          left: 30px;
-        }
-      }
-    }
-  }
-  .spendList {
-    flex: 1;
-    position: relative;
-    h4 {
-      margin-bottom: 15px;
-      font-size: 12px;
-    }
-    .list {
-      position: absolute;
-      left: 0;
-      top: 30px;
-      right: 0;
-      bottom: 0;
-      overflow-y: auto;
-      .listItem {
+      .spendType {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        border-radius: 10px;
-        height: 55px;
-        margin-bottom: 15px;
-        padding: 0 20px;
-        .itemInfo {
+        .type {
           display: flex;
+          justify-content: center;
           align-items: center;
-          .icon {
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            margin-right: 10px;
+          position: relative;
+          width: 45%;
+          height: 60px;
+          border-radius: 20px;
+          margin-bottom: 30px;
+          img {
+            position: absolute;
+            bottom: 8px;
+            left: 10px;
           }
-          h3 {
+          .text {
             font-size: 14px;
+            position: relative;
+            left: 30px;
           }
-          span {
-            font-size: 12px;
+        }
+      }
+    }
+    .spendList {
+      flex: 1;
+      position: relative;
+      h4 {
+        margin-bottom: 15px;
+        font-size: 12px;
+      }
+      .list {
+        position: absolute;
+        left: 0;
+        top: 30px;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        .listItem {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-radius: 10px;
+          height: 55px;
+          margin-bottom: 15px;
+          padding: 0 20px;
+          .itemInfo {
+            display: flex;
+            align-items: center;
+            .icon {
+              border: 1px solid rgba(0, 0, 0, 0.2);
+              border-radius: 50%;
+              width: 36px;
+              height: 36px;
+              margin-right: 10px;
+            }
+            h3 {
+              font-size: 14px;
+            }
+            span {
+              font-size: 12px;
+            }
           }
         }
       }
