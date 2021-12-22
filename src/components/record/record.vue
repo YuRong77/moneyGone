@@ -17,20 +17,33 @@
         <div class="recordItem" v-for="(item, index) in spendList" :key="index">
           <div class="date">{{ item.date }}</div>
           <div class="total">總計: {{ item.total }}</div>
-          <div class="detail" @click="openDetail(item.details)">明細</div>
+          <div class="detail" @click="openDetail(item.date, item.details)">
+            明細
+          </div>
         </div>
       </div>
     </div>
+    <DetailPopup
+      v-if="detailPopup"
+      :detailPopup.sync="detailPopup"
+      :currentDetail="currentDetail"
+    />
   </div>
 </template>
 
 <script>
 import moment from "moment";
 import { mapState } from "vuex";
+import DetailPopup from "@/components/popup/detailPopup";
 export default {
+  components: {
+    DetailPopup,
+  },
   data() {
     return {
       currentMonth: moment().format("YYYY-MM"),
+      currentDetail: null,
+      detailPopup: false,
     };
   },
   watch: {
@@ -56,8 +69,12 @@ export default {
         .add(val, "M")
         .format("YYYY-MM");
     },
-    openDetail(items) {
-      console.log(items);
+    openDetail(_date, _list) {
+      this.currentDetail = {
+        date: _date,
+        list: _list,
+      };
+      this.detailPopup = true;
     },
   },
   created() {
