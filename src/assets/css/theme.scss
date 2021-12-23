@@ -13,6 +13,8 @@ $whiteSubTitle: rgba(255, 255, 255, 0.75);
 $darkPopupBg: rgba(0, 0, 0, 0.7);
 $whiteBorder: rgba(255, 255, 255, 0.9);
 
+$whitePopupBg: #fbfbfb;
+
 /* lightMode */
 .lightMode {
   &#app {
@@ -101,6 +103,18 @@ $whiteBorder: rgba(255, 255, 255, 0.9);
     .recordItem {
       background: $whiteSubBg;
       box-shadow: $lightModeShadow;
+    }
+    .detailPopup {
+      .detailCard {
+        background: $whitePopupBg;
+        .detailItem {
+          background: $whiteSubBg;
+          box-shadow: $lightModeShadow;
+          .directions {
+            border-bottom: 1px solid $blackBorder;
+          }
+        }
+      }
     }
   }
   .footer {
