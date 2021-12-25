@@ -106,7 +106,7 @@ export default {
   align-items: center;
   .memoCard {
     position: relative;
-    width: 340px;
+    width: 95%;
     padding: 20px 20px;
     border-radius: 15px;
     .title {

@@ -169,7 +169,7 @@ export default {
   justify-content: center;
   align-items: center;
   .spendCard {
-    width: 340px;
+    width: 95%;
     border-radius: 15px;
     padding: 20px 20px;
     h3 {

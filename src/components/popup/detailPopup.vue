@@ -59,7 +59,7 @@ export default {
   justify-content: center;
   align-items: center;
   .detailCard {
-    width: 340px;
+    width: 95%;
     height: 630px;
     padding: 20px 20px;
     border-radius: 15px;

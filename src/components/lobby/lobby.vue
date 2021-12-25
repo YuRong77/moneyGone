@@ -119,29 +119,6 @@ export default {
       if (type === 3) return "fas fa-graduation-cap";
       if (type === 4) return "fas fa-comment-dots";
     },
-    logout() {
-      sessionStorage.removeItem("uid");
-      document.cookie = `session.uid= `;
-    },
-    getTest() {
-      // const uid = sessionStorage.getItem("uid");
-      // this.axios
-      //   .get(`${process.env.VUE_APP_API_PATH}/api/member/getMemberInfo/${uid}`)
-      //   .then((res) => {
-      //     console.log(res.data);
-      //   });
-    },
-    setTest() {
-      // const data = {};
-      // this.axios
-      //   .post(
-      //     `${process.env.VUE_APP_API_PATH}/api/spendRecord/updateSpend`,
-      //     data
-      //   )
-      //   .then((res) => {
-      //     console.log(res.data);
-      //   });
-    },
   },
 };
 </script>
@@ -230,7 +207,7 @@ export default {
           border-radius: 10px;
           height: 55px;
           margin-bottom: 15px;
-          padding: 0 20px;
+          padding: 0 20px 0 10px;
           .itemInfo {
             display: flex;
             align-items: center;
