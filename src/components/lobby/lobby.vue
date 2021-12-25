@@ -239,7 +239,6 @@ export default {
               justify-content: center;
               align-items: center;
               color: #5e94c3;
-              border-radius: 50%;
               width: 36px;
               height: 36px;
               margin-right: 10px;

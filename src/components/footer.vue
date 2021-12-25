@@ -44,6 +44,7 @@ export default {
   height: 65px;
   .footer_item {
     text-align: center;
+    flex: 1;
     .icon {
       font-size: 24px;
     }

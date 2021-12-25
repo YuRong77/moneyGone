@@ -11,9 +11,9 @@ $darkSubBg: #414f5c;
 $whiteTitle: rgba(255, 255, 255, 0.9);
 $whiteSubTitle: rgba(255, 255, 255, 0.75);
 $darkPopupBg: rgba(0, 0, 0, 0.7);
-$whiteBorder: rgba(255, 255, 255, 0.9);
+$whiteBorder: rgba(255, 255, 255, 0.3);
 
-$whitePopupBg: #fbfbfb;
+$whiteCardBg: #fbfbfb;
 
 /* lightMode */
 .lightMode {
@@ -119,20 +119,43 @@ $whitePopupBg: #fbfbfb;
       h3 {
         color: $blackSubTitle;
       }
+      .currentMonth {
+        color: $blackTitle;
+      }
     }
     .recordItem {
       background: $whiteSubBg;
       box-shadow: $lightModeShadow;
+      .date {
+        color: $blackTitle;
+      }
+      .total {
+        color: $blackSubTitle;
+      }
     }
     .detailPopup {
+      background: $blackPopupBg;
       .detailCard {
-        background: $whitePopupBg;
+        background: $whiteCardBg;
+        h2 {
+          color: $blackTitle;
+        }
         .detailItem {
           background: $whiteSubBg;
           box-shadow: $lightModeShadow;
           .directions {
             border-bottom: 1px solid $blackBorder;
+            color: $blackSubTitle;
           }
+          .name,
+          .spend {
+            color: $blackTitle;
+          }
+        }
+        .detailBtn div {
+          background: $whiteBg;
+          box-shadow: $lightModeShadow;
+          color: $blackSubTitle;
         }
       }
     }
@@ -221,8 +244,7 @@ $whitePopupBg: #fbfbfb;
           color: $whiteSubTitle;
         }
         .hotKeyItem,
-        .hotKeyBtn,
-        .formBtn div {
+        .hotKeyBtn {
           background: $darkSubBg;
           color: $whiteSubTitle;
         }
@@ -249,6 +271,50 @@ $whitePopupBg: #fbfbfb;
           .edit {
             color: $whiteSubTitle;
           }
+        }
+      }
+    }
+  }
+  .record {
+    .header {
+      background: $darkSubBg;
+      h3 {
+        color: $whiteSubTitle;
+      }
+      .currentMonth {
+        color: $whiteTitle;
+      }
+    }
+    .recordItem {
+      background: $darkSubBg;
+      .date {
+        color: $whiteTitle;
+      }
+      .total {
+        color: $whiteSubTitle;
+      }
+    }
+    .detailPopup {
+      background: $darkPopupBg;
+      .detailCard {
+        background: $darkBg;
+        h2 {
+          color: $whiteTitle;
+        }
+        .detailItem {
+          background: $darkSubBg;
+          .directions {
+            border-bottom: 1px solid $whiteBorder;
+            color: $whiteSubTitle;
+          }
+          .name,
+          .spend {
+            color: $whiteTitle;
+          }
+        }
+        .detailBtn div {
+          background: $darkSubBg;
+          color: $whiteSubTitle;
         }
       }
     }

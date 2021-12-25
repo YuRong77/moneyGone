@@ -13,14 +13,14 @@
             <span>備註: {{ item.remark }}</span>
           </div>
           <div class="info">
-            <div class="type">{{ item.type }}</div>
+            <div class="type"><i :class="getSpendIcon(item.type)"></i></div>
             <div class="name">{{ item.name }}</div>
-            <div class="spend">{{ item.spend }}</div>
+            <div class="spend">NT$ {{ item.spend }}</div>
           </div>
         </div>
       </div>
-      <div class="">
-        <button @click="$emit('update:detailPopup', false)">關閉</button>
+      <div class="detailBtn">
+        <div @click="$emit('update:detailPopup', false)">關閉</div>
       </div>
     </div>
   </div>
@@ -37,6 +37,12 @@ export default {
     getDate(date) {
       return moment(date).format("HH:mm:ss");
     },
+    getSpendIcon(type) {
+      if (type === 1) return "fas fa-utensils";
+      if (type === 2) return "fas fa-gamepad";
+      if (type === 3) return "fas fa-graduation-cap";
+      if (type === 4) return "fas fa-comment-dots";
+    },
   },
   created() {},
 };
@@ -52,7 +58,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.1);
   .detailCard {
     width: 340px;
     height: 630px;
@@ -64,7 +69,7 @@ export default {
     }
     .detailList {
       margin: 20px 0;
-      height: 490px;
+      height: 500px;
       overflow-y: auto;
       .detailItem {
         border-radius: 5px;
@@ -80,8 +85,12 @@ export default {
         }
         .info {
           display: flex;
+          align-items: center;
+          padding: 5px 0;
           .type {
-            margin-right: 20px;
+            color: #5e94c3;
+            margin-right: 15px;
+            width: 20px;
           }
           .name {
             font-size: 14px;
@@ -91,6 +100,14 @@ export default {
             font-size: 14px;
           }
         }
+      }
+    }
+    .detailBtn {
+      display: flex;
+      justify-content: center;
+      div {
+        padding: 5px 15px;
+        border-radius: 5px;
       }
     }
   }

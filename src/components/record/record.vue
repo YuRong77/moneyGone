@@ -17,7 +17,10 @@
         <div class="recordItem" v-for="(item, index) in spendList" :key="index">
           <div class="date">{{ item.date }}</div>
           <div class="total">總計: {{ item.total }}</div>
-          <div class="detail" @click="openDetail(item.date, item.details)">
+          <div
+            class="detail confirmBtn"
+            @click="openDetail(item.date, item.details)"
+          >
             明細
           </div>
         </div>
@@ -105,6 +108,11 @@ export default {
         font-size: 14px;
         margin-bottom: 5px;
       }
+      .currentMonth {
+        font-size: 18px;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
     }
   }
   .recordList {
@@ -125,6 +133,18 @@ export default {
         height: 55px;
         border-radius: 10px;
         margin-bottom: 15px;
+        .date {
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .total {
+          font-size: 14px;
+        }
+        .detail {
+          padding: 5px 10px;
+          border-radius: 5px;
+          font-size: 14px;
+        }
       }
     }
   }
