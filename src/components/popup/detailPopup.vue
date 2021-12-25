@@ -64,7 +64,7 @@ export default {
     }
     .detailList {
       margin: 20px 0;
-      height: 480px;
+      height: 490px;
       overflow-y: auto;
       .detailItem {
         border-radius: 5px;

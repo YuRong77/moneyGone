@@ -35,6 +35,7 @@ $whitePopupBg: #fbfbfb;
     .addMemo {
       background: $whiteSubBg;
       box-shadow: $lightModeShadow;
+      color: $blackPopupBg;
     }
     .memo p {
       color: $blackSubTitle;
@@ -79,8 +80,7 @@ $whitePopupBg: #fbfbfb;
           color: $blackSubTitle;
         }
         .hotKeyItem,
-        .hotKeyBtn,
-        .formBtn div {
+        .hotKeyBtn {
           background: $whiteBg;
           box-shadow: $lightModeShadow;
           color: $blackSubTitle;
@@ -88,6 +88,26 @@ $whitePopupBg: #fbfbfb;
         .deleteHotKey {
           background: $blackBorder;
           color: $whiteSubBg;
+        }
+      }
+    }
+    .memoPopup {
+      background: $blackPopupBg;
+      .memoCard {
+        background: $whiteSubBg;
+        .title {
+          color: $blackTitle;
+        }
+        .content {
+          color: $blackSubTitle;
+        }
+        .memoEdit {
+          div {
+            background: $whiteSubBg;
+          }
+          .edit {
+            color: $blackPopupBg;
+          }
         }
       }
     }
@@ -130,6 +150,14 @@ $whitePopupBg: #fbfbfb;
   input,
   textarea {
     border-bottom: $blackBorder solid 1px;
+    &::placeholder {
+      color: $blackPopupBg;
+    }
+  }
+  .formBtn div {
+    background: $whiteBg;
+    box-shadow: $lightModeShadow;
+    color: $blackSubTitle;
   }
 }
 
@@ -151,6 +179,7 @@ $whitePopupBg: #fbfbfb;
     .memo div,
     .addMemo {
       background: $darkSubBg;
+      color: $whiteSubTitle;
     }
     .memo p {
       color: $whiteSubTitle;
@@ -203,6 +232,26 @@ $whitePopupBg: #fbfbfb;
         }
       }
     }
+    .memoPopup {
+      background: $darkPopupBg;
+      .memoCard {
+        background: $darkBg;
+        .title {
+          color: $whiteTitle;
+        }
+        .content {
+          color: $whiteSubTitle;
+        }
+        .memoEdit {
+          div {
+            background: $darkBg;
+          }
+          .edit {
+            color: $whiteSubTitle;
+          }
+        }
+      }
+    }
   }
   .footer {
     background: $darkSubBg;
@@ -219,5 +268,12 @@ $whitePopupBg: #fbfbfb;
     border-bottom: $whiteBorder solid 1px;
     background: none;
     color: $whiteTitle;
+    &::placeholder {
+      color: $whiteSubTitle;
+    }
+  }
+  .formBtn div {
+    background: $darkSubBg;
+    color: $whiteSubTitle;
   }
 }

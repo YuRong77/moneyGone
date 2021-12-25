@@ -4,11 +4,11 @@
     <div class="spendInfo">
       <div>
         <h3>{{ $t("LC_SPEND_TODAY") }}</h3>
-        <p class="spend">NT${{ memberInfo.spendToday }}</p>
+        <p class="spend">NT$ {{ memberInfo.spendToday }}</p>
       </div>
       <div>
         <h3>{{ $t("LC_SPEND_MONTH") }}</h3>
-        <p class="spend">NT${{ memberInfo.spendMonth }}</p>
+        <p class="spend">NT$ {{ memberInfo.spendMonth }}</p>
       </div>
     </div>
   </div>

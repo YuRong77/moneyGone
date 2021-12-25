@@ -39,7 +39,7 @@
               />
             </transition>
             <div
-              class="hotKeyBtn"
+              class="hotKeyBtn confirmBtn"
               v-if="openNewSpendItem"
               @click="addNewSpendItem()"
             >
@@ -86,8 +86,8 @@
         </div>
       </div>
       <div class="formBtn">
-        <div @click="addSpend()">新增</div>
         <div @click="closeSpend()">關閉</div>
+        <div class="confirmBtn" @click="addSpend()">新增</div>
       </div>
     </div>
   </div>
@@ -193,7 +193,7 @@ export default {
             padding: 6px 15px;
             border-radius: 5px;
             margin: 0 6px 6px 0;
-            font-size: 12px;
+            font-size: 14px;
             .deleteHotKey {
               position: absolute;
               width: 20px;
@@ -202,7 +202,7 @@ export default {
               left: 50%;
               top: -10px;
               transform: translateX(-50%);
-              font-size: 12px;
+              font-size: 14px;
               display: flex;
               justify-content: center;
             }
@@ -216,21 +216,11 @@ export default {
           }
           .hotKeyBtn {
             padding: 6px 15px;
-            margin-right: 5px;
-            font-size: 12px;
+            margin-right: 10px;
+            font-size: 14px;
             border-radius: 5px;
           }
         }
-      }
-    }
-    .formBtn {
-      display: flex;
-      justify-content: flex-end;
-      div {
-        padding: 6px 15px;
-        margin-left: 5px;
-        font-size: 12px;
-        border-radius: 5px;
       }
     }
   }

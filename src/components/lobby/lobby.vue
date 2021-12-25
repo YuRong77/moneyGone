@@ -10,7 +10,7 @@
             :key="item.id"
             @click="openMemo(item)"
           >
-            <div>icon</div>
+            <div><i class="far fa-sticky-note"></i></div>
             <p>{{ item.title }}</p>
           </div>
           <div
@@ -51,13 +51,13 @@
             :key="index"
           >
             <div class="itemInfo">
-              <div class="icon"></div>
+              <div class="icon"><i :class="getSpendIcon(item.type)"></i></div>
               <div>
                 <h3>{{ item.name }}</h3>
                 <span>{{ getType(item.type) }}</span>
               </div>
             </div>
-            <div class="itemSpend">NT {{ item.spend }}</div>
+            <div class="itemSpend">NT$ {{ item.spend }}</div>
           </div>
         </div>
       </div>
@@ -112,6 +112,12 @@ export default {
       if (type === 2) return this.$t("LC_FUN");
       if (type === 3) return this.$t("LC_STUDY");
       if (type === 4) return this.$t("LC_OTHER");
+    },
+    getSpendIcon(type) {
+      if (type === 1) return "fas fa-utensils";
+      if (type === 2) return "fas fa-gamepad";
+      if (type === 3) return "fas fa-graduation-cap";
+      if (type === 4) return "fas fa-comment-dots";
     },
     logout() {
       sessionStorage.removeItem("uid");
@@ -229,7 +235,10 @@ export default {
             display: flex;
             align-items: center;
             .icon {
-              border: 1px solid rgba(0, 0, 0, 0.2);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: #5e94c3;
               border-radius: 50%;
               width: 36px;
               height: 36px;

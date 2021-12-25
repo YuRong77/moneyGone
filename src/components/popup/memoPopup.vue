@@ -1,17 +1,43 @@
 <template>
   <div class="memoPopup">
     <div class="memoCard">
-      <div class="inputBox">
-        <input type="text" v-model="title" />
+      <div class="title">
+        <div class="titleText" v-if="!isEdit">{{ title }}</div>
+        <div class="inputBox" v-if="isEdit">
+          <input type="text" placeholder="請輸入標題" v-model="title" />
+        </div>
       </div>
-      <div class="inputBox">
-        <textarea class="inputBox" rows="12" v-model="content" />
+      <div class="content">
+        <div class="contentText" v-if="!isEdit">{{ content }}</div>
+        <div class="inputBox" v-if="isEdit">
+          <textarea
+            class="inputBox"
+            rows="12"
+            placeholder="請輸入內容"
+            v-model="content"
+          />
+        </div>
       </div>
       <div class="formBtn">
-        <button v-if="!isAddMemo" @click="updateMemo()">update</button>
-        <button v-if="isAddMemo" @click="createMemo()">create</button>
-        <button @click="closeMemo()">close</button>
-        <button v-if="!isAddMemo" @click="deleteMemo()">delete</button>
+        <div @click="closeMemo()">取消</div>
+        <div
+          class="confirmBtn"
+          v-if="!isAddMemo && isEdit"
+          @click="updateMemo()"
+        >
+          更新
+        </div>
+        <div class="confirmBtn" v-if="isAddMemo" @click="createMemo()">
+          新增
+        </div>
+      </div>
+      <div class="memoEdit">
+        <div class="delete" v-if="!isAddMemo" @click="deleteMemo()">
+          <i class="fas fa-trash-alt"></i>
+        </div>
+        <div class="edit" v-if="!isAddMemo" @click="isEdit = true">
+          <i class="fas fa-pen"></i>
+        </div>
       </div>
     </div>
   </div>
@@ -25,6 +51,7 @@ export default {
       title: null,
       content: null,
       isAddMemo: true,
+      isEdit: true,
     };
   },
   methods: {
@@ -61,6 +88,7 @@ export default {
       this.title = this.currentMemo.title;
       this.content = this.currentMemo.content;
       this.isAddMemo = false;
+      this.isEdit = false;
     }
   },
 };
@@ -76,12 +104,38 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.1);
   .memoCard {
+    position: relative;
     width: 340px;
-    padding: 30px 20px;
+    padding: 20px 20px;
     border-radius: 15px;
-    background: white;
+    .title {
+      margin-bottom: 20px;
+    }
+    .content {
+      min-height: 275px;
+      margin-bottom: 10px;
+    }
+    .memoEdit {
+      position: absolute;
+      left: 50%;
+      bottom: -80px;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: space-between;
+      div {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 15px;
+      }
+      .delete {
+        color: #ff7d7d;
+      }
+    }
   }
 }
 </style>

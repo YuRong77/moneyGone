@@ -31,6 +31,7 @@ textarea {
   input,
   textarea {
     width: 100%;
+    padding: 5px 0;
   }
   label {
     display: block;
@@ -40,4 +41,21 @@ textarea {
 }
 .loading {
   text-align: center;
+}
+#app {
+  .confirmBtn {
+    background: #5e94c3;
+    color: white;
+    font-weight: bold;
+  }
+  .formBtn {
+    display: flex;
+    justify-content: flex-end;
+    div {
+      padding: 8px 20px;
+      margin-left: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+  }
 }

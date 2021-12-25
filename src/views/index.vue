@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-view class="content" />
+    <router-view class="routeContent" />
     <Footer />
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style>
-.content {
+.routeContent {
   min-height: calc(100vh - 65px);
 }
 </style>
