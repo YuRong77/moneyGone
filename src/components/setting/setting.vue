@@ -25,15 +25,19 @@
           <div class="icon"><i class="fas fa-adjust"></i></div>
           <div class="text">主題</div>
           <div class="control">
-            <button @click="setTheme('lightMode')">light</button>
-            <button @click="setTheme('darkMode')">dark</button>
+            <input type="checkbox" id="theme" v-model="isLightMode" />
+            <label for="theme">
+              <img src="@/assets/img/sun.svg" alt="" />
+              <img src="@/assets/img/moon.svg" alt="" />
+              <div class="switchBall"></div>
+            </label>
           </div>
         </div>
         <div class="setItem">
           <div class="icon"><i class="fas fa-sign-out-alt"></i></div>
           <div class="text">登出</div>
           <div class="control">
-            <button @click="logout()">登出</button>
+            <div class="logoutBtn" @click="logout()">登出</div>
           </div>
         </div>
       </div>
@@ -42,14 +46,42 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
+  data() {
+    return {
+      isLightMode: null,
+    };
+  },
+  watch: {
+    isLightMode(newVal, oldVal) {
+      if (oldVal === null) return;
+      if (newVal) return this.setTheme("lightMode");
+      return this.setTheme("darkMode");
+    },
+  },
+  computed: {
+    ...mapState("setting", ["theme"]),
+  },
   methods: {
     setTheme(val) {
-      this.$store.dispatch("setting/test", val);
+      const data = {
+        theme: val,
+      };
+      this.$store.commit("setting/SET_THEME", val);
+      this.$store.dispatch("setting/changeTheme", data);
     },
     logout() {
       sessionStorage.removeItem("uid");
+      location.reload();
     },
+  },
+  created() {
+    if (this.theme === "lightMode") {
+      this.isLightMode = true;
+    } else {
+      this.isLightMode = false;
+    }
   },
 };
 </script>
@@ -62,8 +94,10 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 85px;
-    background: white;
+    height: 75px;
+    h3 {
+      font-size: 18px;
+    }
   }
   .content {
     flex: 1;
@@ -72,12 +106,10 @@ export default {
     .setup {
       padding: 5px 20px;
       border-radius: 10px;
-      background: white;
       .setItem {
         display: flex;
         align-items: center;
         padding: 15px 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         .icon {
           font-size: 24px;
           margin-right: 10px;
@@ -87,6 +119,46 @@ export default {
           margin-right: auto;
         }
         .control {
+          input {
+            position: absolute;
+            opacity: 0;
+            &:checked + label {
+              background: #5e94c3;
+              & .switchBall {
+                transform: translateX(33px);
+              }
+            }
+          }
+          label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            width: 65px;
+            height: 32px;
+            padding: 0 6px;
+            border-radius: 50px;
+            transition: background 0.5s;
+            background: #28333d;
+            .switchBall {
+              position: absolute;
+              top: 3px;
+              left: 3px;
+              width: 26px;
+              height: 26px;
+              border-radius: 50%;
+              background: white;
+              transition: transform 0.2s;
+            }
+          }
+          .logoutBtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 36px;
+            border-radius: 5px;
+          }
         }
         &:nth-last-child(1) {
           border-bottom: none;

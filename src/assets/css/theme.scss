@@ -160,6 +160,34 @@ $whiteCardBg: #fbfbfb;
       }
     }
   }
+  .setting {
+    .header {
+      background: $whiteSubBg;
+      box-shadow: $lightModeShadow;
+      h3 {
+        color: $blackSubTitle;
+      }
+    }
+    .setup {
+      background: $whiteSubBg;
+      .setItem {
+        border-bottom: 1px solid $blackBorder;
+        .text {
+          color: $blackTitle;
+        }
+        .control {
+          color: $blackSubTitle;
+          i {
+            color: $blackPopupBg;
+          }
+        }
+        .logoutBtn {
+          background: $whiteBg;
+          box-shadow: $lightModeShadow;
+        }
+      }
+    }
+  }
   .footer {
     background: $whiteSubBg;
     .icon,
@@ -315,6 +343,32 @@ $whiteCardBg: #fbfbfb;
         .detailBtn div {
           background: $darkSubBg;
           color: $whiteSubTitle;
+        }
+      }
+    }
+  }
+  .setting {
+    .header {
+      background: $darkSubBg;
+      h3 {
+        color: $whiteSubTitle;
+      }
+    }
+    .setup {
+      background: $darkSubBg;
+      .setItem {
+        border-bottom: 1px solid $whiteBorder;
+        .text {
+          color: $whiteTitle;
+        }
+        .control {
+          color: $whiteSubTitle;
+          i {
+            color: $whiteSubTitle;
+          }
+        }
+        .logoutBtn {
+          background: $darkBg;
         }
       }
     }

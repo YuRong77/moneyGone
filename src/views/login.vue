@@ -31,9 +31,11 @@ export default {
       this.axios
         .post(`${process.env.VUE_APP_API_PATH}/api/index/login`, data)
         .then((res) => {
-          // document.cookie = `session.uid=${res.data.result.uid}`;
-          sessionStorage.setItem("uid", res.data.result.uid);
-          // this.$store.commit("memberInfo/SET_MEMBER_INFO", res.data.result);
+          const result = res.data.result;
+          sessionStorage.setItem("uid", result.uid);
+          sessionStorage.setItem("lang", result.setting.language);
+          sessionStorage.setItem("theme", result.setting.theme);
+          this.$store.commit("setting/SET_THEME", result.setting.theme);
           this.$router.push("/home");
         })
         .catch((err) => {
@@ -41,9 +43,7 @@ export default {
         });
     },
   },
-  created() {
-    // console.log(process.env.VUE_APP_API_PATH);
-  },
+  created() {},
 };
 </script>
 

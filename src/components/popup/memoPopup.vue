@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="content">
-        <div class="contentText" v-if="!isEdit">{{ content }}</div>
+        <pre class="contentText" v-if="!isEdit">{{ content }}</pre>
         <div class="inputBox" v-if="isEdit">
           <textarea
             class="inputBox"

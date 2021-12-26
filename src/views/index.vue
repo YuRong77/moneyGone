@@ -12,6 +12,8 @@ export default {
     Footer,
   },
   created() {
+    const theme = sessionStorage.getItem("theme");
+    if (theme) this.$store.commit("setting/SET_THEME", theme);
     this.$store.dispatch("memberInfo/getMemberInfo");
     this.$store.dispatch("memo/getMemo");
   },
