@@ -2,14 +2,17 @@
   <div>
     <router-view class="routeContent" />
     <Footer />
+    <Copyright />
   </div>
 </template>
 
 <script>
 import Footer from "@/components/footer";
+import Copyright from "@/components/copyright";
 export default {
   components: {
     Footer,
+    Copyright,
   },
   created() {
     const theme = sessionStorage.getItem("theme");
@@ -22,6 +25,7 @@ export default {
 
 <style>
 .routeContent {
-  min-height: calc(100vh - 65px);
+  /* footer copyright */
+  min-height: calc(100vh - 65px - 30px);
 }
 </style>
