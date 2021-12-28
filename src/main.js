@@ -22,7 +22,7 @@ let messagesObj = {
   "ja-JP": ja_JP,
 };
 
-let currentLang = window.localStorage.getItem("lang") || "zh-TW";
+let currentLang = window.sessionStorage.getItem("lang") || "zh-TW";
 var html = document.documentElement;
 html.setAttribute("lang", currentLang);
 export const i18n = new VueI18n({

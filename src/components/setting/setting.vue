@@ -5,19 +5,19 @@
     </div>
     <div class="content">
       <div class="setup">
-        <div class="setItem">
+        <div class="setItem" @click="editName()">
           <div class="icon"><i class="fas fa-user-circle"></i></div>
           <div class="text">暱稱</div>
           <div class="control">
-            <span>挖a名子 </span>
+            <span>{{ memberInfo.name }} </span>
             <span><i class="fas fa-angle-right"></i></span>
           </div>
         </div>
-        <div class="setItem">
+        <div class="setItem" @click="editLang()">
           <div class="icon"><i class="fas fa-globe"></i></div>
           <div class="text">語言</div>
           <div class="control">
-            <span>繁體中文 </span>
+            <span>{{ getLang() }} </span>
             <span><i class="fas fa-angle-right"></i></span>
           </div>
         </div>
@@ -42,14 +42,33 @@
         </div>
       </div>
     </div>
+    <EditNamePopup
+      v-if="editNamePopup"
+      :editNamePopup.sync="editNamePopup"
+      :name="memberInfo.name"
+    />
+    <EditLangPopup
+      v-if="editLangPopup"
+      :editLangPopup.sync="editLangPopup"
+      :lang.sync="lang"
+    />
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import EditNamePopup from "@/components/popup/editNamePopup.vue";
+import EditLangPopup from "@/components/popup/editLangPopup.vue";
 export default {
+  components: {
+    EditNamePopup,
+    EditLangPopup,
+  },
   data() {
     return {
+      lang: sessionStorage.getItem("lang"),
+      editNamePopup: false,
+      editLangPopup: false,
       isLightMode: null,
     };
   },
@@ -62,8 +81,15 @@ export default {
   },
   computed: {
     ...mapState("setting", ["theme"]),
+    ...mapState("memberInfo", ["memberInfo"]),
   },
   methods: {
+    editName() {
+      this.editNamePopup = true;
+    },
+    editLang() {
+      this.editLangPopup = true;
+    },
     setTheme(val) {
       const data = {
         theme: val,
@@ -74,6 +100,12 @@ export default {
     logout() {
       sessionStorage.removeItem("uid");
       location.reload();
+    },
+    getLang() {
+      if (this.lang === "zh-TW") return "繁體中文";
+      if (this.lang === "zh-CN") return "简体中文";
+      if (this.lang === "en-US") return "Englist";
+      if (this.lang === "ja-JP") return "日本語";
     },
   },
   created() {
@@ -138,7 +170,7 @@ export default {
             height: 32px;
             padding: 0 6px;
             border-radius: 50px;
-            transition: background 0.5s;
+            transition: background 0.4s;
             background: #28333d;
             .switchBall {
               position: absolute;

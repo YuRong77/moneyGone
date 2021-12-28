@@ -1,0 +1,100 @@
+<template>
+  <div class="editLangPopup">
+    <div class="editLangCard">
+      <h2>選擇語言</h2>
+      <div class="langList">
+        <div
+          class="langItem"
+          :class="{ active: item.value === newLang }"
+          v-for="item in langList"
+          :key="item.value"
+          @click="newLang = item.value"
+        >
+          {{ item.name }}
+        </div>
+      </div>
+      <div class="editBtn">
+        <div class="confirmBtn" @click="editLang()">確定</div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ["editLangPopup", "lang"],
+  data() {
+    return {
+      newLang: null,
+      langList: [
+        { name: "繁體中文", value: "zh-TW" },
+        { name: "简体中文", value: "zh-CN" },
+        { name: "Englist", value: "en-US" },
+        { name: "日本語", value: "ja-JP" },
+      ],
+    };
+  },
+  methods: {
+    editLang() {
+      if (this.lang === this.newLang)
+        return this.$emit("update:editLangPopup", false);
+      const data = {
+        lang: this.newLang,
+      };
+      this.$i18n.locale = this.newLang;
+      this.$store.dispatch("setting/changeLang", data);
+      this.$emit("update:lang", this.newLang);
+      this.$emit("update:editLangPopup", false);
+    },
+  },
+  created() {
+    this.newLang = this.lang;
+  },
+};
+</script>
+
+<style  lang="scss" scoped>
+.editLangPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .editLangCard {
+    width: 85%;
+    height: 350px;
+    padding: 20px 30px;
+    border-radius: 15px;
+    h2 {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .langList {
+      margin-bottom: 20px;
+      .langItem {
+        width: 100%;
+        border-radius: 5px;
+        padding: 10px 0;
+        margin-bottom: 18px;
+        text-align: center;
+        &.active {
+          background: #5e94c3;
+          color: white;
+        }
+      }
+    }
+    .editBtn {
+      display: flex;
+      justify-content: center;
+      div {
+        width: 35%;
+        font-size: 14px;
+      }
+    }
+  }
+}
+</style>

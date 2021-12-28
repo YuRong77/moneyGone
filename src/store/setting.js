@@ -20,7 +20,7 @@ const actions = {
       .post(`${process.env.VUE_APP_API_PATH}/api/member/updateMemberName`, data)
       .then((res) => {
         if (res.data.status === 200) {
-          console.log(res.data.result, "updateName");
+          context.dispatch("memberInfo/getMemberInfo", null, { root: true });
         }
       });
   },
@@ -31,7 +31,7 @@ const actions = {
       .post(`${process.env.VUE_APP_API_PATH}/api/member/updateMemberLang`, data)
       .then((res) => {
         if (res.data.status === 200) {
-          console.log(res.data.result, "updateLang");
+          sessionStorage.setItem("lang", payload.lang);
         }
       });
   },

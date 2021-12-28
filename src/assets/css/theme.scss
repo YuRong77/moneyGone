@@ -187,6 +187,32 @@ $whiteCardBg: #fbfbfb;
         }
       }
     }
+    .editNamePopup {
+      background: $blackPopupBg;
+      .editNameCard {
+        background: $whiteSubBg;
+        h2 {
+          color: $blackTitle;
+        }
+        input {
+          border: 1px solid $blackBorder;
+        }
+      }
+    }
+    .editLangPopup {
+      background: $blackPopupBg;
+      .editLangCard {
+        background: $whiteSubBg;
+        h2 {
+          color: $blackTitle;
+        }
+        .langItem {
+          background: $whiteBg;
+          box-shadow: $lightModeShadow;
+          color: $blackSubTitle;
+        }
+      }
+    }
   }
   .footer {
     background: $whiteSubBg;
@@ -209,6 +235,17 @@ $whiteCardBg: #fbfbfb;
     background: $whiteBg;
     box-shadow: $lightModeShadow;
     color: $blackSubTitle;
+  }
+  .normalBtn {
+    background: $whiteBg;
+    box-shadow: $lightModeShadow;
+    color: $blackSubTitle;
+    text-align: center;
+    border-radius: 5px;
+    padding: 6px 15px;
+  }
+  .confirmBtn {
+    box-shadow: $lightModeShadow;
   }
 }
 
@@ -372,6 +409,31 @@ $whiteCardBg: #fbfbfb;
         }
       }
     }
+    .editNamePopup {
+      background: $darkPopupBg;
+      .editNameCard {
+        background: $darkSubBg;
+        h2 {
+          color: $whiteTitle;
+        }
+        input {
+          border: 1px solid $whiteBorder;
+        }
+      }
+    }
+    .editLangPopup {
+      background: $darkPopupBg;
+      .editLangCard {
+        background: $darkSubBg;
+        h2 {
+          color: $whiteTitle;
+        }
+        .langItem {
+          background: $darkBg;
+          color: $whiteSubTitle;
+        }
+      }
+    }
   }
   .footer {
     background: $darkSubBg;
@@ -395,5 +457,12 @@ $whiteCardBg: #fbfbfb;
   .formBtn div {
     background: $darkSubBg;
     color: $whiteSubTitle;
+  }
+  .normalBtn {
+    background: $darkBg;
+    color: $whiteSubTitle;
+    text-align: center;
+    border-radius: 5px;
+    padding: 6px 15px;
   }
 }
