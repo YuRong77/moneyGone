@@ -160,6 +160,15 @@ $whiteCardBg: #fbfbfb;
       }
     }
   }
+  .chart {
+    .header {
+      background: $whiteSubBg;
+      box-shadow: $lightModeShadow;
+      h3 {
+        color: $blackSubTitle;
+      }
+    }
+  }
   .setting {
     .header {
       background: $whiteSubBg;

@@ -12,7 +12,7 @@ export default {};
 .copyright {
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 3px;
   height: 30px;
   background: rgb(250, 250, 250);
   color: rgb(175, 175, 175);
