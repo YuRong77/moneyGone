@@ -116,6 +116,9 @@ $whiteCardBg: #fbfbfb;
     .header {
       background: $whiteSubBg;
       box-shadow: $lightModeShadow;
+      .changeMonthBtn {
+        color: $blackTitle;
+      }
       h3 {
         color: $blackSubTitle;
       }
@@ -164,8 +167,28 @@ $whiteCardBg: #fbfbfb;
     .header {
       background: $whiteSubBg;
       box-shadow: $lightModeShadow;
+      .changeMonthBtn {
+        color: $blackTitle;
+      }
       h3 {
         color: $blackSubTitle;
+      }
+      .currentMonth {
+        color: $blackTitle;
+      }
+    }
+    .content {
+      h5 {
+        color: $blackSubTitle;
+      }
+      .spendTypeItem,
+      .chartBtn div {
+        background: $whiteSubBg;
+        box-shadow: $lightModeShadow;
+        color: $blackTitle;
+      }
+      .chartArea {
+        background: $whiteSubBg;
       }
     }
   }
@@ -352,6 +375,9 @@ $whiteCardBg: #fbfbfb;
   .record {
     .header {
       background: $darkSubBg;
+      .changeMonthBtn {
+        color: $whiteTitle;
+      }
       h3 {
         color: $whiteSubTitle;
       }
@@ -390,6 +416,33 @@ $whiteCardBg: #fbfbfb;
           background: $darkSubBg;
           color: $whiteSubTitle;
         }
+      }
+    }
+  }
+  .chart {
+    .header {
+      background: $darkSubBg;
+      .changeMonthBtn {
+        color: $whiteTitle;
+      }
+      h3 {
+        color: $whiteSubTitle;
+      }
+      .currentMonth {
+        color: $whiteTitle;
+      }
+    }
+    .content {
+      h5 {
+        color: $whiteSubTitle;
+      }
+      .spendTypeItem,
+      .chartBtn div {
+        background: $darkSubBg;
+        color: $whiteTitle;
+      }
+      .chartArea {
+        background: $darkSubBg;
       }
     }
   }

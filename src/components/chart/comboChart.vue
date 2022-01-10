@@ -3,16 +3,36 @@
 </template>
 <script>
 import Chart from "chart.js/auto";
+import { mapState } from "vuex";
 export default {
-  props: ["testList"],
+  props: {
+    spendList: {
+      type: Array,
+      default: () => {
+        return [];
+      },
+    },
+    labels: {
+      type: Array,
+      default: () => {
+        return [];
+      },
+    },
+    isYearChart: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
-      labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
       chart: null,
     };
   },
+  computed: {
+    ...mapState("setting", ["theme"]),
+  },
   watch: {
-    testList() {
+    spendList() {
       this.chart.destroy();
       this.getChart();
     },
@@ -25,37 +45,37 @@ export default {
         data: {
           labels: this.labels,
           datasets: [
-            // {
-            //   type: "bar",
-            //   backgroundColor: "rgba(255, 99, 132, 0.2)",
-            //   // label: "測試1",
-            //   data: this.testList,
-            //   barPercentage: 0.3,
-            // },
             {
-              type: "line",
-              data: this.testList,
-              backgroundColor: (context) => {
-                const chart = context.chart;
-                const { chartArea } = chart;
-                if (!chartArea) {
-                  return null;
-                }
-                var gradientFill = ctx.createLinearGradient(
-                  0,
-                  chartArea.bottom,
-                  0,
-                  chartArea.top
-                );
-                gradientFill.addColorStop(0.8, "#cce4f8");
-                gradientFill.addColorStop(0, "#5e94c3");
-                return gradientFill;
-              },
-              borderColor: "#5e94c3",
-              // label: "測試2",
-              fill: true,
-              tension: 0.3,
+              type: "bar",
+              backgroundColor: "#5e94c3",
+              // label: "測試1",
+              data: this.spendList,
+              barPercentage: 0.3,
             },
+            // {
+            //   type: "line",
+            //   data: this.spendList,
+            //   backgroundColor: (context) => {
+            //     const chart = context.chart;
+            //     const { chartArea } = chart;
+            //     if (!chartArea) {
+            //       return null;
+            //     }
+            //     var gradientFill = ctx.createLinearGradient(
+            //       0,
+            //       chartArea.bottom,
+            //       0,
+            //       chartArea.top
+            //     );
+            //     gradientFill.addColorStop(0.8, "#cce4f8");
+            //     gradientFill.addColorStop(0, "#5e94c3");
+            //     return gradientFill;
+            //   },
+            //   borderColor: "#5e94c3",
+            //   // label: "測試2",
+            //   fill: true,
+            //   tension: 0.3,
+            // },
           ],
         },
         options: {
@@ -67,23 +87,44 @@ export default {
               //   display: true,
               //   text: "Month",
               // },
+              // weight: 100,
               grid: {
-                // borderColor: "red",
+                borderColor:
+                  this.theme === "lightMode"
+                    ? "rgba(0, 0, 0, 0.1)"
+                    : "rgba(255, 255, 255, 0.3)",
                 drawOnChartArea: false,
                 drawTicks: false,
+                color: "rgba(0, 0, 0, 0.3)",
               },
               ticks: {
                 maxTicksLimit: this.labels.length / 2, //label最多{value}個
+                color:
+                  this.theme === "lightMode"
+                    ? "rgba(0, 0, 0, 0.6)"
+                    : "rgba(255, 255, 255, 0.6)",
               },
             },
             y: {
+              // display: false ,
               grid: {
-                // borderColor: "red",
+                borderColor:
+                  this.theme === "lightMode"
+                    ? "rgba(0, 0, 0, 0.1)"
+                    : "rgba(255, 255, 255, 0.3)",
+                borderWidth: 2,
                 drawOnChartArea: false,
                 drawTicks: false,
               },
               ticks: {
-                stepSize: 1000, //每1000一格
+                stepSize: this.isYearChart ? 500 : 50, //每XXX一格
+                color:
+                  this.theme === "lightMode"
+                    ? "rgba(0, 0, 0, 0.6)"
+                    : "rgba(255, 255, 255, 0.6)",
+                // padding: 20,
+                // textStrokeWidth: 100,
+                // display: false,
               },
             },
           },

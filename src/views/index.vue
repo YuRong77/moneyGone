@@ -26,6 +26,7 @@ export default {
 <style>
 .routeContent {
   /* footer copyright */
-  min-height: calc(100vh - 65px - 30px - 40px);
+  min-height: calc(100vh - 65px - 30px);
+  /* min-height: calc(100vh - 65px - 30px - 40px); */
 }
 </style>

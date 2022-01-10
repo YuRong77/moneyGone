@@ -1,6 +1,6 @@
 {
-  "name": "PWA test",
-  "short_name": "Test",
+  "name": "摳摳去哪裡",
+  "short_name": "摳摳哩",
   "icons": [
     {
       "src": "./img/icons/mstile-150x150.png",
