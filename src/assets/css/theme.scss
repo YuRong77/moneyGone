@@ -70,7 +70,7 @@ $whiteCardBg: #fbfbfb;
       background: $blackPopupBg;
       .spendCard {
         background: $whiteSubBg;
-        .loading {
+        .loading-s {
           color: $whiteBg;
         }
         h3 {
@@ -337,7 +337,7 @@ $whiteCardBg: #fbfbfb;
           color: $whiteTitle;
         }
         h5,
-        .loading {
+        .loading-s {
           color: $whiteSubTitle;
         }
         .hotKeyItem,

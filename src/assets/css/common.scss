@@ -40,6 +40,26 @@ textarea {
   }
 }
 .loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(190, 190, 190, 0.1);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  .box {
+    width: 80px;
+    text-align: center;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+.loading-s {
   text-align: center;
 }
 #app {

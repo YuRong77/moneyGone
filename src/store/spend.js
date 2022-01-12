@@ -16,12 +16,14 @@ const actions = {
   getSpendRecord(context, payload) {
     const _uid = sessionStorage.getItem("uid");
     const data = { ...payload, uid: _uid };
+    context.commit("memberInfo/SET_ISLOADING", true, { root: true });
     axios
       .post(
         `${process.env.VUE_APP_API_PATH}/api/spendRecord/getSpendRecord`,
         data
       )
       .then((res) => {
+        context.commit("memberInfo/SET_ISLOADING", false, { root: true });
         context.commit("SET_SPENDLIST", res.data.result);
       });
   },

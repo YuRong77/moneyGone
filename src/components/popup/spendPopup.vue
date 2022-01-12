@@ -27,7 +27,7 @@
               <span>{{ item.name }}</span>
             </div>
           </div>
-          <div v-else class="loading">
+          <div v-else class="loading-s">
             <i class="fas fa-circle-notch fa-spin"></i>
           </div>
           <div class="addHotKey">

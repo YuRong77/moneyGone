@@ -3,16 +3,23 @@
     <router-view class="routeContent" />
     <Footer />
     <Copyright />
+    <Loading v-show="isLoading" />
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Footer from "@/components/footer";
 import Copyright from "@/components/copyright";
+import Loading from "@/components/loading";
 export default {
   components: {
     Footer,
     Copyright,
+    Loading,
+  },
+  computed: {
+    ...mapState("memberInfo", ["isLoading"]),
   },
   created() {
     const theme = sessionStorage.getItem("theme");

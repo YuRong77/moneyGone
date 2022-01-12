@@ -15,9 +15,11 @@ const mutations = {
 const actions = {
   getMemo(context) {
     const uid = sessionStorage.getItem("uid");
+    context.commit("memberInfo/SET_ISLOADING", true, { root: true });
     axios
       .get(`${process.env.VUE_APP_API_PATH}/api/memo/getMemo/${uid}`)
       .then((res) => {
+        context.commit("memberInfo/SET_ISLOADING", false, { root: true });
         context.commit("SET_MEMO", res.data.result);
       });
   },
