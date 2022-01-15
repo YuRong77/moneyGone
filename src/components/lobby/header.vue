@@ -3,11 +3,11 @@
     <div class="name">{{ memberInfo.name }}</div>
     <div class="spendInfo">
       <div>
-        <h3>{{ $t("LC_SPEND_TODAY") }}</h3>
+        <h3 class="font-14">{{ $t("LC_SPEND_TODAY") }}</h3>
         <p class="spend">NT$ {{ memberInfo.spendToday }}</p>
       </div>
       <div>
-        <h3>{{ $t("LC_SPEND_MONTH") }}</h3>
+        <h3 class="font-14">{{ $t("LC_SPEND_MONTH") }}</h3>
         <p class="spend">NT$ {{ memberInfo.spendMonth }}</p>
       </div>
     </div>
@@ -40,9 +40,6 @@ export default {
     display: flex;
     justify-content: space-around;
     flex: 1;
-    h3 {
-      font-size: 12px;
-    }
     .spend {
       padding: 3px 5px;
       margin-top: 15px;

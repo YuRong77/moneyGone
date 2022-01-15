@@ -1,5 +1,5 @@
 <template>
-  <div class="copyright">
+  <div class="copyright font-12">
     <p>&copy; {{ new Date().getFullYear() }} YuRong</p>
   </div>
 </template>
@@ -16,6 +16,5 @@ export default {};
   height: 30px;
   background: rgb(250, 250, 250);
   color: rgb(175, 175, 175);
-  font-size: 12px;
 }
 </style>

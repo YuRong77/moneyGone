@@ -5,8 +5,8 @@
         <i class="fas fa-angle-left"></i>
       </div>
       <div class="spendStatistics">
-        <h3>統計圖表</h3>
-        <div class="currentMonth">{{ currentMonth }}</div>
+        <h3 class="font-14">統計圖表</h3>
+        <div class="currentMonth font-18">{{ currentMonth }}</div>
       </div>
       <div class="changeMonthBtn" @click="changeMonth(1)">
         <i class="fas fa-angle-right"></i>
@@ -14,20 +14,20 @@
     </div>
     <div class="content">
       <div class="monthChart" style="margin-bottom: 20px">
-        <h5>本月統計</h5>
+        <h5 class="font-14">本月統計</h5>
         <div class="spendTypeList">
           <div
             class="spendTypeItem"
             v-for="item in getTypeMonth"
             :key="item.type"
           >
-            <div class="icon"><i :class="getIcon(item.type)"></i></div>
+            <div class="icon font-14"><i :class="getIcon(item.type)"></i></div>
             <div class="spend">{{ item.total }}</div>
           </div>
         </div>
         <div class="chartArea" style="padding-bottom: 20px">
           <ComboChart :spendList="getSpendMonth" :labels="getMonthLabel" />
-          <div class="chartBtn" v-show="!isLoading">
+          <div class="chartBtn font-14" v-show="!isLoading">
             <div
               class="left"
               :class="{ active: isFirstHalf }"
@@ -46,14 +46,14 @@
         </div>
       </div>
       <div class="yearChart">
-        <h5>年度統計</h5>
+        <h5 class="font-14">年度統計</h5>
         <div class="spendTypeList">
           <div
             class="spendTypeItem"
             v-for="item in getTypeYear"
             :key="item.type"
           >
-            <div class="icon"><i :class="getIcon(item.type)"></i></div>
+            <div class="icon font-14"><i :class="getIcon(item.type)"></i></div>
             <div class="spend">{{ item.total }}</div>
           </div>
         </div>
@@ -187,11 +187,9 @@ export default {
       flex: 1;
       text-align: center;
       h3 {
-        font-size: 14px;
         margin-bottom: 5px;
       }
       .currentMonth {
-        font-size: 18px;
         margin-bottom: 5px;
         font-weight: bold;
       }
@@ -221,7 +219,6 @@ export default {
           padding: 8px 0;
           .icon {
             color: #5e94c3;
-            font-size: 14px;
           }
         }
       }
@@ -235,7 +232,6 @@ export default {
         padding: 10px;
         border-radius: 10px;
         .chartBtn {
-          font-size: 14px;
           position: absolute;
           left: 50%;
           transform: translateX(-50%);

@@ -7,7 +7,7 @@
       @click="changeViews(item.path)"
     >
       <div class="icon"><i :class="item.icon"></i></div>
-      <div class="text">{{ item.name }}</div>
+      <div class="text font-14">{{ item.name }}</div>
     </div>
   </div>
 </template>
@@ -47,9 +47,6 @@ export default {
     flex: 1;
     .icon {
       font-size: 24px;
-    }
-    .text {
-      font-size: 14px;
     }
   }
 }

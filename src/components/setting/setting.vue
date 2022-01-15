@@ -1,7 +1,7 @@
 <template>
   <div class="setting">
     <div class="header">
-      <h3>我的設定</h3>
+      <h3 class="font-18">我的設定</h3>
     </div>
     <div class="content">
       <div class="setup">
@@ -127,9 +127,6 @@ export default {
     align-items: center;
     justify-content: center;
     height: 75px;
-    h3 {
-      font-size: 18px;
-    }
   }
   .content {
     flex: 1;

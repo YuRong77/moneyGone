@@ -1,112 +1,119 @@
-$whiteBg: #f2f4f8;
-$whiteSubBg: #ffffff;
-$blackTitle: rgba(0, 0, 0, 0.9);
-$blackSubTitle: rgba(0, 0, 0, 0.6);
-$blackPopupBg: rgba(0, 0, 0, 0.3);
-$blackBorder: rgba(0, 0, 0, 0.1);
-$lightModeShadow: 0 2px 2px rgba(214, 214, 214, 0.5);
+//light mode
+$bg_light: #f2f4f8;
+$bg_sub_light: #ffffff;
 
-$darkBg: #28333d;
-$darkSubBg: #414f5c;
-$whiteTitle: rgba(255, 255, 255, 0.9);
-$whiteSubTitle: rgba(255, 255, 255, 0.75);
-$darkPopupBg: rgba(0, 0, 0, 0.7);
-$whiteBorder: rgba(255, 255, 255, 0.3);
+$title_light: rgba(0, 0, 0, 0.9);
+$title_sub_light: rgba(0, 0, 0, 0.6);
+
+$popupBg_light: rgba(0, 0, 0, 0.3);
+$border_light: rgba(0, 0, 0, 0.1);
+$shadow_light: 0 2px 2px rgba(214, 214, 214, 0.5);
 
 $whiteCardBg: #fbfbfb;
+
+//dark mode
+$bg_dark: #28333d;
+$bg_sub_dark: #414f5c;
+
+$title_dark: rgba(255, 255, 255, 0.9);
+$title_sub_dark: rgba(255, 255, 255, 0.75);
+
+$popupBg_dark: rgba(0, 0, 0, 0.7);
+$border_dark: rgba(255, 255, 255, 0.3);
+
 
 /* lightMode */
 .lightMode {
   &#app {
-    background: $whiteBg;
+    background: $bg_light;
   }
   .lobby {
     .header {
-      background: $whiteSubBg;
-      box-shadow: $lightModeShadow;
+      background: $bg_sub_light;
+      box-shadow: $shadow_light;
       h3 {
-        color: $blackSubTitle;
+        color: $title_sub_light;
       }
       .spend {
-        color: $blackTitle;
+        color: $title_light;
       }
     }
     .memo div,
     .addMemo {
-      background: $whiteSubBg;
-      box-shadow: $lightModeShadow;
-      color: $blackPopupBg;
+      background: $bg_sub_light;
+      box-shadow: $shadow_light;
+      color: $popupBg_light;
     }
     .memo p {
-      color: $blackSubTitle;
+      color: $title_sub_light;
     }
     .spendType {
       .type {
-        background: linear-gradient(to left, $whiteSubBg, $whiteBg);
+        background: linear-gradient(to left, $bg_sub_light, $bg_light);
       }
       .text {
-        color: $blackTitle;
+        color: $title_light;
       }
     }
     .spendList {
       h4 {
-        color: $blackSubTitle;
+        color: $title_sub_light;
       }
       .listItem {
-        background: $whiteSubBg;
-        box-shadow: $lightModeShadow;
+        background: $bg_sub_light;
+        box-shadow: $shadow_light;
         h3 {
-          color: $blackTitle;
+          color: $title_light;
         }
         span {
-          color: $blackSubTitle;
+          color: $title_sub_light;
         }
         .itemSpend {
-          color: $blackTitle;
+          color: $title_light;
         }
       }
     }
     .spendPopup {
-      background: $blackPopupBg;
+      background: $popupBg_light;
       .spendCard {
-        background: $whiteSubBg;
+        background: $bg_sub_light;
         .loading-s {
-          color: $whiteBg;
+          color: $bg_light;
         }
         h3 {
-          color: $blackTitle;
+          color: $title_light;
         }
         h5 {
-          color: $blackSubTitle;
+          color: $title_sub_light;
         }
         .hotKeyItem,
         .hotKeyBtn {
-          background: $whiteBg;
-          box-shadow: $lightModeShadow;
-          color: $blackSubTitle;
+          background: $bg_light;
+          box-shadow: $shadow_light;
+          color: $title_sub_light;
         }
         .deleteHotKey {
-          background: $blackBorder;
-          color: $whiteSubBg;
+          background: $border_light;
+          color: $bg_sub_light;
         }
       }
     }
     .memoPopup {
-      background: $blackPopupBg;
+      background: $popupBg_light;
       .memoCard {
-        background: $whiteSubBg;
+        background: $bg_sub_light;
         .title {
-          color: $blackTitle;
+          color: $title_light;
         }
         .content {
-          color: $blackSubTitle;
+          color: $title_sub_light;
         }
         .memoEdit {
           div {
-            background: $whiteSubBg;
+            background: $bg_sub_light;
           }
           .edit {
-            color: $blackPopupBg;
+            color: $popupBg_light;
           }
         }
       }
@@ -114,259 +121,259 @@ $whiteCardBg: #fbfbfb;
   }
   .record {
     .header {
-      background: $whiteSubBg;
-      box-shadow: $lightModeShadow;
+      background: $bg_sub_light;
+      box-shadow: $shadow_light;
       .changeMonthBtn {
-        color: $blackTitle;
+        color: $title_light;
       }
       h3 {
-        color: $blackSubTitle;
+        color: $title_sub_light;
       }
       .currentMonth {
-        color: $blackTitle;
+        color: $title_light;
       }
     }
     .recordItem {
-      background: $whiteSubBg;
-      box-shadow: $lightModeShadow;
+      background: $bg_sub_light;
+      box-shadow: $shadow_light;
       .date {
-        color: $blackTitle;
+        color: $title_light;
       }
       .total {
-        color: $blackSubTitle;
+        color: $title_sub_light;
       }
     }
     .detailPopup {
-      background: $blackPopupBg;
+      background: $popupBg_light;
       .detailCard {
         background: $whiteCardBg;
         h2 {
-          color: $blackTitle;
+          color: $title_light;
         }
         .detailItem {
-          background: $whiteSubBg;
-          box-shadow: $lightModeShadow;
+          background: $bg_sub_light;
+          box-shadow: $shadow_light;
           .directions {
-            border-bottom: 1px solid $blackBorder;
-            color: $blackSubTitle;
+            border-bottom: 1px solid $border_light;
+            color: $title_sub_light;
           }
           .name,
           .spend {
-            color: $blackTitle;
+            color: $title_light;
           }
         }
         .detailBtn div {
-          background: $whiteBg;
-          box-shadow: $lightModeShadow;
-          color: $blackSubTitle;
+          background: $bg_light;
+          box-shadow: $shadow_light;
+          color: $title_sub_light;
         }
       }
     }
   }
   .chart {
     .header {
-      background: $whiteSubBg;
-      box-shadow: $lightModeShadow;
+      background: $bg_sub_light;
+      box-shadow: $shadow_light;
       .changeMonthBtn {
-        color: $blackTitle;
+        color: $title_light;
       }
       h3 {
-        color: $blackSubTitle;
+        color: $title_sub_light;
       }
       .currentMonth {
-        color: $blackTitle;
+        color: $title_light;
       }
     }
     .content {
       h5 {
-        color: $blackSubTitle;
+        color: $title_sub_light;
       }
       .spendTypeItem,
       .chartBtn div {
-        background: $whiteSubBg;
-        box-shadow: $lightModeShadow;
-        color: $blackTitle;
+        background: $bg_sub_light;
+        box-shadow: $shadow_light;
+        color: $title_light;
       }
       .chartArea {
-        background: $whiteSubBg;
+        background: $bg_sub_light;
       }
     }
   }
   .setting {
     .header {
-      background: $whiteSubBg;
-      box-shadow: $lightModeShadow;
+      background: $bg_sub_light;
+      box-shadow: $shadow_light;
       h3 {
-        color: $blackSubTitle;
+        color: $title_sub_light;
       }
     }
     .setup {
-      background: $whiteSubBg;
+      background: $bg_sub_light;
       .setItem {
-        border-bottom: 1px solid $blackBorder;
+        border-bottom: 1px solid $border_light;
         .text {
-          color: $blackTitle;
+          color: $title_light;
         }
         .control {
-          color: $blackSubTitle;
+          color: $title_sub_light;
           i {
-            color: $blackPopupBg;
+            color: $popupBg_light;
           }
         }
         .logoutBtn {
-          background: $whiteBg;
-          box-shadow: $lightModeShadow;
+          background: $bg_light;
+          box-shadow: $shadow_light;
         }
       }
     }
     .editNamePopup {
-      background: $blackPopupBg;
+      background: $popupBg_light;
       .editNameCard {
-        background: $whiteSubBg;
+        background: $bg_sub_light;
         h2 {
-          color: $blackTitle;
+          color: $title_light;
         }
         input {
-          border: 1px solid $blackBorder;
+          border: 1px solid $border_light;
         }
       }
     }
     .editLangPopup {
-      background: $blackPopupBg;
+      background: $popupBg_light;
       .editLangCard {
-        background: $whiteSubBg;
+        background: $bg_sub_light;
         h2 {
-          color: $blackTitle;
+          color: $title_light;
         }
         .langItem {
-          background: $whiteBg;
-          box-shadow: $lightModeShadow;
-          color: $blackSubTitle;
+          background: $bg_light;
+          box-shadow: $shadow_light;
+          color: $title_sub_light;
         }
       }
     }
   }
   .footer {
-    background: $whiteSubBg;
+    background: $bg_sub_light;
     .icon,
     .text {
-      color: $blackSubTitle;
+      color: $title_sub_light;
     }
   }
   label {
-    color: $blackSubTitle;
+    color: $title_sub_light;
   }
   input,
   textarea {
-    border-bottom: $blackBorder solid 1px;
+    border-bottom: $border_light solid 1px;
     &::placeholder {
-      color: $blackPopupBg;
+      color: $popupBg_light;
     }
   }
   .formBtn div {
-    background: $whiteBg;
-    box-shadow: $lightModeShadow;
-    color: $blackSubTitle;
+    background: $bg_light;
+    box-shadow: $shadow_light;
+    color: $title_sub_light;
   }
   .normalBtn {
-    background: $whiteBg;
-    box-shadow: $lightModeShadow;
-    color: $blackSubTitle;
+    background: $bg_light;
+    box-shadow: $shadow_light;
+    color: $title_sub_light;
     text-align: center;
     border-radius: 5px;
     padding: 6px 15px;
   }
   .confirmBtn {
-    box-shadow: $lightModeShadow;
+    box-shadow: $shadow_light;
   }
 }
 
 /* darkMode */
 .darkMode {
   &#app {
-    background: $darkBg;
+    background: $bg_dark;
   }
   .lobby {
     .header {
-      background: $darkSubBg;
+      background: $bg_sub_dark;
       h3 {
-        color: $whiteSubTitle;
+        color: $title_sub_dark;
       }
       .spend {
-        color: $whiteTitle;
+        color: $title_dark;
       }
     }
     .memo div,
     .addMemo {
-      background: $darkSubBg;
-      color: $whiteSubTitle;
+      background: $bg_sub_dark;
+      color: $title_sub_dark;
     }
     .memo p {
-      color: $whiteSubTitle;
+      color: $title_sub_dark;
     }
     .spendType {
       .type {
-        background: linear-gradient(to left, $darkSubBg 25%, $darkBg);
+        background: linear-gradient(to left, $bg_sub_dark 25%, $bg_dark);
       }
       .text {
-        color: $whiteTitle;
+        color: $title_dark;
       }
     }
     .spendList {
       h4 {
-        color: $whiteSubTitle;
+        color: $title_sub_dark;
       }
       .listItem {
-        background: $darkSubBg;
+        background: $bg_sub_dark;
         h3 {
-          color: $whiteTitle;
+          color: $title_dark;
         }
         span {
-          color: $whiteSubTitle;
+          color: $title_sub_dark;
         }
         .itemSpend {
-          color: $whiteTitle;
+          color: $title_dark;
         }
       }
     }
     .spendPopup {
-      background: $darkPopupBg;
+      background: $popupBg_dark;
       .spendCard {
-        background: $darkBg;
+        background: $bg_dark;
         h3 {
-          color: $whiteTitle;
+          color: $title_dark;
         }
         h5,
         .loading-s {
-          color: $whiteSubTitle;
+          color: $title_sub_dark;
         }
         .hotKeyItem,
         .hotKeyBtn {
-          background: $darkSubBg;
-          color: $whiteSubTitle;
+          background: $bg_sub_dark;
+          color: $title_sub_dark;
         }
         .deleteHotKey {
-          background: $whiteBorder;
-          color: $darkSubBg;
+          background: $border_dark;
+          color: $bg_sub_dark;
         }
       }
     }
     .memoPopup {
-      background: $darkPopupBg;
+      background: $popupBg_dark;
       .memoCard {
-        background: $darkBg;
+        background: $bg_dark;
         .title {
-          color: $whiteTitle;
+          color: $title_dark;
         }
         .content {
-          color: $whiteSubTitle;
+          color: $title_sub_dark;
         }
         .memoEdit {
           div {
-            background: $darkBg;
+            background: $bg_dark;
           }
           .edit {
-            color: $whiteSubTitle;
+            color: $title_sub_dark;
           }
         }
       }
@@ -374,155 +381,155 @@ $whiteCardBg: #fbfbfb;
   }
   .record {
     .header {
-      background: $darkSubBg;
+      background: $bg_sub_dark;
       .changeMonthBtn {
-        color: $whiteTitle;
+        color: $title_dark;
       }
       h3 {
-        color: $whiteSubTitle;
+        color: $title_sub_dark;
       }
       .currentMonth {
-        color: $whiteTitle;
+        color: $title_dark;
       }
     }
     .recordItem {
-      background: $darkSubBg;
+      background: $bg_sub_dark;
       .date {
-        color: $whiteTitle;
+        color: $title_dark;
       }
       .total {
-        color: $whiteSubTitle;
+        color: $title_sub_dark;
       }
     }
     .detailPopup {
-      background: $darkPopupBg;
+      background: $popupBg_dark;
       .detailCard {
-        background: $darkBg;
+        background: $bg_dark;
         h2 {
-          color: $whiteTitle;
+          color: $title_dark;
         }
         .detailItem {
-          background: $darkSubBg;
+          background: $bg_sub_dark;
           .directions {
-            border-bottom: 1px solid $whiteBorder;
-            color: $whiteSubTitle;
+            border-bottom: 1px solid $border_dark;
+            color: $title_sub_dark;
           }
           .name,
           .spend {
-            color: $whiteTitle;
+            color: $title_dark;
           }
         }
         .detailBtn div {
-          background: $darkSubBg;
-          color: $whiteSubTitle;
+          background: $bg_sub_dark;
+          color: $title_sub_dark;
         }
       }
     }
   }
   .chart {
     .header {
-      background: $darkSubBg;
+      background: $bg_sub_dark;
       .changeMonthBtn {
-        color: $whiteTitle;
+        color: $title_dark;
       }
       h3 {
-        color: $whiteSubTitle;
+        color: $title_sub_dark;
       }
       .currentMonth {
-        color: $whiteTitle;
+        color: $title_dark;
       }
     }
     .content {
       h5 {
-        color: $whiteSubTitle;
+        color: $title_sub_dark;
       }
       .spendTypeItem,
       .chartBtn div {
-        background: $darkSubBg;
-        color: $whiteTitle;
+        background: $bg_sub_dark;
+        color: $title_dark;
       }
       .chartArea {
-        background: $darkSubBg;
+        background: $bg_sub_dark;
       }
     }
   }
   .setting {
     .header {
-      background: $darkSubBg;
+      background: $bg_sub_dark;
       h3 {
-        color: $whiteSubTitle;
+        color: $title_sub_dark;
       }
     }
     .setup {
-      background: $darkSubBg;
+      background: $bg_sub_dark;
       .setItem {
-        border-bottom: 1px solid $whiteBorder;
+        border-bottom: 1px solid $border_dark;
         .text {
-          color: $whiteTitle;
+          color: $title_dark;
         }
         .control {
-          color: $whiteSubTitle;
+          color: $title_sub_dark;
           i {
-            color: $whiteSubTitle;
+            color: $title_sub_dark;
           }
         }
         .logoutBtn {
-          background: $darkBg;
+          background: $bg_dark;
         }
       }
     }
     .editNamePopup {
-      background: $darkPopupBg;
+      background: $popupBg_dark;
       .editNameCard {
-        background: $darkSubBg;
+        background: $bg_sub_dark;
         h2 {
-          color: $whiteTitle;
+          color: $title_dark;
         }
         input {
-          border: 1px solid $whiteBorder;
+          border: 1px solid $border_dark;
         }
       }
     }
     .editLangPopup {
-      background: $darkPopupBg;
+      background: $popupBg_dark;
       .editLangCard {
-        background: $darkSubBg;
+        background: $bg_sub_dark;
         h2 {
-          color: $whiteTitle;
+          color: $title_dark;
         }
         .langItem {
-          background: $darkBg;
-          color: $whiteSubTitle;
+          background: $bg_dark;
+          color: $title_sub_dark;
         }
       }
     }
   }
   .footer {
-    background: $darkSubBg;
+    background: $bg_sub_dark;
     .icon,
     .text {
-      color: $whiteSubTitle;
+      color: $title_sub_dark;
     }
   }
   label {
-    color: $whiteSubTitle;
+    color: $title_sub_dark;
   }
   input,
   textarea {
-    border-bottom: $whiteBorder solid 1px;
+    border-bottom: $border_dark solid 1px;
     background: none;
-    color: $whiteTitle;
+    color: $title_dark;
     &::placeholder {
-      color: $whiteSubTitle;
+      color: $title_sub_dark;
     }
   }
   .formBtn div {
-    background: $darkSubBg;
-    color: $whiteSubTitle;
+    background: $bg_sub_dark;
+    color: $title_sub_dark;
   }
   .normalBtn {
-    background: $darkBg;
-    color: $whiteSubTitle;
+    background: $bg_dark;
+    color: $title_sub_dark;
     text-align: center;
     border-radius: 5px;
     padding: 6px 15px;

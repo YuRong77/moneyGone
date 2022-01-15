@@ -1,5 +1,5 @@
 <template>
-  <div class="spendPopup">
+  <div class="spendPopup popupMask">
     <div class="spendCard">
       <h3>{{ getSpendType(spendType) }}</h3>
       <div class="spendForm">
@@ -8,17 +8,17 @@
           <input class="inputBox" type="text" id="name" v-model="name" />
         </div>
         <div class="hotKey">
-          <h5>快捷選項</h5>
+          <h5 class="font-12">快捷選項</h5>
           <div class="hotKeyList" v-if="!spendItemLoading">
             <div
-              class="hotKeyItem"
+              class="hotKeyItem font-14"
               :class="{ shake: openDeleteSpendItem }"
               v-for="item in spendItemOptions"
               :key="item.id"
               @click="useHotKey(item.name)"
             >
               <div
-                class="deleteHotKey"
+                class="deleteHotKey font-14"
                 v-if="openDeleteSpendItem"
                 @click="deleteSpendItem(item)"
               >
@@ -39,28 +39,28 @@
               />
             </transition>
             <div
-              class="hotKeyBtn confirmBtn"
+              class="hotKeyBtn confirmBtn deleteHotKey font-14"
               v-if="openNewSpendItem"
               @click="addNewSpendItem()"
             >
               加入
             </div>
             <div
-              class="hotKeyBtn"
+              class="hotKeyBtn font-14"
               v-if="!openNewSpendItem && !openDeleteSpendItem"
               @click="openNewSpendItem = true"
             >
               +
             </div>
             <div
-              class="hotKeyBtn"
+              class="hotKeyBtn font-14"
               v-if="!openNewSpendItem && !openDeleteSpendItem"
               @click="openDeleteSpendItem = true"
             >
               -
             </div>
             <div
-              class="hotKeyBtn"
+              class="hotKeyBtn font-14"
               v-if="openNewSpendItem || openDeleteSpendItem"
               @click="
                 openNewSpendItem = false;
@@ -160,16 +160,9 @@ export default {
 
 <style lang="scss" scoped>
 .spendPopup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   .spendCard {
     width: 95%;
+    max-width: 400px;
     border-radius: 15px;
     padding: 20px 20px;
     h3 {
@@ -181,7 +174,6 @@ export default {
       .hotKey {
         margin-bottom: 20px;
         h5 {
-          font-size: 12px;
           margin-bottom: 10px;
         }
         .hotKeyList {
@@ -193,7 +185,6 @@ export default {
             padding: 6px 15px;
             border-radius: 5px;
             margin: 0 6px 6px 0;
-            font-size: 14px;
             .deleteHotKey {
               position: absolute;
               width: 20px;
@@ -202,7 +193,6 @@ export default {
               left: 50%;
               top: -10px;
               transform: translateX(-50%);
-              font-size: 14px;
               display: flex;
               justify-content: center;
             }
@@ -217,7 +207,6 @@ export default {
           .hotKeyBtn {
             padding: 6px 15px;
             margin-right: 10px;
-            font-size: 14px;
             border-radius: 5px;
           }
         }

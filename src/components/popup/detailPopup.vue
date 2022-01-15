@@ -1,7 +1,7 @@
 <template>
-  <div class="detailPopup">
+  <div class="detailPopup popupMask">
     <div class="detailCard">
-      <h2>{{ currentDetail.date }} 明細</h2>
+      <h2 class="font-16">{{ currentDetail.date }} 明細</h2>
       <div class="detailList">
         <div
           class="detailItem"
@@ -9,13 +9,13 @@
           :key="index"
         >
           <div class="directions">
-            <span>建立時間: {{ getDate(item.date) }}</span>
-            <span>備註: {{ item.remark }}</span>
+            <span class="font-14">建立時間: {{ getDate(item.date) }}</span>
+            <span class="font-14">備註: {{ item.remark }}</span>
           </div>
           <div class="info">
             <div class="type"><i :class="getSpendIcon(item.type)"></i></div>
-            <div class="name">{{ item.name }}</div>
-            <div class="spend">NT$ {{ item.spend }}</div>
+            <div class="name font-16">{{ item.name }}</div>
+            <div class="spend font-16">NT$ {{ item.spend }}</div>
           </div>
         </div>
       </div>
@@ -50,21 +50,13 @@ export default {
 
 <style lang="scss" scoped>
 .detailPopup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   .detailCard {
     width: 95%;
+    max-width: 400px;
     height: 630px;
     padding: 20px 20px;
     border-radius: 15px;
     h2 {
-      font-size: 16px;
       text-align: center;
     }
     .detailList {
@@ -80,7 +72,6 @@ export default {
           margin-bottom: 10px;
           padding-bottom: 5px;
           span {
-            font-size: 12px;
             margin-right: 30px;
           }
         }
@@ -94,11 +85,7 @@ export default {
             width: 20px;
           }
           .name {
-            font-size: 14px;
             margin-right: auto;
-          }
-          .spend {
-            font-size: 14px;
           }
         }
       }

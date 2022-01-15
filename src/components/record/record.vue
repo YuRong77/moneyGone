@@ -5,8 +5,8 @@
         <i class="fas fa-angle-left"></i>
       </div>
       <div class="recordMonth">
-        <h3>花費紀錄</h3>
-        <div class="currentMonth">{{ currentMonth }}</div>
+        <h3 class="font-14">花費紀錄</h3>
+        <div class="currentMonth font-18">{{ currentMonth }}</div>
       </div>
       <div class="changeMonthBtn" @click="changeMonth(1)">
         <i class="fas fa-angle-right"></i>
@@ -15,10 +15,10 @@
     <div class="recordList">
       <div class="list">
         <div class="recordItem" v-for="(item, index) in spendList" :key="index">
-          <div class="date">{{ item.date }}</div>
-          <div class="total">總計: {{ item.total }}</div>
+          <div class="date font-16">{{ item.date }}</div>
+          <div class="total font-16">總計: {{ item.total }}</div>
           <div
-            class="detail confirmBtn"
+            class="detail confirmBtn font-16"
             @click="openDetail(item.date, item.details)"
           >
             明細
@@ -105,11 +105,9 @@ export default {
       flex: 1;
       text-align: center;
       h3 {
-        font-size: 14px;
         margin-bottom: 5px;
       }
       .currentMonth {
-        font-size: 18px;
         margin-bottom: 5px;
         font-weight: bold;
       }
@@ -135,16 +133,11 @@ export default {
         border-radius: 10px;
         margin-bottom: 15px;
         .date {
-          font-size: 14px;
           font-weight: bold;
-        }
-        .total {
-          font-size: 14px;
         }
         .detail {
           padding: 5px 10px;
           border-radius: 5px;
-          font-size: 14px;
         }
       }
     }

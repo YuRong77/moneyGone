@@ -1,5 +1,5 @@
 <template>
-  <div class="memoPopup">
+  <div class="memoPopup popupMask">
     <div class="memoCard">
       <div class="title">
         <div class="titleText" v-if="!isEdit">{{ title }}</div>
@@ -96,17 +96,10 @@ export default {
 
 <style lang="scss" scoped>
 .memoPopup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   .memoCard {
     position: relative;
     width: 95%;
+    max-width: 400px;
     padding: 20px 20px;
     border-radius: 15px;
     .title {

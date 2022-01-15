@@ -1,13 +1,13 @@
 <template>
-  <div class="editNamePopup">
+  <div class="editNamePopup popupMask">
     <div class="editNameCard">
-      <h2>修改暱稱</h2>
+      <h2 class="font-18">修改暱稱</h2>
       <input type="text" v-model="newName" />
       <div class="editBtn">
-        <div class="normalBtn" @click="$emit('update:editNamePopup', false)">
+        <div class="normalBtn font-16" @click="$emit('update:editNamePopup', false)">
           取消
         </div>
-        <div class="confirmBtn" @click="editName()">確定</div>
+        <div class="confirmBtn font-16" @click="editName()">確定</div>
       </div>
     </div>
   </div>
@@ -38,21 +38,13 @@ export default {
 
 <style  lang="scss" scoped>
 .editNamePopup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   .editNameCard {
     width: 85%;
+    max-width: 400px;
     height: 180px;
     padding: 20px 40px;
     border-radius: 15px;
     h2 {
-      font-size: 18px;
       text-align: center;
       margin-bottom: 20px;
     }
@@ -67,7 +59,6 @@ export default {
       justify-content: space-between;
       div {
         width: 40%;
-        font-size: 14px;
       }
     }
   }

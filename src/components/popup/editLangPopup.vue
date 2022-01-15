@@ -1,7 +1,7 @@
 <template>
-  <div class="editLangPopup">
+  <div class="editLangPopup popupMask">
     <div class="editLangCard">
-      <h2>選擇語言</h2>
+      <h2 class="font-18">選擇語言</h2>
       <div class="langList">
         <div
           class="langItem"
@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="editBtn">
-        <div class="confirmBtn" @click="editLang()">確定</div>
+        <div class="confirmBtn font-16" @click="editLang()">確定</div>
       </div>
     </div>
   </div>
@@ -55,21 +55,13 @@ export default {
 
 <style  lang="scss" scoped>
 .editLangPopup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   .editLangCard {
     width: 85%;
+    max-width: 400px;
     height: 350px;
     padding: 20px 30px;
     border-radius: 15px;
     h2 {
-      font-size: 18px;
       text-align: center;
       margin-bottom: 18px;
     }
@@ -92,7 +84,6 @@ export default {
       justify-content: center;
       div {
         width: 35%;
-        font-size: 14px;
       }
     }
   }
