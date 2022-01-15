@@ -27,7 +27,7 @@
         </div>
         <div class="chartArea" style="padding-bottom: 20px">
           <ComboChart :spendList="getSpendMonth" :labels="getMonthLabel" />
-          <div class="chartBtn">
+          <div class="chartBtn" v-show="!isLoading">
             <div
               class="left"
               :class="{ active: isFirstHalf }"
@@ -94,6 +94,7 @@ export default {
   },
   computed: {
     ...mapState("statistics", ["spendStatistics"]),
+    ...mapState("memberInfo", ["isLoading"]),
     getTypeMonth() {
       return this.spendMonth.spendType;
     },
