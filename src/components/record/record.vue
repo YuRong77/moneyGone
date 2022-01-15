@@ -5,7 +5,7 @@
         <i class="fas fa-angle-left"></i>
       </div>
       <div class="recordMonth">
-        <h3 class="font-14">花費紀錄</h3>
+        <h3 class="font-14">{{ $t("LC_SPEND_RECORD") }}</h3>
         <div class="currentMonth font-18">{{ currentMonth }}</div>
       </div>
       <div class="changeMonthBtn" @click="changeMonth(1)">
@@ -16,12 +16,12 @@
       <div class="list">
         <div class="recordItem" v-for="(item, index) in spendList" :key="index">
           <div class="date font-16">{{ item.date }}</div>
-          <div class="total font-16">總計: {{ item.total }}</div>
+          <div class="total font-16">{{ $t("LC_TOTAL") }}: {{ item.total }}</div>
           <div
             class="detail confirmBtn font-16"
             @click="openDetail(item.date, item.details)"
           >
-            明細
+            {{ $t("LC_DETAIL") }}
           </div>
         </div>
       </div>

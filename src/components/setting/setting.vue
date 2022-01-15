@@ -1,13 +1,13 @@
 <template>
   <div class="setting">
     <div class="header">
-      <h3 class="font-18">我的設定</h3>
+      <h3 class="font-18">{{ $t("LC_MY_SETTING") }}</h3>
     </div>
     <div class="content">
       <div class="setup">
         <div class="setItem" @click="editName()">
           <div class="icon"><i class="fas fa-user-circle"></i></div>
-          <div class="text">暱稱</div>
+          <div class="text">{{ $t("LC_NICKNAME") }}</div>
           <div class="control">
             <span>{{ memberInfo.name }} </span>
             <span><i class="fas fa-angle-right"></i></span>
@@ -15,7 +15,7 @@
         </div>
         <div class="setItem" @click="editLang()">
           <div class="icon"><i class="fas fa-globe"></i></div>
-          <div class="text">語言</div>
+          <div class="text">{{ $t("LC_LANG") }}</div>
           <div class="control">
             <span>{{ getLang() }} </span>
             <span><i class="fas fa-angle-right"></i></span>
@@ -23,7 +23,7 @@
         </div>
         <div class="setItem">
           <div class="icon"><i class="fas fa-adjust"></i></div>
-          <div class="text">主題</div>
+          <div class="text">{{ $t("LC_THEME") }}</div>
           <div class="control">
             <input type="checkbox" id="theme" v-model="isLightMode" />
             <label for="theme">
@@ -35,9 +35,9 @@
         </div>
         <div class="setItem">
           <div class="icon"><i class="fas fa-sign-out-alt"></i></div>
-          <div class="text">登出</div>
+          <div class="text">{{ $t("LC_LOGOUT") }}</div>
           <div class="control">
-            <div class="logoutBtn" @click="logout()">登出</div>
+            <div class="logoutBtn" @click="logout()">{{ $t("LC_LOGOUT") }}</div>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@ export default {
     getLang() {
       if (this.lang === "zh-TW") return "繁體中文";
       if (this.lang === "zh-CN") return "简体中文";
-      if (this.lang === "en-US") return "Englist";
+      if (this.lang === "en-US") return "English";
       if (this.lang === "ja-JP") return "日本語";
     },
   },

@@ -1,13 +1,18 @@
 <template>
   <div class="editNamePopup popupMask">
     <div class="editNameCard">
-      <h2 class="font-18">修改暱稱</h2>
+      <h2 class="font-18">{{ $t("LC_EDIT_NICKNAME") }}</h2>
       <input type="text" v-model="newName" />
       <div class="editBtn">
-        <div class="normalBtn font-16" @click="$emit('update:editNamePopup', false)">
-          取消
+        <div
+          class="normalBtn font-16"
+          @click="$emit('update:editNamePopup', false)"
+        >
+          {{ $t("LC_CANCEL") }}
         </div>
-        <div class="confirmBtn font-16" @click="editName()">確定</div>
+        <div class="confirmBtn font-16" @click="editName()">
+          {{ $t("LC_CONFIRM") }}
+        </div>
       </div>
     </div>
   </div>

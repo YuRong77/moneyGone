@@ -5,7 +5,7 @@
         <i class="fas fa-angle-left"></i>
       </div>
       <div class="spendStatistics">
-        <h3 class="font-14">統計圖表</h3>
+        <h3 class="font-14">{{ $t("LC_CHART") }}</h3>
         <div class="currentMonth font-18">{{ currentMonth }}</div>
       </div>
       <div class="changeMonthBtn" @click="changeMonth(1)">
@@ -14,7 +14,7 @@
     </div>
     <div class="content">
       <div class="monthChart" style="margin-bottom: 20px">
-        <h5 class="font-14">本月統計</h5>
+        <h5 class="font-14">{{ $t("LC_CHART_MONTH") }}</h5>
         <div class="spendTypeList">
           <div
             class="spendTypeItem"
@@ -33,20 +33,20 @@
               :class="{ active: isFirstHalf }"
               @click="isFirstHalf = true"
             >
-              上半月
+              {{ $t("LC_FIRST_HALF") }}
             </div>
             <div
               class="right"
               :class="{ active: !isFirstHalf }"
               @click="isFirstHalf = false"
             >
-              下半月
+              {{ $t("LC_LAST_HALF") }}
             </div>
           </div>
         </div>
       </div>
       <div class="yearChart">
-        <h5 class="font-14">年度統計</h5>
+        <h5 class="font-14">{{ $t("LC_CHART_YEAR") }}</h5>
         <div class="spendTypeList">
           <div
             class="spendTypeItem"

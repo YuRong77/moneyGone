@@ -1,7 +1,7 @@
 <template>
   <div class="editLangPopup popupMask">
     <div class="editLangCard">
-      <h2 class="font-18">選擇語言</h2>
+      <h2 class="font-18">{{ $t("LC_SELECT_LANG") }}</h2>
       <div class="langList">
         <div
           class="langItem"
@@ -14,7 +14,9 @@
         </div>
       </div>
       <div class="editBtn">
-        <div class="confirmBtn font-16" @click="editLang()">確定</div>
+        <div class="confirmBtn font-16" @click="editLang()">
+          {{ $t("LC_CONFIRM") }}
+        </div>
       </div>
     </div>
   </div>
@@ -29,7 +31,7 @@ export default {
       langList: [
         { name: "繁體中文", value: "zh-TW" },
         { name: "简体中文", value: "zh-CN" },
-        { name: "Englist", value: "en-US" },
+        { name: "English", value: "en-US" },
         { name: "日本語", value: "ja-JP" },
       ],
     };

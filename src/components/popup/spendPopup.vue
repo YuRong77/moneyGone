@@ -4,11 +4,11 @@
       <h3>{{ getSpendType(spendType) }}</h3>
       <div class="spendForm">
         <div class="inputBox">
-          <label for="name">名稱</label>
+          <label for="name">{{ $t("LC_NAME") }}</label>
           <input class="inputBox" type="text" id="name" v-model="name" />
         </div>
         <div class="hotKey">
-          <h5 class="font-12">快捷選項</h5>
+          <h5 class="font-12">{{ $t("LC_HOTKEY") }}</h5>
           <div class="hotKeyList" v-if="!spendItemLoading">
             <div
               class="hotKeyItem font-14"
@@ -43,7 +43,7 @@
               v-if="openNewSpendItem"
               @click="addNewSpendItem()"
             >
-              加入
+              {{ $t("LC_JOIN") }}
             </div>
             <div
               class="hotKeyBtn font-14"
@@ -67,12 +67,12 @@
                 openDeleteSpendItem = false;
               "
             >
-              取消
+              {{ $t("LC_CANCEL") }}
             </div>
           </div>
         </div>
         <div class="inputBox">
-          <label for="spend">金額</label>
+          <label for="spend">{{ $t("LC_AMOUNT") }}</label>
           <input
             class="inputBox"
             type="number"
@@ -81,13 +81,13 @@
           />
         </div>
         <div class="inputBox">
-          <label for="remark">備註</label>
+          <label for="remark">{{ $t("LC_REMARK") }}</label>
           <input class="inputBox" type="text" id="remark" v-model="remark" />
         </div>
       </div>
       <div class="formBtn">
-        <div @click="closeSpend()">關閉</div>
-        <div class="confirmBtn" @click="addSpend()">新增</div>
+        <div @click="closeSpend()">{{ $t("LC_CLOSE") }}</div>
+        <div class="confirmBtn" @click="addSpend()">{{ $t("LC_ADD") }}</div>
       </div>
     </div>
   </div>

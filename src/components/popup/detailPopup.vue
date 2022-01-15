@@ -1,7 +1,7 @@
 <template>
   <div class="detailPopup popupMask">
     <div class="detailCard">
-      <h2 class="font-16">{{ currentDetail.date }} 明細</h2>
+      <h2 class="font-16">{{ currentDetail.date }} {{ $t("LC_DETAIL") }}</h2>
       <div class="detailList">
         <div
           class="detailItem"
@@ -9,8 +9,12 @@
           :key="index"
         >
           <div class="directions">
-            <span class="font-14">建立時間: {{ getDate(item.date) }}</span>
-            <span class="font-14">備註: {{ item.remark }}</span>
+            <span class="font-14"
+              >{{ $t("LC_BUILD_TIME") }}: {{ getDate(item.date) }}</span
+            >
+            <span class="font-14"
+              >{{ $t("LC_REMARK") }}: {{ item.remark }}</span
+            >
           </div>
           <div class="info">
             <div class="type"><i :class="getSpendIcon(item.type)"></i></div>
@@ -20,7 +24,9 @@
         </div>
       </div>
       <div class="detailBtn">
-        <div @click="$emit('update:detailPopup', false)">關閉</div>
+        <div @click="$emit('update:detailPopup', false)">
+          {{ $t("LC_CLOSE") }}
+        </div>
       </div>
     </div>
   </div>

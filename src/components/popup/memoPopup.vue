@@ -4,7 +4,11 @@
       <div class="title">
         <div class="titleText" v-if="!isEdit">{{ title }}</div>
         <div class="inputBox" v-if="isEdit">
-          <input type="text" placeholder="請輸入標題" v-model="title" />
+          <input
+            type="text"
+            :placeholder="$t('LC_PLACEHODLER_TITLE')"
+            v-model="title"
+          />
         </div>
       </div>
       <div class="content">
@@ -13,22 +17,22 @@
           <textarea
             class="inputBox"
             rows="12"
-            placeholder="請輸入內容"
+            :placeholder="$t('LC_PLACEHODLER_CONTENT')"
             v-model="content"
           />
         </div>
       </div>
       <div class="formBtn">
-        <div @click="closeMemo()">取消</div>
+        <div @click="closeMemo()">{{ $t("LC_CANCEL") }}</div>
         <div
           class="confirmBtn"
           v-if="!isAddMemo && isEdit"
           @click="updateMemo()"
         >
-          更新
+          {{ $t("LC_UPDATE") }}
         </div>
         <div class="confirmBtn" v-if="isAddMemo" @click="createMemo()">
-          新增
+          {{ $t("LC_ADD") }}
         </div>
       </div>
       <div class="memoEdit">
