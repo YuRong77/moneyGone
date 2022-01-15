@@ -71,6 +71,7 @@ export default {
       margin: 20px 0;
       height: 500px;
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
       .detailItem {
         border-radius: 5px;
         margin-bottom: 20px;
