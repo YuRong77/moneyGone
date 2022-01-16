@@ -5,7 +5,7 @@
         <i class="fas fa-angle-left"></i>
       </div>
       <div class="spendStatistics">
-        <h3 class="font-14">{{ $t("LC_CHART") }}</h3>
+        <h3 class="font-14">{{ $t("LC_STATISTICS") }}</h3>
         <div class="currentMonth font-18">{{ currentMonth }}</div>
       </div>
       <div class="changeMonthBtn" @click="changeMonth(1)">

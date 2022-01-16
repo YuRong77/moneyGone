@@ -43,8 +43,10 @@ export default {
       const data = {
         lang: this.newLang,
       };
-      this.$i18n.locale = this.newLang;
       this.$store.dispatch("setting/changeLang", data);
+      this.$store.commit("setting/SET_LANG", this.newLang);
+      this.$i18n.locale = this.newLang;
+      sessionStorage.setItem("lang", this.newLang);
       this.$emit("update:lang", this.newLang);
       this.$emit("update:editLangPopup", false);
     },

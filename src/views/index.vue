@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-view class="routeContent" />
-    <Footer />
+    <Footer v-if="isAlive" />
     <Copyright />
     <Loading v-show="isLoading" />
   </div>
@@ -18,8 +18,22 @@ export default {
     Copyright,
     Loading,
   },
+  data() {
+    return {
+      isAlive: true,
+    };
+  },
   computed: {
     ...mapState("memberInfo", ["isLoading"]),
+    ...mapState("setting", ["lang"]),
+  },
+  watch: {
+    lang() {
+      this.isAlive = false;
+      this.$nextTick(() => {
+        this.isAlive = true;
+      });
+    },
   },
   created() {
     const theme = sessionStorage.getItem("theme");

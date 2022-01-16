@@ -36,6 +36,7 @@ export default {
           sessionStorage.setItem("lang", result.setting.language);
           sessionStorage.setItem("theme", result.setting.theme);
           this.$store.commit("setting/SET_THEME", result.setting.theme);
+          this.$store.commit("setting/SET_LANG", result.setting.language);
           this.$router.push("/home");
         })
         .catch((err) => {

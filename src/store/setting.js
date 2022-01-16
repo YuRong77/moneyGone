@@ -2,6 +2,7 @@ import axios from "axios";
 
 const state = {
   theme: "lightMode",
+  lang: "zh-TW",
 };
 
 const getters = {};
@@ -9,6 +10,9 @@ const getters = {};
 const mutations = {
   SET_THEME(state, payload) {
     state.theme = payload;
+  },
+  SET_LANG(state, payload) {
+    state.lang = payload;
   },
 };
 
