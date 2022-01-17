@@ -16,7 +16,9 @@
       <div class="list">
         <div class="recordItem" v-for="(item, index) in spendList" :key="index">
           <div class="date font-16">{{ item.date }}</div>
-          <div class="total font-16">{{ $t("LC_TOTAL") }}: {{ item.total }}</div>
+          <div class="total font-16">
+            {{ $t("LC_TOTAL") }}: {{ item.total }}
+          </div>
           <div
             class="detail confirmBtn font-16"
             @click="openDetail(item.date, item.details)"
@@ -91,6 +93,8 @@ export default {
   display: flex;
   flex-direction: column;
   .header {
+    position: relative;
+    z-index: 10;
     display: flex;
     align-items: center;
     height: 85px;

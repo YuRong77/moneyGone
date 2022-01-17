@@ -49,15 +49,24 @@
             class="listItem"
             v-for="(item, index) in memberInfo.spendList"
             :key="index"
+            v-show="false"
           >
             <div class="itemInfo">
-              <div class="icon font-18"><i :class="getSpendIcon(item.type)"></i></div>
+              <div class="icon font-18">
+                <i :class="getSpendIcon(item.type)"></i>
+              </div>
               <div>
                 <h3 class="font-16">{{ item.name }}</h3>
                 <span class="font-14">{{ getType(item.type) }}</span>
               </div>
             </div>
             <div class="itemSpend">NT$ {{ item.spend }}</div>
+          </div>
+          <div class="empty" v-if="true">
+            <div>
+              <img src="@/assets/img/rain.svg" alt="" />
+              <h3 class="font-18">{{ $t("LC_EMPTY_SPEND") }}</h3>
+            </div>
           </div>
         </div>
       </div>
@@ -219,6 +228,18 @@ export default {
               margin-right: 10px;
             }
           }
+        }
+      }
+      .empty {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        border-radius: 20px;
+        img {
+          margin-bottom: 20px;
         }
       }
     }

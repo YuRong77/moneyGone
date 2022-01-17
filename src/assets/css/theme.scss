@@ -10,6 +10,7 @@ $border_light: rgba(0, 0, 0, 0.1);
 $shadow_light: 0 2px 2px rgba(214, 214, 214, 0.5);
 
 $whiteCardBg: #fbfbfb;
+$empty_light: rgba(255, 255, 255, 0.7);
 
 //dark mode
 $bg_dark: #28333d;
@@ -21,6 +22,7 @@ $title_sub_dark: rgba(255, 255, 255, 0.75);
 $popupBg_dark: rgba(0, 0, 0, 0.7);
 $border_dark: rgba(255, 255, 255, 0.3);
 
+$empty_dark: rgba(86, 99, 112, 0.6);
 
 /* lightMode */
 .lightMode {
@@ -70,6 +72,12 @@ $border_dark: rgba(255, 255, 255, 0.3);
         }
         .itemSpend {
           color: $title_light;
+        }
+      }
+      .empty {
+        background: $empty_light;
+        h3 {
+          color: $title_sub_light;
         }
       }
     }
@@ -333,6 +341,12 @@ $border_dark: rgba(255, 255, 255, 0.3);
         }
         .itemSpend {
           color: $title_dark;
+        }
+      }
+      .empty {
+        background: $empty_dark;
+        h3 {
+          color: $title_sub_dark;
         }
       }
     }
