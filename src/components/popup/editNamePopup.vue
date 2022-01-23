@@ -1,6 +1,6 @@
 <template>
   <div class="editNamePopup popupMask">
-    <div class="editNameCard">
+    <div class="editNameCard animate__animated animate__zoomIn animate__faster">
       <h2 class="font-18">{{ $t("LC_EDIT_NICKNAME") }}</h2>
       <input type="text" v-model="newName" />
       <div class="editBtn">

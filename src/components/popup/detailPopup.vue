@@ -1,6 +1,6 @@
 <template>
   <div class="detailPopup popupMask">
-    <div class="detailCard">
+    <div class="detailCard animate__animated animate__fadeInUp animate__faster">
       <h2 class="font-16">{{ currentDetail.date }} {{ $t("LC_DETAIL") }}</h2>
       <div class="detailList">
         <div

@@ -1,6 +1,6 @@
 <template>
   <div class="memoPopup popupMask">
-    <div class="memoCard">
+    <div class="memoCard animate__animated animate__zoomIn animate__faster">
       <div class="title">
         <div class="titleText" v-if="!isEdit">{{ title }}</div>
         <div class="inputBox" v-if="isEdit">

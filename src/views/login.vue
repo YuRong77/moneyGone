@@ -37,6 +37,13 @@ export default {
           sessionStorage.setItem("theme", result.setting.theme);
           this.$store.commit("setting/SET_THEME", result.setting.theme);
           this.$store.commit("setting/SET_LANG", result.setting.language);
+          //set theme color
+          const color =
+            result.setting.theme === "lightMode" ? "#ffffff" : "#414f5c";
+          const metaThemeColor = document.querySelector(
+            "meta[name=theme-color]"
+          );
+          metaThemeColor.setAttribute("content", color);
           this.$router.push("/home");
         })
         .catch((err) => {

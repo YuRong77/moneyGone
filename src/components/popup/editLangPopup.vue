@@ -1,6 +1,6 @@
 <template>
   <div class="editLangPopup popupMask">
-    <div class="editLangCard">
+    <div class="editLangCard animate__animated animate__zoomIn animate__faster">
       <h2 class="font-18">{{ $t("LC_SELECT_LANG") }}</h2>
       <div class="langList">
         <div

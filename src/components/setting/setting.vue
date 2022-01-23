@@ -96,6 +96,10 @@ export default {
       };
       this.$store.commit("setting/SET_THEME", val);
       this.$store.dispatch("setting/changeTheme", data);
+      //change theme color
+      const color = val === "lightMode" ? "#ffffff" : "#414f5c";
+      const metaThemeColor = document.querySelector("meta[name=theme-color]");
+      metaThemeColor.setAttribute("content", color);
     },
     logout() {
       sessionStorage.removeItem("uid");

@@ -27,6 +27,12 @@
           </div>
         </div>
       </div>
+      <div class="emptyList" v-if="spendList.length === 0">
+        <div>
+          <img src="@/assets/img/empty_street.svg" alt="" />
+          <h3 class="font-16">{{ $t("LC_EMPTY_LIST") }}</h3>
+        </div>
+      </div>
     </div>
     <DetailPopup
       v-if="detailPopup"
@@ -143,6 +149,21 @@ export default {
           padding: 5px 10px;
           border-radius: 5px;
         }
+      }
+    }
+    .emptyList {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      border-radius: 20px;
+      img {
+        margin-bottom: 20px;
       }
     }
   }

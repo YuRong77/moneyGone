@@ -12,9 +12,13 @@ export default {};
 .copyright {
   display: flex;
   justify-content: center;
-  padding-top: 3px;
+  align-items: center;
   height: 30px;
   background: rgb(250, 250, 250);
   color: rgb(175, 175, 175);
+}
+.darkMode .copyright {
+  background: #4d5d6d;
+  color: rgba(255, 255, 255, 0.75);
 }
 </style>

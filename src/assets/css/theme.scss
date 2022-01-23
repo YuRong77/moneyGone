@@ -151,6 +151,9 @@ $empty_dark: rgba(86, 99, 112, 0.6);
         color: $title_sub_light;
       }
     }
+    .emptyList h3 {
+      color: $title_sub_light;
+    }
     .detailPopup {
       background: $popupBg_light;
       .detailCard {
@@ -414,6 +417,9 @@ $empty_dark: rgba(86, 99, 112, 0.6);
       .total {
         color: $title_sub_dark;
       }
+    }
+    .emptyList h3 {
+      color: $title_sub_dark;
     }
     .detailPopup {
       background: $popupBg_dark;

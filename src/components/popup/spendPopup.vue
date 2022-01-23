@@ -1,6 +1,6 @@
 <template>
   <div class="spendPopup popupMask">
-    <div class="spendCard">
+    <div class="spendCard animate__animated animate__zoomIn animate__faster">
       <h3>{{ getSpendType(spendType) }}</h3>
       <div class="spendForm">
         <div class="inputBox">
