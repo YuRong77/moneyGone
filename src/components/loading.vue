@@ -4,7 +4,7 @@
       <div class="animate__animated animate__rubberBand animate__infinite">
         <img src="@/assets/img/loading.png" alt="" />
       </div>
-      <p>載入中...</p>
+      <p>{{ $t("LC_LOADING") }}</p>
     </div>
   </div>
 </template>

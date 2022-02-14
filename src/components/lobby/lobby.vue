@@ -49,7 +49,6 @@
             class="listItem"
             v-for="(item, index) in memberInfo.spendList"
             :key="index"
-            v-show="false"
           >
             <div class="itemInfo">
               <div class="icon font-18">
@@ -62,7 +61,7 @@
             </div>
             <div class="itemSpend">NT$ {{ item.spend }}</div>
           </div>
-          <div class="empty" v-if="true">
+          <div class="empty" v-if="memberInfo.spendList.length === 0">
             <div>
               <img src="@/assets/img/rain.svg" alt="" />
               <h3 class="font-18">{{ $t("LC_EMPTY_SPEND") }}</h3>

@@ -18,11 +18,13 @@
         <div class="spendTypeList">
           <div
             class="spendTypeItem"
-            v-for="item in getTypeMonth"
+            v-for="(item, index) in getTypeMonth"
             :key="item.type"
           >
-            <div class="icon font-14"><i :class="getIcon(item.type)"></i></div>
-            <div class="spend">{{ item.total }}</div>
+            <div class="icon font-14">
+              <i :class="getIcon(index + 1)"></i>
+            </div>
+            <div class="spend">{{ item.total || 0 }}</div>
           </div>
         </div>
         <div class="chartArea" style="padding-bottom: 20px">
@@ -50,10 +52,10 @@
         <div class="spendTypeList">
           <div
             class="spendTypeItem"
-            v-for="item in getTypeYear"
+            v-for="(item, index) in getTypeYear"
             :key="item.type"
           >
-            <div class="icon font-14"><i :class="getIcon(item.type)"></i></div>
+            <div class="icon font-14"><i :class="getIcon(index + 1)"></i></div>
             <div class="spend">{{ item.total }}</div>
           </div>
         </div>

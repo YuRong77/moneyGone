@@ -297,6 +297,9 @@ $empty_dark: rgba(86, 99, 112, 0.6);
   .confirmBtn {
     box-shadow: $shadow_light;
   }
+  .loading p {
+    color: $title_sub_light;
+  }
 }
 
 /* darkMode */
@@ -553,5 +556,8 @@ $empty_dark: rgba(86, 99, 112, 0.6);
     text-align: center;
     border-radius: 5px;
     padding: 6px 15px;
+  }
+  .loading p {
+    color: $title_sub_dark;
   }
 }

@@ -44,7 +44,7 @@ export default {
             "meta[name=theme-color]"
           );
           metaThemeColor.setAttribute("content", color);
-          this.$router.push("/home");
+          this.$router.push("/index/lobby");
         })
         .catch((err) => {
           console.log(err);

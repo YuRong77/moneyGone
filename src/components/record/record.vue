@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <div class="emptyList" v-if="spendList.length === 0">
+      <div class="emptyList" v-if="spendList.length === 0 && !isLoading">
         <div>
           <img src="@/assets/img/empty_street.svg" alt="" />
           <h3 class="font-16">{{ $t("LC_EMPTY_LIST") }}</h3>
@@ -64,6 +64,7 @@ export default {
   },
   computed: {
     ...mapState("spend", ["spendList"]),
+    ...mapState("memberInfo", ["isLoading"]),
   },
   methods: {
     getSpendRecord() {
