@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { POST } from "../tools/fetch";
+
 export default {
   data() {
     return {
@@ -28,13 +30,12 @@ export default {
         email: this.account,
         password: this.password,
       };
-      this.axios
-        .post(`${process.env.VUE_APP_API_PATH}/api/index/login`, data)
+      POST(`${process.env.VUE_APP_API_PATH}/api/index/login`, data)
         .then((res) => {
-          const result = res.data.result;
-          sessionStorage.setItem("uid", result.uid);
+          const result = res.result;
           sessionStorage.setItem("lang", result.setting.language);
           sessionStorage.setItem("theme", result.setting.theme);
+          sessionStorage.setItem("Authorization", `Bearer ${result.token}`);
           this.$store.commit("setting/SET_THEME", result.setting.theme);
           this.$store.commit("setting/SET_LANG", result.setting.language);
           //set theme color

@@ -1,4 +1,4 @@
-import axios from "axios";
+import { POST } from "../tools/fetch";
 
 const state = {
   spendStatistics: {},
@@ -14,18 +14,18 @@ const mutations = {
 
 const actions = {
   getSpendStatistics(context, payload) {
-    const _uid = sessionStorage.getItem("uid");
-    const data = { ...payload, uid: _uid };
     context.commit("memberInfo/SET_ISLOADING", true, { root: true });
-    axios
-      .post(
-        `${process.env.VUE_APP_API_PATH}/api/spendStatistics/getSpendStatistics`,
-        data
-      )
+    POST(
+      `${process.env.VUE_APP_API_PATH}/api/spendStatistics/getSpendStatistics`,
+      payload
+    )
       .then((res) => {
         context.commit("memberInfo/SET_ISLOADING", false, { root: true });
-        context.commit("SET_STATISTICS", res.data.result);
-      });
+        context.commit("SET_STATISTICS", res.result);
+      })
+      .catch(() =>
+        context.commit("memberInfo/SET_ISLOADING", false, { root: true })
+      );
   },
 };
 

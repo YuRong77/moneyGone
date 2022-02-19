@@ -1,4 +1,4 @@
-import axios from "axios";
+import { GET } from "../tools/fetch";
 
 const state = {
   memberInfo: {
@@ -23,14 +23,13 @@ const mutations = {
 
 const actions = {
   getMemberInfo(context) {
-    const uid = sessionStorage.getItem("uid");
     context.commit("SET_ISLOADING", true);
-    axios
-      .get(`${process.env.VUE_APP_API_PATH}/api/member/getMemberInfo/${uid}`)
+    GET(`${process.env.VUE_APP_API_PATH}/api/member/getMemberInfo`)
       .then((res) => {
+        context.commit("SET_MEMBER_INFO", res.result);
         context.commit("SET_ISLOADING", false);
-        context.commit("SET_MEMBER_INFO", res.data.result);
-      });
+      })
+      .catch(() => context.commit("SET_ISLOADING", false));
   },
 };
 

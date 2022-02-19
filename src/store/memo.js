@@ -1,4 +1,4 @@
-import axios from "axios";
+import { GET, POST } from "../tools/fetch";
 
 const state = {
   memoList: [],
@@ -14,44 +14,39 @@ const mutations = {
 
 const actions = {
   getMemo(context) {
-    const uid = sessionStorage.getItem("uid");
     context.commit("memberInfo/SET_ISLOADING", true, { root: true });
-    axios
-      .get(`${process.env.VUE_APP_API_PATH}/api/memo/getMemo/${uid}`)
+    GET(`${process.env.VUE_APP_API_PATH}/api/memo/getMemo`)
       .then((res) => {
         context.commit("memberInfo/SET_ISLOADING", false, { root: true });
-        context.commit("SET_MEMO", res.data.result);
-      });
+        context.commit("SET_MEMO", res.result);
+      })
+      .catch(() =>
+        context.commit("memberInfo/SET_ISLOADING", false, { root: true })
+      );
   },
   createMemo(context, payload) {
-    const _uid = sessionStorage.getItem("uid");
-    const data = { ...payload, uid: _uid };
-    axios
-      .post(`${process.env.VUE_APP_API_PATH}/api/memo/createMemo`, data)
-      .then((res) => {
-        if (res.data.status === 200) {
+    POST(`${process.env.VUE_APP_API_PATH}/api/memo/createMemo`, payload).then(
+      (res) => {
+        if (res.status === 200) {
           context.dispatch("getMemo");
         }
-      });
+      }
+    );
   },
   updateMemo(context, payload) {
-    const _uid = sessionStorage.getItem("uid");
-    const data = { ...payload, uid: _uid };
     axios
-      .post(`${process.env.VUE_APP_API_PATH}/api/memo/updateMemo`, data)
+      .post(`${process.env.VUE_APP_API_PATH}/api/memo/updateMemo`, payload)
       .then((res) => {
-        if (res.data.status === 200) {
+        if (res.status === 200) {
           context.dispatch("getMemo");
         }
       });
   },
   deleteMemo(context, payload) {
-    const _uid = sessionStorage.getItem("uid");
-    const data = { ...payload, uid: _uid };
     axios
-      .post(`${process.env.VUE_APP_API_PATH}/api/memo/deleteMemo`, data)
+      .post(`${process.env.VUE_APP_API_PATH}/api/memo/deleteMemo`, payload)
       .then((res) => {
-        if (res.data.status === 200) {
+        if (res.status === 200) {
           context.dispatch("getMemo");
         }
       });

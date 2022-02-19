@@ -1,4 +1,4 @@
-import axios from "axios";
+import { POST } from "../tools/fetch";
 
 const state = {
   spendList: [],
@@ -14,29 +14,28 @@ const mutations = {
 
 const actions = {
   getSpendRecord(context, payload) {
-    const _uid = sessionStorage.getItem("uid");
-    const data = { ...payload, uid: _uid };
     context.commit("memberInfo/SET_ISLOADING", true, { root: true });
-    axios
-      .post(
-        `${process.env.VUE_APP_API_PATH}/api/spendRecord/getSpendRecord`,
-        data
-      )
+    POST(
+      `${process.env.VUE_APP_API_PATH}/api/spendRecord/getSpendRecord`,
+      payload
+    )
       .then((res) => {
         context.commit("memberInfo/SET_ISLOADING", false, { root: true });
-        context.commit("SET_SPENDLIST", res.data.result);
-      });
+        context.commit("SET_SPENDLIST", res.result);
+      })
+      .catch(() =>
+        context.commit("memberInfo/SET_ISLOADING", false, { root: true })
+      );
   },
   addSpend(context, payload) {
-    const _uid = sessionStorage.getItem("uid");
-    const data = { ...payload, uid: _uid };
-    axios
-      .post(`${process.env.VUE_APP_API_PATH}/api/spendRecord/updateSpend`, data)
-      .then((res) => {
-        if (res.data.status === 200) {
-          context.dispatch("memberInfo/getMemberInfo", null, { root: true });
-        }
-      });
+    POST(
+      `${process.env.VUE_APP_API_PATH}/api/spendRecord/updateSpend`,
+      payload
+    ).then((res) => {
+      if (res.status === 200) {
+        context.dispatch("memberInfo/getMemberInfo", null, { root: true });
+      }
+    });
   },
 };
 

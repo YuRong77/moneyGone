@@ -12,9 +12,6 @@ import zh_CN from "@/locales/zh_CN.json";
 import en_US from "@/locales/en_US.json";
 import ja_JP from "@/locales/ja_JP.json";
 
-import axios from "axios";
-import VueAxios from "vue-axios";
-Vue.use(VueAxios, axios);
 Vue.use(VueI18n);
 
 let messagesObj = {
