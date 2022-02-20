@@ -102,7 +102,7 @@ export default {
       metaThemeColor.setAttribute("content", color);
     },
     logout() {
-      sessionStorage.removeItem("uid");
+      sessionStorage.removeItem("Authorization");
       location.reload();
     },
     getLang() {
