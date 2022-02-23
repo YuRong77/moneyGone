@@ -1,6 +1,6 @@
 <template>
   <div class="detailPopup popupMask">
-    <div class="detailCard animate__animated animate__fadeInUp animate__faster">
+    <div class="detailCard p-card">
       <h2 class="font-16">{{ currentDetail.date }} {{ $t("LC_DETAIL") }}</h2>
       <div class="detailList">
         <div
@@ -59,7 +59,6 @@ export default {
   .detailCard {
     width: 95%;
     max-width: 400px;
-    height: 630px;
     padding: 20px 20px;
     border-radius: 15px;
     h2 {
@@ -67,7 +66,7 @@ export default {
     }
     .detailList {
       margin: 20px 0;
-      height: 500px;
+      height: 400px;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
       .detailItem {

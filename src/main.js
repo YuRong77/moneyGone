@@ -3,8 +3,7 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
-import 'animate.css';
-import './tools/iNoBounce'
+import './tools/iNoBounce';
 
 import VueI18n from "vue-i18n";
 import zh_TW from "@/locales/zh_TW.json";
