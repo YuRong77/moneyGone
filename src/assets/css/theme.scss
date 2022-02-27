@@ -9,11 +9,11 @@ $popupBg_light: rgba(0, 0, 0, 0.3);
 $border_light: rgba(0, 0, 0, 0.1);
 $shadow_light: 0 2px 2px rgba(214, 214, 214, 0.5);
 
-$whiteCardBg: #fbfbfb;
+$whiteCardBg: #fbfbfb; //
 $empty_light: rgba(255, 255, 255, 0.7);
 
 //dark mode
-$bg_dark: #28333d;
+$bg_dark: #313f4c;
 $bg_sub_dark: #414f5c;
 
 $title_dark: rgba(255, 255, 255, 0.9);
@@ -42,17 +42,12 @@ $empty_dark: rgba(86, 99, 112, 0.6);
     }
     .memo div,
     .addMemo {
-      background: $bg_sub_light;
-      box-shadow: $shadow_light;
       color: $popupBg_light;
     }
     .memo p {
       color: $title_sub_light;
     }
     .spendType {
-      .type {
-        background: linear-gradient(to left, $bg_sub_light, $bg_light);
-      }
       .text {
         color: $title_light;
       }
@@ -62,8 +57,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
         color: $title_sub_light;
       }
       .listItem {
-        background: $bg_sub_light;
-        box-shadow: $shadow_light;
         h3 {
           color: $title_light;
         }
@@ -84,7 +77,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
     .spendPopup {
       background: $popupBg_light;
       .spendCard {
-        background: $bg_sub_light;
         .loading-s {
           color: $bg_light;
         }
@@ -109,7 +101,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
     .memoPopup {
       background: $popupBg_light;
       .memoCard {
-        background: $bg_sub_light;
         .title {
           color: $title_light;
         }
@@ -117,9 +108,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
           color: $title_sub_light;
         }
         .memoEdit {
-          div {
-            background: $bg_sub_light;
-          }
           .edit {
             color: $popupBg_light;
           }
@@ -142,8 +130,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
       }
     }
     .recordItem {
-      background: $bg_sub_light;
-      box-shadow: $shadow_light;
       .date {
         color: $title_light;
       }
@@ -157,7 +143,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
     .detailPopup {
       background: $popupBg_light;
       .detailCard {
-        background: $whiteCardBg;
         h2 {
           color: $title_light;
         }
@@ -172,11 +157,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
           .spend {
             color: $title_light;
           }
-        }
-        .detailBtn div {
-          background: $bg_light;
-          box-shadow: $shadow_light;
-          color: $title_sub_light;
         }
       }
     }
@@ -201,12 +181,7 @@ $empty_dark: rgba(86, 99, 112, 0.6);
       }
       .spendTypeItem,
       .chartBtn div {
-        background: $bg_sub_light;
-        box-shadow: $shadow_light;
         color: $title_light;
-      }
-      .chartArea {
-        background: $bg_sub_light;
       }
     }
   }
@@ -219,7 +194,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
       }
     }
     .setup {
-      background: $bg_sub_light;
       .setItem {
         border-bottom: 1px solid $border_light;
         .text {
@@ -240,7 +214,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
     .editNamePopup {
       background: $popupBg_light;
       .editNameCard {
-        background: $bg_sub_light;
         h2 {
           color: $title_light;
         }
@@ -252,7 +225,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
     .editLangPopup {
       background: $popupBg_light;
       .editLangCard {
-        background: $bg_sub_light;
         h2 {
           color: $title_light;
         }
@@ -281,24 +253,16 @@ $empty_dark: rgba(86, 99, 112, 0.6);
       color: $popupBg_light;
     }
   }
-  .formBtn div {
-    background: $bg_light;
-    box-shadow: $shadow_light;
-    color: $title_sub_light;
-  }
-  .normalBtn {
-    background: $bg_light;
-    box-shadow: $shadow_light;
-    color: $title_sub_light;
-    text-align: center;
-    border-radius: 5px;
-    padding: 6px 15px;
-  }
   .confirmBtn {
     box-shadow: $shadow_light;
   }
   .loading p {
     color: $title_sub_light;
+  }
+  .btnShadow {
+    box-shadow: 0 8px 24px 0 rgb(38 61 89 / 5%),
+      inset -4px -4px 4px 0 rgb(50 78 112 / 15%), inset 4px 4px 4px 0 #fff;
+    background-image: linear-gradient(96deg, #f9f9f9, #ffffff);
   }
 }
 
@@ -319,16 +283,12 @@ $empty_dark: rgba(86, 99, 112, 0.6);
     }
     .memo div,
     .addMemo {
-      background: $bg_sub_dark;
       color: $title_sub_dark;
     }
     .memo p {
       color: $title_sub_dark;
     }
     .spendType {
-      .type {
-        background: linear-gradient(to left, $bg_sub_dark 25%, $bg_dark);
-      }
       .text {
         color: $title_dark;
       }
@@ -338,7 +298,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
         color: $title_sub_dark;
       }
       .listItem {
-        background: $bg_sub_dark;
         h3 {
           color: $title_dark;
         }
@@ -359,7 +318,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
     .spendPopup {
       background: $popupBg_dark;
       .spendCard {
-        background: $bg_dark;
         h3 {
           color: $title_dark;
         }
@@ -381,7 +339,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
     .memoPopup {
       background: $popupBg_dark;
       .memoCard {
-        background: $bg_dark;
         .title {
           color: $title_dark;
         }
@@ -389,9 +346,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
           color: $title_sub_dark;
         }
         .memoEdit {
-          div {
-            background: $bg_dark;
-          }
           .edit {
             color: $title_sub_dark;
           }
@@ -413,7 +367,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
       }
     }
     .recordItem {
-      background: $bg_sub_dark;
       .date {
         color: $title_dark;
       }
@@ -427,7 +380,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
     .detailPopup {
       background: $popupBg_dark;
       .detailCard {
-        background: $bg_dark;
         h2 {
           color: $title_dark;
         }
@@ -441,10 +393,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
           .spend {
             color: $title_dark;
           }
-        }
-        .detailBtn div {
-          background: $bg_sub_dark;
-          color: $title_sub_dark;
         }
       }
     }
@@ -468,11 +416,7 @@ $empty_dark: rgba(86, 99, 112, 0.6);
       }
       .spendTypeItem,
       .chartBtn div {
-        background: $bg_sub_dark;
         color: $title_dark;
-      }
-      .chartArea {
-        background: $bg_sub_dark;
       }
     }
   }
@@ -484,7 +428,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
       }
     }
     .setup {
-      background: $bg_sub_dark;
       .setItem {
         border-bottom: 1px solid $border_dark;
         .text {
@@ -504,7 +447,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
     .editNamePopup {
       background: $popupBg_dark;
       .editNameCard {
-        background: $bg_sub_dark;
         h2 {
           color: $title_dark;
         }
@@ -516,7 +458,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
     .editLangPopup {
       background: $popupBg_dark;
       .editLangCard {
-        background: $bg_sub_dark;
         h2 {
           color: $title_dark;
         }
@@ -546,18 +487,12 @@ $empty_dark: rgba(86, 99, 112, 0.6);
       color: $title_sub_dark;
     }
   }
-  .formBtn div {
-    background: $bg_sub_dark;
-    color: $title_sub_dark;
-  }
-  .normalBtn {
-    background: $bg_dark;
-    color: $title_sub_dark;
-    text-align: center;
-    border-radius: 5px;
-    padding: 6px 15px;
-  }
   .loading p {
     color: $title_sub_dark;
+  }
+  .btnShadow {
+    box-shadow: 0 8px 24px 0 rgb(38 61 89 / 5%),
+      inset -4px -4px 4px 0 rgb(50 67 88 / 75%), inset 4px 4px 4px 0 #93a5b7;
+    background-image: linear-gradient(96deg, #5e6e7c, #5c7287);
   }
 }

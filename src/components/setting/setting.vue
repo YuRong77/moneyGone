@@ -4,7 +4,7 @@
       <h3 class="font-18">{{ $t("LC_MY_SETTING") }}</h3>
     </div>
     <div class="content">
-      <div class="setup">
+      <div class="setup btnShadow">
         <div class="setItem" @click="editName()">
           <div class="icon"><i class="fas fa-user-circle"></i></div>
           <div class="text">{{ $t("LC_NICKNAME") }}</div>
@@ -172,7 +172,7 @@ export default {
             padding: 0 6px;
             border-radius: 50px;
             transition: background 0.4s;
-            background: #28333d;
+            background: #313f4c;
             .switchBall {
               position: absolute;
               top: 3px;

@@ -1,6 +1,6 @@
 <template>
   <div class="editLangPopup popupMask">
-    <div class="editLangCard p-card-s">
+    <div class="editLangCard p-card-s btnShadow">
       <h2 class="font-18">{{ $t("LC_SELECT_LANG") }}</h2>
       <div class="langList">
         <div
@@ -13,7 +13,7 @@
           {{ item.name }}
         </div>
       </div>
-      <div class="editBtn">
+      <div class="formBtn">
         <div class="confirmBtn font-16" @click="editLang()">
           {{ $t("LC_CONFIRM") }}
         </div>
@@ -60,11 +60,6 @@ export default {
 <style  lang="scss" scoped>
 .editLangPopup {
   .editLangCard {
-    width: 85%;
-    max-width: 400px;
-    height: 350px;
-    padding: 20px 30px;
-    border-radius: 15px;
     h2 {
       text-align: center;
       margin-bottom: 18px;
@@ -81,13 +76,6 @@ export default {
           background: #5e94c3;
           color: white;
         }
-      }
-    }
-    .editBtn {
-      display: flex;
-      justify-content: center;
-      div {
-        width: 35%;
       }
     }
   }

@@ -14,15 +14,17 @@
     </div>
     <div class="recordList">
       <div class="list">
-        <div class="recordItem" v-for="(item, index) in spendList" :key="index">
+        <div
+          class="recordItem btnShadow btn"
+          v-for="(item, index) in spendList"
+          :key="index"
+          @click="openDetail(item.date, item.details)"
+        >
           <div class="date font-16">{{ item.date }}</div>
           <div class="total font-16">
             {{ $t("LC_TOTAL") }}: {{ item.total }}
           </div>
-          <div
-            class="detail confirmBtn font-16"
-            @click="openDetail(item.date, item.details)"
-          >
+          <div class="detail confirmBtn font-16">
             {{ $t("LC_DETAIL") }}
           </div>
         </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="memoPopup popupMask">
-    <div class="memoCard p-card-s">
+    <div class="memoCard p-card-s btnShadow">
       <div class="title">
         <div class="titleText" v-if="!isEdit">{{ title }}</div>
         <div class="inputBox" v-if="isEdit">
@@ -23,23 +23,31 @@
         </div>
       </div>
       <div class="formBtn">
-        <div @click="closeMemo()">{{ $t("LC_CANCEL") }}</div>
+        <div class="cancelBtn" @click="closeMemo()">{{ $t("LC_CANCEL") }}</div>
         <div
-          class="confirmBtn"
+          class="confirmBtn btn"
           v-if="!isAddMemo && isEdit"
           @click="updateMemo()"
         >
           {{ $t("LC_UPDATE") }}
         </div>
-        <div class="confirmBtn" v-if="isAddMemo" @click="createMemo()">
+        <div class="confirmBtn btn" v-if="isAddMemo" @click="createMemo()">
           {{ $t("LC_ADD") }}
         </div>
       </div>
       <div class="memoEdit">
-        <div class="delete" v-if="!isAddMemo" @click="deleteMemo()">
+        <div
+          class="delete btnShadow btn"
+          v-if="!isAddMemo"
+          @click="deleteMemo()"
+        >
           <i class="fas fa-trash-alt"></i>
         </div>
-        <div class="edit" v-if="!isAddMemo" @click="isEdit = true">
+        <div
+          class="edit btnShadow btn"
+          v-if="!isAddMemo"
+          @click="isEdit = true"
+        >
           <i class="fas fa-pen"></i>
         </div>
       </div>
@@ -102,10 +110,6 @@ export default {
 .memoPopup {
   .memoCard {
     position: relative;
-    width: 95%;
-    max-width: 400px;
-    padding: 20px 20px;
-    border-radius: 15px;
     .title {
       margin-bottom: 20px;
     }

@@ -17,7 +17,7 @@
         <h5 class="font-14">{{ $t("LC_CHART_MONTH") }}</h5>
         <div class="spendTypeList">
           <div
-            class="spendTypeItem"
+            class="spendTypeItem btnShadow"
             v-for="(item, index) in getTypeMonth"
             :key="item.type"
           >
@@ -27,7 +27,7 @@
             <div class="spend">{{ item.total || 0 }}</div>
           </div>
         </div>
-        <div class="chartArea" style="padding-bottom: 20px">
+        <div class="chartArea btnShadow" style="padding-bottom: 20px">
           <ComboChart :spendList="getSpendMonth" :labels="getMonthLabel" />
           <div class="chartBtn font-14" v-show="!isLoading">
             <div
@@ -51,7 +51,7 @@
         <h5 class="font-14">{{ $t("LC_CHART_YEAR") }}</h5>
         <div class="spendTypeList">
           <div
-            class="spendTypeItem"
+            class="spendTypeItem btnShadow"
             v-for="(item, index) in getTypeYear"
             :key="item.type"
           >
@@ -59,7 +59,7 @@
             <div class="spend">{{ item.total }}</div>
           </div>
         </div>
-        <div class="chartArea">
+        <div class="chartArea btnShadow">
           <ComboChart
             :spendList="getSpendYear"
             :labels="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"

@@ -32,7 +32,7 @@ export default {
   display: flex;
   align-items: center;
   text-align: center;
-  height: 100px;
+  height: 90px;
   .name {
     flex: 1;
   }
@@ -42,7 +42,7 @@ export default {
     flex: 1;
     .spend {
       padding: 3px 5px;
-      margin-top: 15px;
+      margin-top: 5px;
       border-radius: 8px;
       font-weight: bold;
     }

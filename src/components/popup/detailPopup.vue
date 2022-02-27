@@ -1,6 +1,6 @@
 <template>
   <div class="detailPopup popupMask">
-    <div class="detailCard p-card">
+    <div class="detailCard p-card btnShadow">
       <h2 class="font-16">{{ currentDetail.date }} {{ $t("LC_DETAIL") }}</h2>
       <div class="detailList">
         <div
@@ -23,8 +23,8 @@
           </div>
         </div>
       </div>
-      <div class="detailBtn">
-        <div @click="$emit('update:detailPopup', false)">
+      <div class="formBtn">
+        <div class="cancelBtn btn" @click="$emit('update:detailPopup', false)">
           {{ $t("LC_CLOSE") }}
         </div>
       </div>
@@ -57,10 +57,6 @@ export default {
 <style lang="scss" scoped>
 .detailPopup {
   .detailCard {
-    width: 95%;
-    max-width: 400px;
-    padding: 20px 20px;
-    border-radius: 15px;
     h2 {
       text-align: center;
     }
@@ -93,14 +89,6 @@ export default {
             margin-right: auto;
           }
         }
-      }
-    }
-    .detailBtn {
-      display: flex;
-      justify-content: center;
-      div {
-        padding: 5px 15px;
-        border-radius: 5px;
       }
     }
   }

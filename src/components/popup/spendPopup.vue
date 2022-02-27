@@ -1,6 +1,6 @@
 <template>
   <div class="spendPopup popupMask">
-    <div class="spendCard p-card-s">
+    <div class="spendCard p-card-s btnShadow">
       <h3>{{ getSpendType(spendType) }}</h3>
       <div class="spendForm">
         <div class="inputBox">
@@ -86,8 +86,8 @@
         </div>
       </div>
       <div class="formBtn">
-        <div @click="closeSpend()">{{ $t("LC_CLOSE") }}</div>
-        <div class="confirmBtn" @click="addSpend()">{{ $t("LC_ADD") }}</div>
+        <div class="cancelBtn btn" @click="closeSpend()">{{ $t("LC_CLOSE") }}</div>
+        <div class="confirmBtn btn" @click="addSpend()">{{ $t("LC_ADD") }}</div>
       </div>
     </div>
   </div>
@@ -161,10 +161,6 @@ export default {
 <style lang="scss" scoped>
 .spendPopup {
   .spendCard {
-    width: 95%;
-    max-width: 400px;
-    border-radius: 15px;
-    padding: 20px 20px;
     h3 {
       text-align: center;
       margin-bottom: 30px;

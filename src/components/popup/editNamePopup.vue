@@ -1,11 +1,11 @@
 <template>
   <div class="editNamePopup popupMask">
-    <div class="editNameCard p-card-s">
+    <div class="editNameCard p-card-s btnShadow">
       <h2 class="font-18">{{ $t("LC_EDIT_NICKNAME") }}</h2>
       <input type="text" v-model="newName" />
-      <div class="editBtn">
+      <div class="formBtn">
         <div
-          class="normalBtn font-16"
+          class="cancelBtn font-16"
           @click="$emit('update:editNamePopup', false)"
         >
           {{ $t("LC_CANCEL") }}
@@ -44,11 +44,6 @@ export default {
 <style  lang="scss" scoped>
 .editNamePopup {
   .editNameCard {
-    width: 85%;
-    max-width: 400px;
-    height: 180px;
-    padding: 20px 40px;
-    border-radius: 15px;
     h2 {
       text-align: center;
       margin-bottom: 20px;

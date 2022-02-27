@@ -34,22 +34,22 @@ const actions = {
     );
   },
   updateMemo(context, payload) {
-    axios
-      .post(`${process.env.VUE_APP_API_PATH}/api/memo/updateMemo`, payload)
-      .then((res) => {
+    POST(`${process.env.VUE_APP_API_PATH}/api/memo/updateMemo`, payload).then(
+      (res) => {
         if (res.status === 200) {
           context.dispatch("getMemo");
         }
-      });
+      }
+    );
   },
   deleteMemo(context, payload) {
-    axios
-      .post(`${process.env.VUE_APP_API_PATH}/api/memo/deleteMemo`, payload)
-      .then((res) => {
+    POST(`${process.env.VUE_APP_API_PATH}/api/memo/deleteMemo`, payload).then(
+      (res) => {
         if (res.status === 200) {
           context.dispatch("getMemo");
         }
-      });
+      }
+    );
   },
 };
 

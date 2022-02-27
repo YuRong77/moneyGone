@@ -10,11 +10,11 @@
             :key="item.id"
             @click="openMemo(item)"
           >
-            <div><i class="far fa-sticky-note"></i></div>
+            <div class="btnShadow btn"><i class="far fa-sticky-note"></i></div>
             <p class="font-14">{{ item.title }}</p>
           </div>
           <div
-            class="addMemo"
+            class="addMemo btnShadow btn"
             v-if="memoList.length < 5"
             @click="openMemo(null)"
           >
@@ -22,21 +22,21 @@
           </div>
         </div>
         <div class="spendType">
-          <div class="type" @click="addSpend(1)">
+          <div class="type btnShadow btn" @click="addSpend(1)">
             <img src="@/assets/img/life.svg" alt="" />
             <div class="text font-16">{{ $t("LC_LIFE") }}</div>
           </div>
-          <div class="type" @click="addSpend(2)">
+          <div class="type btnShadow btn" @click="addSpend(2)">
             <img src="@/assets/img/fun.svg" alt="" />
             <div class="text font-16">{{ $t("LC_FUN") }}</div>
           </div>
         </div>
         <div class="spendType">
-          <div class="type" @click="addSpend(3)">
+          <div class="type btnShadow btn" @click="addSpend(3)">
             <img src="@/assets/img/study.svg" alt="" />
             <div class="text font-16">{{ $t("LC_STUDY") }}</div>
           </div>
-          <div class="type" @click="addSpend(4)">
+          <div class="type btnShadow btn" @click="addSpend(4)">
             <img src="@/assets/img/other.svg" alt="" />
             <div class="text font-16">{{ $t("LC_OTHER") }}</div>
           </div>
@@ -46,7 +46,7 @@
         <h4 class="font-14">{{ $t("LC_SPEND_TODAY") }}</h4>
         <div class="list">
           <div
-            class="listItem"
+            class="listItem btnShadow"
             v-for="(item, index) in memberInfo.spendList"
             :key="index"
           >
@@ -211,7 +211,7 @@ export default {
           justify-content: space-between;
           align-items: center;
           border-radius: 10px;
-          height: 55px;
+          height: 60px;
           margin-bottom: 15px;
           padding: 0 20px 0 10px;
           .itemInfo {
