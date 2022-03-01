@@ -29,10 +29,16 @@ $empty_dark: rgba(86, 99, 112, 0.6);
   &#app {
     background: $bg_light;
   }
+  .header {
+    background: linear-gradient(to top, #ffffff, #f2f4f8);
+    box-shadow: 0 3px 0 0 rgb(237 237 237 / 50%),
+      inset 0 -2px 2px 0 rgb(237 237 237 / 50%);
+  }
   .lobby {
     .header {
-      background: $bg_sub_light;
-      box-shadow: $shadow_light;
+      .name {
+        color: $title_light;
+      }
       h3 {
         color: $title_sub_light;
       }
@@ -117,8 +123,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
   }
   .record {
     .header {
-      background: $bg_sub_light;
-      box-shadow: $shadow_light;
       .changeMonthBtn {
         color: $title_light;
       }
@@ -163,8 +167,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
   }
   .chart {
     .header {
-      background: $bg_sub_light;
-      box-shadow: $shadow_light;
       .changeMonthBtn {
         color: $title_light;
       }
@@ -187,8 +189,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
   }
   .setting {
     .header {
-      background: $bg_sub_light;
-      box-shadow: $shadow_light;
       h3 {
         color: $title_sub_light;
       }
@@ -237,7 +237,9 @@ $empty_dark: rgba(86, 99, 112, 0.6);
     }
   }
   .footer {
-    background: $bg_sub_light;
+    box-shadow: 0 0 3px 0 rgb(255 255 255 / 20%),
+      inset 0 2px 2px 0 rgb(237 237 237 / 50%);
+    background: linear-gradient(to bottom, #ffffff, #f2f4f8);
     .icon,
     .text {
       color: $title_sub_light;
@@ -259,10 +261,10 @@ $empty_dark: rgba(86, 99, 112, 0.6);
   .loading p {
     color: $title_sub_light;
   }
-  .btnShadow {
+  .boxShadow {
     box-shadow: 0 8px 24px 0 rgb(38 61 89 / 5%),
       inset -4px -4px 4px 0 rgb(50 78 112 / 15%), inset 4px 4px 4px 0 #fff;
-    background-image: linear-gradient(96deg, #f9f9f9, #ffffff);
+    background: linear-gradient(96deg, #f9f9f9, #ffffff);
   }
 }
 
@@ -271,9 +273,16 @@ $empty_dark: rgba(86, 99, 112, 0.6);
   &#app {
     background: $bg_dark;
   }
+  .header {
+    background: linear-gradient(to top, #667e95, #677685);
+    box-shadow: 0 3px 0 0 rgb(57 70 94 / 50%),
+      inset 0 -2px 2px 0 rgb(44 61 74 / 50%);
+  }
   .lobby {
     .header {
-      background: $bg_sub_dark;
+      .name {
+        color: $title_dark;
+      }
       h3 {
         color: $title_sub_dark;
       }
@@ -355,7 +364,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
   }
   .record {
     .header {
-      background: $bg_sub_dark;
       .changeMonthBtn {
         color: $title_dark;
       }
@@ -399,7 +407,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
   }
   .chart {
     .header {
-      background: $bg_sub_dark;
       .changeMonthBtn {
         color: $title_dark;
       }
@@ -422,7 +429,6 @@ $empty_dark: rgba(86, 99, 112, 0.6);
   }
   .setting {
     .header {
-      background: $bg_sub_dark;
       h3 {
         color: $title_sub_dark;
       }
@@ -470,6 +476,9 @@ $empty_dark: rgba(86, 99, 112, 0.6);
   }
   .footer {
     background: $bg_sub_dark;
+    background: linear-gradient(to bottom, #667e95, #677685);
+    box-shadow: 0 3px 0 0 rgb(57 70 94 / 50%),
+      inset 0 2px 2px 0 rgb(44 61 74 / 50%);
     .icon,
     .text {
       color: $title_sub_dark;
@@ -490,9 +499,9 @@ $empty_dark: rgba(86, 99, 112, 0.6);
   .loading p {
     color: $title_sub_dark;
   }
-  .btnShadow {
+  .boxShadow {
     box-shadow: 0 8px 24px 0 rgb(38 61 89 / 5%),
       inset -4px -4px 4px 0 rgb(50 67 88 / 75%), inset 4px 4px 4px 0 #93a5b7;
-    background-image: linear-gradient(96deg, #5e6e7c, #5c7287);
+    background: linear-gradient(96deg, #5e6e7c, #5c7287);
   }
 }

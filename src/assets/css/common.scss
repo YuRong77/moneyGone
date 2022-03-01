@@ -6,6 +6,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  //關閉長按
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 html body {
   font-family: setofont, -apple-system, "Microsoft JhengHei", "Segoe UI",
@@ -20,9 +26,18 @@ textarea {
   border: none;
   border-radius: 0;
   resize: none;
+  //輸入框可長按
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
   &:focus {
     outline: none;
   }
+}
+//禁止點擊
+img {
+  pointer-events: none;
 }
 #app {
   .inputBox {
@@ -63,15 +78,11 @@ textarea {
     text-align: center;
   }
   .confirmBtn {
-    // background: #5e94c3;
     color: white;
     font-weight: bold;
     background: linear-gradient(135deg, #5e94c3, #568ab7);
     box-shadow: 0 8px 16px 0 #5087b752, inset -2px -4px 2px 0 #789dbd9c,
       inset 0 2px 1px 0 #d9f3ff7a;
-    // text-align: center;
-    // border-radius: 5px;
-    // padding: 6px 15px;
   }
   .cancelBtn {
     color: rgba(0, 0, 0, 0.6);
@@ -84,7 +95,6 @@ textarea {
     display: flex;
     justify-content: center;
     div {
-      // padding: 8px 20px;
       font-size: 16px;
       border-radius: 8px;
       width: 100px;

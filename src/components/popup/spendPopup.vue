@@ -1,6 +1,6 @@
 <template>
   <div class="spendPopup popupMask">
-    <div class="spendCard p-card-s btnShadow">
+    <div class="spendCard p-card-s boxShadow">
       <h3>{{ getSpendType(spendType) }}</h3>
       <div class="spendForm">
         <div class="inputBox">

@@ -2,7 +2,6 @@
   <div>
     <router-view class="routeContent" />
     <Footer v-if="isAlive" />
-    <Copyright />
     <Loading v-show="isLoading" />
   </div>
 </template>
@@ -10,12 +9,10 @@
 <script>
 import { mapState } from "vuex";
 import Footer from "@/components/footer";
-import Copyright from "@/components/copyright";
 import Loading from "@/components/loading";
 export default {
   components: {
     Footer,
-    Copyright,
     Loading,
   },
   data() {
@@ -46,8 +43,7 @@ export default {
 
 <style>
 .routeContent {
-  /* footer copyright */
-  min-height: calc(100vh - 65px - 30px);
-  /* min-height: calc(100vh - 65px - 30px - 40px); */
+  /* footer */
+  min-height: calc(100vh - 95px);
 }
 </style>

@@ -1,13 +1,18 @@
 <template>
   <div class="footer">
-    <div
-      class="footer_item"
-      v-for="item in footerItem"
-      :key="item.path"
-      @click="changeViews(item.path)"
-    >
-      <div class="icon"><i :class="item.icon"></i></div>
-      <div class="text font-14">{{ item.name }}</div>
+    <div class="footerList">
+      <div
+        class="footerItem"
+        v-for="item in footerItem"
+        :key="item.path"
+        @click="changeViews(item.path)"
+      >
+        <div class="icon"><i :class="item.icon"></i></div>
+        <div class="text font-14">{{ item.name }}</div>
+      </div>
+    </div>
+    <div class="copyright font-12">
+      <p>&copy; {{ new Date().getFullYear() }} YuRong</p>
     </div>
   </div>
 </template>
@@ -37,17 +42,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.footer {
+.footerList {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 65px;
-  .footer_item {
+  height: 70px;
+  .footerItem {
     text-align: center;
     flex: 1;
     .icon {
       font-size: 24px;
     }
   }
+}
+.copyright {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 25px;
+  color: #bfbfbf;
+  padding: 0 20px;
+}
+.darkMode .copyright {
+  color: #d7d7d7;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="memoPopup popupMask">
-    <div class="memoCard p-card-s btnShadow">
+    <div class="memoCard p-card-s boxShadow">
       <div class="title">
         <div class="titleText" v-if="!isEdit">{{ title }}</div>
         <div class="inputBox" v-if="isEdit">
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="formBtn">
-        <div class="cancelBtn" @click="closeMemo()">{{ $t("LC_CANCEL") }}</div>
+        <div class="cancelBtn btn" @click="closeMemo()">{{ $t("LC_CANCEL") }}</div>
         <div
           class="confirmBtn btn"
           v-if="!isAddMemo && isEdit"
@@ -37,14 +37,14 @@
       </div>
       <div class="memoEdit">
         <div
-          class="delete btnShadow btn"
+          class="delete boxShadow btn"
           v-if="!isAddMemo"
           @click="deleteMemo()"
         >
           <i class="fas fa-trash-alt"></i>
         </div>
         <div
-          class="edit btnShadow btn"
+          class="edit boxShadow btn"
           v-if="!isAddMemo"
           @click="isEdit = true"
         >

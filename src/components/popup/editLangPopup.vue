@@ -1,6 +1,6 @@
 <template>
   <div class="editLangPopup popupMask">
-    <div class="editLangCard p-card-s btnShadow">
+    <div class="editLangCard p-card-s boxShadow">
       <h2 class="font-18">{{ $t("LC_SELECT_LANG") }}</h2>
       <div class="langList">
         <div

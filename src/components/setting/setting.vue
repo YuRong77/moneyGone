@@ -4,7 +4,7 @@
       <h3 class="font-18">{{ $t("LC_MY_SETTING") }}</h3>
     </div>
     <div class="content">
-      <div class="setup btnShadow">
+      <div class="setup boxShadow">
         <div class="setItem" @click="editName()">
           <div class="icon"><i class="fas fa-user-circle"></i></div>
           <div class="text">{{ $t("LC_NICKNAME") }}</div>

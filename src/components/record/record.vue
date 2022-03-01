@@ -15,7 +15,7 @@
     <div class="recordList">
       <div class="list">
         <div
-          class="recordItem btnShadow btn"
+          class="recordItem boxShadow btn"
           v-for="(item, index) in spendList"
           :key="index"
           @click="openDetail(item.date, item.details)"
