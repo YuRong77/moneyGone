@@ -37,7 +37,7 @@
           <div class="icon"><i class="fas fa-sign-out-alt"></i></div>
           <div class="text">{{ $t("LC_LOGOUT") }}</div>
           <div class="control">
-            <div class="logoutBtn" @click="logout()">{{ $t("LC_LOGOUT") }}</div>
+            <div class="logoutBtn cancelBtn btn" @click="logout()">{{ $t("LC_LOGOUT") }}</div>
           </div>
         </div>
       </div>
@@ -97,7 +97,7 @@ export default {
       this.$store.commit("setting/SET_THEME", val);
       this.$store.dispatch("setting/changeTheme", data);
       //change theme color
-      const color = val === "lightMode" ? "#ffffff" : "#414f5c";
+      const color = val === "lightMode" ? "#f2f4f8" : "#677685";
       const metaThemeColor = document.querySelector("meta[name=theme-color]");
       metaThemeColor.setAttribute("content", color);
     },

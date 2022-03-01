@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="formBtn">
-        <div class="confirmBtn font-16" @click="editLang()">
+        <div class="confirmBtn btn font-16" @click="editLang()">
           {{ $t("LC_CONFIRM") }}
         </div>
       </div>

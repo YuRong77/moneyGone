@@ -12,16 +12,3 @@
 .hotKeyOpen-leave {
   max-width: 130px;
 }
-
-.shake {
-  animation: shake 0.3s;
-  animation-iteration-count: infinite;
-}
-@keyframes shake {
-  0% {
-    transform: rotate(-2deg);
-  }
-  50% {
-    transform: rotate(2deg);
-  }
-}

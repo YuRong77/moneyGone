@@ -239,6 +239,7 @@ export default {
           transform: translateX(-50%);
           bottom: -18px;
           display: flex;
+          backdrop-filter: blur(5px);
           z-index: 10;
           div {
             padding: 8px;

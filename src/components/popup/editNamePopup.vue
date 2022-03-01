@@ -5,12 +5,12 @@
       <input type="text" v-model="newName" />
       <div class="formBtn">
         <div
-          class="cancelBtn font-16"
+          class="cancelBtn btn font-16"
           @click="$emit('update:editNamePopup', false)"
         >
           {{ $t("LC_CANCEL") }}
         </div>
-        <div class="confirmBtn font-16" @click="editName()">
+        <div class="confirmBtn btn font-16" @click="editName()">
           {{ $t("LC_CONFIRM") }}
         </div>
       </div>

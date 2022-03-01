@@ -57,11 +57,11 @@ export default {
 }
 .copyright {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   height: 25px;
   color: #bfbfbf;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 .darkMode .copyright {
   color: #d7d7d7;

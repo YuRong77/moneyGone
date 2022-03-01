@@ -1,7 +1,7 @@
 <template>
   <div class="loading">
     <div class="box">
-      <div class="animate__animated animate__rubberBand animate__infinite">
+      <div class="rubber">
         <img src="@/assets/img/loading.png" alt="" />
       </div>
       <p>{{ $t("LC_LOADING") }}</p>
