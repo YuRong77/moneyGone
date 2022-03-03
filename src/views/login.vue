@@ -1,15 +1,21 @@
 <template>
   <div class="login">
     <div class="loginBox">
-      <div>
-        <span>帳號</span>
-        <input type="text" v-model="account" />
+      <h2>登入</h2>
+      <div class="loginForm">
+        <div class="loginInput">
+          <input type="text" v-model="account" />
+        </div>
+        <div class="loginInput">
+          <input type="password" v-model="password" />
+        </div>
+        <div class="rememberPassword">
+          <input type="checkbox" id="isRemember" />
+          <label for="isRemember">test</label>
+        </div>
+        <div class="confirmBtn btn" @click="login()">登入</div>
+        <div class="cancelBtn btn" @click="login(true)">測試帳號登入</div>
       </div>
-      <div>
-        <span>密碼</span>
-        <input type="password" v-model="password" />
-      </div>
-      <button @click="login">登入</button>
     </div>
   </div>
 </template>
@@ -20,18 +26,24 @@ import { POST } from "../tools/fetch";
 export default {
   data() {
     return {
-      account: "gcobc50335@gmail.com",
-      password: "test123",
+      account: "",
+      password: "",
+      testAccount: "gcobc50335@gmail.com",
+      testPassword: "test123",
+      isLoading: false,
     };
   },
   methods: {
-    login() {
+    login(isTest = false) {
+      if (this.isLoading) return;
       const data = {
-        email: this.account,
-        password: this.password,
+        email: isTest ? this.testAccount : this.account,
+        password: isTest ? this.testPassword : this.password,
       };
+      this.isLoading = true;
       POST(`${process.env.VUE_APP_API_PATH}/api/index/login`, data)
         .then((res) => {
+          this.isLoading = false;
           const result = res.result;
           sessionStorage.setItem("lang", result.setting.language);
           sessionStorage.setItem("theme", result.setting.theme);
@@ -48,6 +60,7 @@ export default {
           this.$router.push("/index/lobby");
         })
         .catch((err) => {
+          this.isLoading = false;
           console.log(err);
         });
     },
@@ -56,11 +69,50 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  .loginBox {
+    width: 300px;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 3px 20px rgb(124 124 124 / 30%);
+    padding: 25px 0 40px 0;
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .loginForm {
+      padding: 0 30px;
+      .loginInput {
+        margin-bottom: 10px;
+        input {
+          width: 100%;
+          height: 40px;
+          border: 1px solid black;
+          padding: 5px 10px;
+        }
+      }
+      .rememberPassword {
+        margin-bottom: 30px;
+      }
+      .confirmBtn {
+        height: 46px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .cancelBtn {
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
 }
 </style>

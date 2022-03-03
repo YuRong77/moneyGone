@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="footerList">
       <div
-        class="footerItem"
+        class="footerItem btn"
         v-for="item in footerItem"
         :key="item.path"
         @click="changeViews(item.path)"
