@@ -4,14 +4,10 @@
       <h2>登入</h2>
       <div class="loginForm">
         <div class="loginInput">
-          <input type="text" v-model="account" />
+          <input type="text" placeholder="請輸入帳號" v-model="account" />
         </div>
         <div class="loginInput">
-          <input type="password" v-model="password" />
-        </div>
-        <div class="rememberPassword">
-          <input type="checkbox" id="isRemember" />
-          <label for="isRemember">test</label>
+          <input type="password" placeholder="請輸入密碼" v-model="password" />
         </div>
         <div class="confirmBtn btn" @click="login()">登入</div>
         <div class="cancelBtn btn" @click="login(true)">測試帳號登入</div>
@@ -28,8 +24,8 @@ export default {
     return {
       account: "",
       password: "",
-      testAccount: "gcobc50335@gmail.com",
-      testPassword: "test123",
+      testAccount: "test@gmail.com",
+      testPassword: "test1234",
       isLoading: false,
     };
   },
@@ -40,6 +36,8 @@ export default {
         email: isTest ? this.testAccount : this.account,
         password: isTest ? this.testPassword : this.password,
       };
+      localStorage.setItem("a", data.email);
+      localStorage.setItem("p", data.password);
       this.isLoading = true;
       POST(`${process.env.VUE_APP_API_PATH}/api/index/login`, data)
         .then((res) => {
@@ -65,7 +63,13 @@ export default {
         });
     },
   },
-  created() {},
+  created() {
+    try {
+      this.account = localStorage.getItem("a");
+      this.password = localStorage.getItem("p");
+    } catch {}
+    if (this.account && this.password) this.login();
+  },
 };
 </script>
 
@@ -76,7 +80,7 @@ export default {
   align-items: center;
   height: 100%;
   .loginBox {
-    width: 300px;
+    width: 85%;
     border-radius: 5px;
     background: white;
     box-shadow: 0 3px 20px rgb(124 124 124 / 30%);
@@ -92,7 +96,8 @@ export default {
         input {
           width: 100%;
           height: 40px;
-          border: 1px solid black;
+          border: 1px solid rgba(0, 0, 0, 0.3);
+          border-radius: 3px;
           padding: 5px 10px;
         }
       }
@@ -104,13 +109,15 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 20px;
+        border-radius: 3px;
+        margin-bottom: 10px;
       }
       .cancelBtn {
         height: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
+        border-radius: 3px;
       }
     }
   }

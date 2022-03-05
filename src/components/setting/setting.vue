@@ -37,7 +37,9 @@
           <div class="icon"><i class="fas fa-sign-out-alt"></i></div>
           <div class="text">{{ $t("LC_LOGOUT") }}</div>
           <div class="control">
-            <div class="logoutBtn cancelBtn btn" @click="logout()">{{ $t("LC_LOGOUT") }}</div>
+            <div class="logoutBtn cancelBtn btn" @click="logout()">
+              {{ $t("LC_LOGOUT") }}
+            </div>
           </div>
         </div>
       </div>
@@ -103,6 +105,8 @@ export default {
     },
     logout() {
       sessionStorage.removeItem("Authorization");
+      localStorage.removeItem("a");
+      localStorage.removeItem("p");
       location.reload();
     },
     getLang() {

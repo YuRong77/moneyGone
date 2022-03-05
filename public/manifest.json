@@ -1,17 +1,15 @@
 {
-  "name": "摳摳去哪裡",
-  "short_name": "摳摳哩",
+  "name": "大花錢",
+  "short_name": "大花錢",
   "icons": [
     {
-      "src": "./img/icons/mstile-150x150.png",
-      "sizes": "192x192",
+      "src": "./icon64.png",
+      "sizes": "64x64",
       "type": "image/png"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#ffffff",
   "orientation": "landscape",
   "prefer_related_applications": true
 }
