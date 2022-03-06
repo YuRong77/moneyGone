@@ -4,6 +4,9 @@
     <div class="main">
       <div class="operate">
         <div class="memoList">
+          <div class="addMemo memo" @click="openMemo(null)">
+            <div class="boxShadow btn">+</div>
+          </div>
           <div
             class="memo"
             v-for="item in memoList"
@@ -12,13 +15,6 @@
           >
             <div class="boxShadow btn"><i class="far fa-sticky-note"></i></div>
             <p class="font-14">{{ item.title }}</p>
-          </div>
-          <div
-            class="addMemo boxShadow btn"
-            v-if="memoList.length < 5"
-            @click="openMemo(null)"
-          >
-            +
           </div>
         </div>
         <div class="spendType">
@@ -144,6 +140,13 @@ export default {
       .memoList {
         display: flex;
         margin-bottom: 10%;
+        overflow-x: scroll;
+        //隱藏scrollbar
+        -ms-overflow-style: none; /* for Internet Explorer, Edge */
+        scrollbar-width: none; /* for Firefox */
+        &::-webkit-scrollbar {
+          display: none; /* for Chrome, Safari, and Opera */
+        }
         .memo {
           margin-right: 20px;
           div {

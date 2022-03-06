@@ -2,7 +2,7 @@
   <div class="memoPopup popupMask">
     <div class="memoCard p-card-s boxShadow">
       <div class="title">
-        <div class="titleText" v-if="!isEdit">{{ title }}</div>
+        <div class="titleText font-18" v-if="!isEdit">{{ title }}</div>
         <div class="inputBox" v-if="isEdit">
           <input
             type="text"
@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="content">
-        <pre class="contentText" v-if="!isEdit">{{ content }}</pre>
+        <pre class="contentText font-16" v-if="!isEdit">{{ content }}</pre>
         <div class="inputBox" v-if="isEdit">
           <textarea
             class="inputBox"
@@ -23,7 +23,9 @@
         </div>
       </div>
       <div class="formBtn">
-        <div class="cancelBtn btn" @click="closeMemo()">{{ $t("LC_CANCEL") }}</div>
+        <div class="cancelBtn btn" @click="closeMemo()">
+          {{ $t("LC_CANCEL") }}
+        </div>
         <div
           class="confirmBtn btn"
           v-if="!isAddMemo && isEdit"

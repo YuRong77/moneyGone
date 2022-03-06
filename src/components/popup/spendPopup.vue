@@ -75,8 +75,9 @@
           <label for="spend">{{ $t("LC_AMOUNT") }}</label>
           <input
             class="inputBox"
-            type="number"
+            type="tel"
             id="spend"
+            ref="spend"
             v-model.number="spend"
           />
         </div>
@@ -86,7 +87,9 @@
         </div>
       </div>
       <div class="formBtn">
-        <div class="cancelBtn btn" @click="closeSpend()">{{ $t("LC_CLOSE") }}</div>
+        <div class="cancelBtn btn" @click="closeSpend()">
+          {{ $t("LC_CLOSE") }}
+        </div>
         <div class="confirmBtn btn" @click="addSpend()">{{ $t("LC_ADD") }}</div>
       </div>
     </div>
@@ -120,6 +123,7 @@ export default {
     useHotKey(val) {
       if (this.openDeleteSpendItem) return;
       this.name = val;
+      this.$refs.spend.focus();
     },
     addSpend() {
       const data = {

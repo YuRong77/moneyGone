@@ -4,7 +4,7 @@
       <h2>登入</h2>
       <div class="loginForm">
         <div class="loginInput">
-          <input type="text" placeholder="請輸入帳號" v-model="account" />
+          <input type="email" placeholder="請輸入帳號" v-model="account" />
         </div>
         <div class="loginInput">
           <input type="password" placeholder="請輸入密碼" v-model="password" />

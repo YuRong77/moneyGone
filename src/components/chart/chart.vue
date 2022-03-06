@@ -56,7 +56,7 @@
             :key="item.type"
           >
             <div class="icon font-14"><i :class="getIcon(index + 1)"></i></div>
-            <div class="spend">{{ item.total }}</div>
+            <div class="spend">{{ item.total || 0 }}</div>
           </div>
         </div>
         <div class="chartArea boxShadow">
