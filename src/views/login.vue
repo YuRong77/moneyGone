@@ -81,6 +81,7 @@ export default {
   height: 100%;
   .loginBox {
     width: 85%;
+    max-width: 350px;
     border-radius: 5px;
     background: white;
     box-shadow: 0 3px 20px rgb(124 124 124 / 30%);

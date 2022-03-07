@@ -5,7 +5,7 @@
       <div class="operate">
         <div class="memoList">
           <div class="addMemo memo" @click="openMemo(null)">
-            <div class="boxShadow btn">+</div>
+            <div class="boxShadow confirmBtn btn">+</div>
           </div>
           <div
             class="memo"
@@ -141,6 +141,7 @@ export default {
         display: flex;
         margin-bottom: 10%;
         overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
         //隱藏scrollbar
         -ms-overflow-style: none; /* for Internet Explorer, Edge */
         scrollbar-width: none; /* for Firefox */
