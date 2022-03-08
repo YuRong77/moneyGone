@@ -18,33 +18,42 @@ const mutations = {
 
 const actions = {
   updateMemberName(context, payload) {
-    POST(
-      `${process.env.VUE_APP_API_PATH}/api/member/updateMemberName`,
-      payload
-    ).then((res) => {
-      if (res.status === 200) {
-        context.dispatch("memberInfo/getMemberInfo", null, { root: true });
-      }
+    return new Promise((resolve, reject) => {
+      POST(
+        `${process.env.VUE_APP_API_PATH}/api/member/updateMemberName`,
+        payload
+      )
+        .then((res) => {
+          context.dispatch("memberInfo/getMemberInfo", null, { root: true });
+          resolve(res);
+        })
+        .catch((err) => reject(err));
     });
   },
   changeLang(context, payload) {
-    POST(
-      `${process.env.VUE_APP_API_PATH}/api/member/updateMemberLang`,
-      payload
-    ).then((res) => {
-      if (res.status === 200) {
-        sessionStorage.setItem("lang", payload.lang);
-      }
+    return new Promise((resolve, reject) => {
+      POST(
+        `${process.env.VUE_APP_API_PATH}/api/member/updateMemberLang`,
+        payload
+      )
+        .then((res) => {
+          sessionStorage.setItem("lang", payload.lang);
+          resolve(res);
+        })
+        .catch((err) => reject(err));
     });
   },
   changeTheme(context, payload) {
-    POST(
-      `${process.env.VUE_APP_API_PATH}/api/member/updateMemberTheme`,
-      payload
-    ).then((res) => {
-      if (res.status === 200) {
-        sessionStorage.setItem("theme", payload.theme);
-      }
+    return new Promise((resolve, reject) => {
+      POST(
+        `${process.env.VUE_APP_API_PATH}/api/member/updateMemberTheme`,
+        payload
+      )
+        .then((res) => {
+          sessionStorage.setItem("theme", payload.theme);
+          resolve(res);
+        })
+        .catch((err) => reject(err));
     });
   },
 };

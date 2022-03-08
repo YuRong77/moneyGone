@@ -15,41 +15,48 @@ const mutations = {
 const actions = {
   getMemo(context) {
     context.commit("memberInfo/SET_ISLOADING", true, { root: true });
-    GET(`${process.env.VUE_APP_API_PATH}/api/memo/getMemo`)
-      .then((res) => {
-        context.commit("memberInfo/SET_ISLOADING", false, { root: true });
-        context.commit("SET_MEMO", res.result);
-      })
-      .catch(() =>
-        context.commit("memberInfo/SET_ISLOADING", false, { root: true })
-      );
+    return new Promise((resolve, reject) => {
+      GET(`${process.env.VUE_APP_API_PATH}/api/memo/getMemo`)
+        .then((res) => {
+          context.commit("memberInfo/SET_ISLOADING", false, { root: true });
+          context.commit("SET_MEMO", res.result);
+          resolve(res);
+        })
+        .catch((err) => {
+          context.commit("memberInfo/SET_ISLOADING", false, { root: true });
+          reject(err);
+        });
+    });
   },
   createMemo(context, payload) {
-    POST(`${process.env.VUE_APP_API_PATH}/api/memo/createMemo`, payload).then(
-      (res) => {
-        if (res.status === 200) {
+    return new Promise((resolve, reject) => {
+      POST(`${process.env.VUE_APP_API_PATH}/api/memo/createMemo`, payload)
+        .then((res) => {
           context.dispatch("getMemo");
-        }
-      }
-    );
+          resolve(res);
+        })
+        .catch((err) => reject(err));
+    });
   },
   updateMemo(context, payload) {
-    POST(`${process.env.VUE_APP_API_PATH}/api/memo/updateMemo`, payload).then(
-      (res) => {
-        if (res.status === 200) {
+    return new Promise((resolve, reject) => {
+      POST(`${process.env.VUE_APP_API_PATH}/api/memo/updateMemo`, payload)
+        .then((res) => {
           context.dispatch("getMemo");
-        }
-      }
-    );
+          resolve(res);
+        })
+        .catch((err) => reject(err));
+    });
   },
   deleteMemo(context, payload) {
-    POST(`${process.env.VUE_APP_API_PATH}/api/memo/deleteMemo`, payload).then(
-      (res) => {
-        if (res.status === 200) {
+    return new Promise((resolve, reject) => {
+      POST(`${process.env.VUE_APP_API_PATH}/api/memo/deleteMemo`, payload)
+        .then((res) => {
           context.dispatch("getMemo");
-        }
-      }
-    );
+          resolve(res);
+        })
+        .catch((err) => reject(err));
+    });
   },
 };
 
