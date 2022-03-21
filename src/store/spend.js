@@ -1,4 +1,4 @@
-import { POST } from "../tools/fetch";
+import { POST } from "../tools/axios";
 
 const state = {
   spendList: [],
@@ -41,7 +41,9 @@ const actions = {
           context.dispatch("memberInfo/getMemberInfo", null, { root: true });
           resolve(res);
         })
-        .catch((err) => reject(err));
+        .catch((err) => {
+          reject(err);
+        });
     });
   },
 };

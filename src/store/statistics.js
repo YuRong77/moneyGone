@@ -1,4 +1,4 @@
-import { POST } from "../tools/fetch";
+import { POST } from "../tools/axios";
 
 const state = {
   spendStatistics: {},

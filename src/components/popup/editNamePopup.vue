@@ -31,7 +31,10 @@ export default {
       const data = {
         name: this.newName,
       };
-      this.$store.dispatch("setting/updateMemberName", data);
+      this.$store
+        .dispatch("setting/updateMemberName", data)
+        .then((res) => this.$bus.$emit("sendMessage", res.message, res.state))
+        .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
       this.$emit("update:editNamePopup", false);
     },
   },

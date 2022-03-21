@@ -97,7 +97,9 @@ export default {
         theme: val,
       };
       this.$store.commit("setting/SET_THEME", val);
-      this.$store.dispatch("setting/changeTheme", data);
+      this.$store
+        .dispatch("setting/changeTheme", data)
+        .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
       //change theme color
       const color = val === "lightMode" ? "#f2f4f8" : "#677685";
       const metaThemeColor = document.querySelector("meta[name=theme-color]");

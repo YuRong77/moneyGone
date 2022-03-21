@@ -74,23 +74,32 @@ export default {
         title: this.title,
         content: this.content,
       };
-      this.$store.dispatch("memo/createMemo", data);
+      this.$store
+        .dispatch("memo/createMemo", data)
+        .then((res) => this.$bus.$emit("sendMessage", res.message, res.state))
+        .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
       this.closeMemo();
     },
     updateMemo() {
       const data = {
         title: this.title,
         content: this.content,
-        id: this.currentMemo.id,
+        memoID: this.currentMemo.id,
       };
-      this.$store.dispatch("memo/updateMemo", data);
+      this.$store
+        .dispatch("memo/updateMemo", data)
+        .then((res) => this.$bus.$emit("sendMessage", res.message, res.state))
+        .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
       this.closeMemo();
     },
     deleteMemo() {
       const data = {
-        id: this.currentMemo.id,
+        memoID: this.currentMemo.id,
       };
-      this.$store.dispatch("memo/deleteMemo", data);
+      this.$store
+        .dispatch("memo/deleteMemo", data)
+        .then((res) => this.$bus.$emit("sendMessage", res.message, res.state))
+        .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
       this.closeMemo();
     },
     closeMemo() {

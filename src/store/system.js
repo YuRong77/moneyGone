@@ -1,4 +1,4 @@
-import { GET, POST } from "../tools/fetch";
+import { GET, POST } from "../tools/axios";
 
 const state = {
   spendItemOptions: [],
@@ -28,7 +28,10 @@ const actions = {
           context.commit("SET_SPEND_LOADING", false);
           resolve(res);
         })
-        .catch((err) => reject(err));
+        .catch((err) => {
+          context.commit("SET_SPEND_LOADING", false);
+          reject(err);
+        });
     });
   },
   addSpendOptions(context, payload) {

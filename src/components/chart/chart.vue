@@ -86,12 +86,6 @@ export default {
       isFirstHalf: true,
       spendMonth: {},
       spendYear: {},
-      test: [
-        { type: 1, total: 2000 },
-        { type: 2, total: 2200 },
-        { type: 3, total: 2100 },
-        { type: 4, total: 2300 },
-      ],
     };
   },
   computed: {
@@ -131,24 +125,14 @@ export default {
     },
   },
   methods: {
-    setTest() {
-      this.testList = [
-        7000, 7200, 7150, 7755, 7767, 7144, 7032, 7987, 7467, 6947, 6986, 7698,
-        7367, 7174, 7956,
-      ];
-    },
-    setTest2() {
-      this.testList = [
-        7100, 7240, 7650, 7155, 7467, 7344, 7352, 7287, 7867, 6947, 6186, 7698,
-        7867, 7174, 7456,
-      ];
-    },
     getChartData() {
       const data = {
-        year: moment(this.currentMonth).year(),
+        year: moment(this.currentMonth).year().toString(),
         month: moment(this.currentMonth).format("MM"),
       };
-      this.$store.dispatch("statistics/getSpendStatistics", data);
+      this.$store
+        .dispatch("statistics/getSpendStatistics", data)
+        .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
     },
     changeMonth(val) {
       this.currentMonth = moment(this.currentMonth)

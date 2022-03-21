@@ -76,7 +76,9 @@ export default {
           .format("YYYY-MM-DD"),
         endDate: moment(this.currentMonth).endOf("month").format("YYYY-MM-DD"),
       };
-      this.$store.dispatch("spend/getSpendRecord", data);
+      this.$store
+        .dispatch("spend/getSpendRecord", data)
+        .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
     },
     changeMonth(val) {
       this.currentMonth = moment(this.currentMonth)

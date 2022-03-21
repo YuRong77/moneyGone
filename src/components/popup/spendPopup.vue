@@ -132,7 +132,10 @@ export default {
         remark: this.remark,
         type: this.spendType,
       };
-      this.$store.dispatch("spend/addSpend", data);
+      this.$store
+        .dispatch("spend/addSpend", data)
+        .then((res) => this.$bus.$emit("sendMessage", res.message, res.state))
+        .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
       this.closeSpend();
     },
     addNewSpendItem() {
@@ -140,7 +143,10 @@ export default {
         name: this.newSpendItem,
         type: this.spendType,
       };
-      this.$store.dispatch("system/addSpendOptions", data);
+      this.$store
+        .dispatch("system/addSpendOptions", data)
+        .then((res) => this.$bus.$emit("sendMessage", res.message, res.state))
+        .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
       this.newSpendItem = null;
       this.openNewSpendItem = false;
     },
@@ -149,7 +155,10 @@ export default {
         id: item.id,
         type: this.spendType,
       };
-      this.$store.dispatch("system/deleteSpendOptions", data);
+      this.$store
+        .dispatch("system/deleteSpendOptions", data)
+        .then((res) => this.$bus.$emit("sendMessage", res.message, res.state))
+        .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
       this.openDeleteSpendItem = false;
     },
     closeSpend() {
@@ -157,7 +166,12 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch("system/getSpendOptions", { type: this.spendType });
+    this.$store
+      .dispatch("system/getSpendOptions", { type: this.spendType })
+      .catch((err) => {
+        console.log("err", err);
+        this.$bus.$emit("sendMessage", err.message, err.state);
+      });
   },
 };
 </script>

@@ -1,4 +1,4 @@
-import { GET, POST } from "../tools/fetch";
+import { GET, POST } from "../tools/axios";
 
 const state = {
   memoList: [],

@@ -13,13 +13,18 @@
         <div class="cancelBtn btn" @click="login(true)">測試帳號登入</div>
       </div>
     </div>
+    <Message />
   </div>
 </template>
 
 <script>
-import { POST } from "../tools/fetch";
+import { POST } from "../tools/axios";
+import Message from "@/components/message";
 
 export default {
+  components: {
+    Message,
+  },
   data() {
     return {
       account: "",
@@ -59,6 +64,7 @@ export default {
         })
         .catch((err) => {
           this.isLoading = false;
+          this.$bus.$emit("sendMessage", err.message, err.state);
         });
     },
   },

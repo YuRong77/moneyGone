@@ -43,7 +43,10 @@ export default {
       const data = {
         lang: this.newLang,
       };
-      this.$store.dispatch("setting/changeLang", data);
+      this.$store
+        .dispatch("setting/changeLang", data)
+        .then((res) => this.$bus.$emit("sendMessage", res.message, res.state))
+        .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
       this.$store.commit("setting/SET_LANG", this.newLang);
       this.$i18n.locale = this.newLang;
       sessionStorage.setItem("lang", this.newLang);

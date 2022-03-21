@@ -12,3 +12,20 @@
 .hotKeyOpen-leave {
   max-width: 130px;
 }
+
+.messageShow-enter,
+.messageShow-leave-to {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.messageShow-enter-active {
+  transition: all 0.6s;
+}
+.messageShow-leave-active {
+  transition: all 0.6s;
+}
+.messageShow-enter-to,
+.messageShow-leave {
+  opacity: 1;
+  transform: translateY(0);
+}

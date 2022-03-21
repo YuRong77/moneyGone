@@ -1,4 +1,4 @@
-import { GET } from "../tools/fetch";
+import { GET } from "../tools/axios";
 
 const state = {
   memberInfo: {
