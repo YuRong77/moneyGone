@@ -34,7 +34,7 @@ const actions = {
   addSpend(context, payload) {
     return new Promise((resolve, reject) => {
       POST(
-        `${process.env.VUE_APP_API_PATH}/api/spendRecord/updateSpend`,
+        `${process.env.VUE_APP_API_PATH}/api/spendRecord/addSpend`,
         payload
       )
         .then((res) => {

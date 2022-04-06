@@ -51,7 +51,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       POST(
         `${process.env.VUE_APP_API_PATH}/api/system/deleteSpendItemOptions`,
-        payload
+        { id: payload.id }
       )
         .then((res) => {
           context.dispatch("getSpendOptions", { type: payload.type });

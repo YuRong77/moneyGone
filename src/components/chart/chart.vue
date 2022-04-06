@@ -92,26 +92,36 @@ export default {
     ...mapState("statistics", ["spendStatistics"]),
     ...mapState("memberInfo", ["isLoading"]),
     getTypeMonth() {
-      return this.spendMonth.spendType;
+      if (this.spendMonth.type) {
+        const spendTypeList = Object.keys(this.spendMonth.type).map((key) => {
+          return { type: key, total: this.spendMonth.type[key] };
+        });
+        return spendTypeList;
+      }
     },
     getSpendMonth() {
-      const { spendList } = this.spendMonth;
-      if (!spendList) return;
-      return this.isFirstHalf ? spendList.slice(0, 15) : spendList.slice(15);
+      const { list } = this.spendMonth;
+      if (!list) return;
+      return this.isFirstHalf ? list.slice(0, 15) : list.slice(15);
     },
     getMonthLabel() {
-      const { spendList } = this.spendMonth;
-      if (!spendList) return;
+      const { list } = this.spendMonth;
+      if (!list) return;
       const labels = [];
-      spendList.forEach((item, index) => labels.push(index + 1));
+      list.forEach((item, index) => labels.push(index + 1));
       return this.isFirstHalf ? labels.slice(0, 15) : labels.slice(15);
     },
     getTypeYear() {
-      return this.spendYear.spendType;
+      if (this.spendYear.type) {
+        const spendTypeList = Object.keys(this.spendYear.type).map((key) => {
+          return { type: key, total: this.spendYear.type[key] };
+        });
+        return spendTypeList;
+      }
     },
     getSpendYear() {
-      const { spendList } = this.spendYear;
-      return spendList ? spendList : [];
+      const { list } = this.spendYear;
+      return list ? list : [];
     },
   },
   watch: {

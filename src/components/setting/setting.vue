@@ -59,6 +59,7 @@
 
 <script>
 import { mapState } from "vuex";
+import { GET } from "../../tools/axios";
 import EditNamePopup from "@/components/popup/editNamePopup.vue";
 import EditLangPopup from "@/components/popup/editLangPopup.vue";
 export default {
@@ -106,10 +107,14 @@ export default {
       metaThemeColor.setAttribute("content", color);
     },
     logout() {
-      sessionStorage.removeItem("Authorization");
-      localStorage.removeItem("a");
-      localStorage.removeItem("p");
-      location.reload();
+      GET(`${process.env.VUE_APP_API_PATH}/api/index/logout`)
+        .then(() => {
+          sessionStorage.removeItem("Authorization");
+          localStorage.removeItem("a");
+          localStorage.removeItem("p");
+          location.reload();
+        })
+        .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
     },
     getLang() {
       if (this.lang === "zh-TW") return "繁體中文";
