@@ -50,7 +50,7 @@ export default {
               backgroundColor: "#5e94c3",
               // label: "測試1",
               data: this.spendList,
-              barPercentage: 0.3,
+              barPercentage: 0.6,
             },
             // {
             //   type: "line",

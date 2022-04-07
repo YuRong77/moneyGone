@@ -36,10 +36,18 @@
         </div>
       </div>
     </div>
+    <div class="addSpendBtn btn" @click="addSpendPopup = true">
+      <i class="far fa-edit"></i>
+    </div>
     <DetailPopup
       v-if="detailPopup"
       :detailPopup.sync="detailPopup"
       :currentDetail="currentDetail"
+    />
+    <AddSpendPopup
+      v-if="addSpendPopup"
+      :addSpendPopup.sync="addSpendPopup"
+      @getSpendRecord="getSpendRecord"
     />
   </div>
 </template>
@@ -48,15 +56,18 @@
 import moment from "moment";
 import { mapState } from "vuex";
 import DetailPopup from "@/components/popup/detailPopup";
+import AddSpendPopup from "@/components/popup/addSpendPopup";
 export default {
   components: {
     DetailPopup,
+    AddSpendPopup,
   },
   data() {
     return {
       currentMonth: moment().format("YYYY-MM"),
       currentDetail: null,
       detailPopup: false,
+      addSpendPopup: false,
     };
   },
   watch: {
@@ -101,6 +112,7 @@ export default {
 
 <style lang="scss" scoped>
 .record {
+  position: relative;
   display: flex;
   flex-direction: column;
   .header {
@@ -171,6 +183,21 @@ export default {
         margin-bottom: 20px;
       }
     }
+  }
+  .addSpendBtn {
+    position: absolute;
+    bottom: 2%;
+    right: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #5e94c3, #568ab7);
+    box-shadow: 0 8px 16px 0 #5087b752, inset -2px -4px 2px 0 #789dbd9c,
+      inset 0 2px 1px 0 #d9f3ff7a;
+    color: white;
   }
 }
 </style>

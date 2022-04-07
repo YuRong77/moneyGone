@@ -164,6 +164,9 @@ $empty_dark: rgba(102, 124, 146, 0.9);
         }
       }
     }
+    .addSpendPopup {
+      background: $popupBg_light;
+    }
   }
   .chart {
     .header {
@@ -403,6 +406,9 @@ $empty_dark: rgba(102, 124, 146, 0.9);
           }
         }
       }
+    }
+    .addSpendPopup {
+      background: $popupBg_dark;
     }
   }
   .chart {

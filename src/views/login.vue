@@ -29,8 +29,8 @@ export default {
     return {
       account: "",
       password: "",
-      testAccount: "test@gmail.com",
-      testPassword: "test1234",
+      testAccount: "testgone@gmail.com",
+      testPassword: "testgone123",
       isLoading: false,
     };
   },
