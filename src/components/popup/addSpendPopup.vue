@@ -3,9 +3,14 @@
     <div class="addSpendCard p-card-s boxShadow">
       <h3 class="font-18">{{ $t("LC_ADD_SPEND") }}</h3>
       <div class="spendForm">
-        <div class="inputBox">
-          <label for="date">{{ $t("LC_DATE") }}</label>
-          <input class="inputBox" type="date" id="date" v-model="date" />
+        <div class="datePicker font-14">
+          <label for="date" @click="$refs.date.showPicker()">{{
+            $t("LC_DATE")
+          }}</label>
+          <h4 class="date font-16" @click="$refs.date.showPicker()">
+            {{ date }}
+          </h4>
+          <input type="date" id="date" ref="date" v-model="date" required />
         </div>
         <div class="typeList">
           <div
@@ -98,7 +103,18 @@ export default {
       margin-bottom: 20px;
     }
     .spendForm {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+      .datePicker {
+        border-bottom: rgba(0, 0, 0, 0.1) solid 1px;
+        margin-bottom: 10px;
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+        #date {
+          display: none;
+        }
+      }
       .typeList {
         display: flex;
         justify-content: space-between;

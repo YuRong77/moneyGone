@@ -191,8 +191,8 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: linear-gradient(135deg, #5e94c3, #568ab7);
     box-shadow: 0 8px 16px 0 #5087b752, inset -2px -4px 2px 0 #789dbd9c,
