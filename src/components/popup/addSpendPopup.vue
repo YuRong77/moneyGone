@@ -105,6 +105,7 @@ export default {
     .spendForm {
       margin-bottom: 10px;
       .datePicker {
+        position: relative;
         border-bottom: rgba(0, 0, 0, 0.1) solid 1px;
         margin-bottom: 10px;
         label {
@@ -112,7 +113,11 @@ export default {
           margin-bottom: 5px;
         }
         #date {
-          display: none;
+          visibility: hidden;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
         }
       }
       .typeList {
