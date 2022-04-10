@@ -43,6 +43,7 @@
       v-if="detailPopup"
       :detailPopup.sync="detailPopup"
       :currentDetail="currentDetail"
+      @getSpendRecord="getSpendRecord"
     />
     <AddSpendPopup
       v-if="addSpendPopup"
@@ -194,9 +195,9 @@ export default {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #5e94c3, #568ab7);
-    box-shadow: 0 8px 16px 0 #5087b752, inset -2px -4px 2px 0 #789dbd9c,
-      inset 0 2px 1px 0 #d9f3ff7a;
+    background: linear-gradient(135deg, #ffd744, #ffd151);
+    box-shadow: 0 8px 16px 0 #c3ae7282, inset -2px -4px 2px 0 #d5c39363,
+      inset 0 2px 1px 0 #fff2cdc9;
     color: white;
   }
 }

@@ -161,11 +161,20 @@ $empty_dark: rgba(102, 124, 146, 0.9);
           .spend {
             color: $title_light;
           }
+          .editbar {
+            color: $popupBg_light;
+          }
         }
       }
     }
     .addSpendPopup {
       background: $popupBg_light;
+      .datePicker{
+        border-bottom: 1px solid $border_light;
+        .date{
+          color: $title_light;
+        }
+      }
     }
   }
   .chart {
@@ -404,11 +413,20 @@ $empty_dark: rgba(102, 124, 146, 0.9);
           .spend {
             color: $title_dark;
           }
+          .editbar {
+            color: $title_sub_dark;
+          }
         }
       }
     }
     .addSpendPopup {
       background: $popupBg_dark;
+      .datePicker{
+        border-bottom: 1px solid $border_dark;
+        .date{
+          color: $title_dark;
+        }
+      }
     }
   }
   .chart {

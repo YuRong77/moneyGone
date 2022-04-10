@@ -4,13 +4,18 @@
       <h3 class="font-18">{{ $t("LC_ADD_SPEND") }}</h3>
       <div class="spendForm">
         <div class="datePicker font-14">
-          <label for="date" @click="$refs.date.showPicker()">{{
+          <label for="date" @click="openCalendar = true">{{
             $t("LC_DATE")
           }}</label>
-          <h4 class="date font-16" @click="$refs.date.showPicker()">
+          <h4 class="date font-16" @click="openCalendar = true">
             {{ date }}
           </h4>
-          <input type="date" id="date" ref="date" v-model="date" required />
+          <date-picker
+            class="vcalendar"
+            v-show="openCalendar"
+            v-model="date"
+            :model-config="{ type: 'string', mask: 'YYYY-MM-DD' }"
+          />
         </div>
         <div class="typeList">
           <div
@@ -69,7 +74,14 @@ export default {
         { name: this.$t("LC_STUDY"), value: 3 },
         { name: this.$t("LC_OTHER"), value: 4 },
       ],
+      openCalendar: false,
     };
+  },
+  watch: {
+    date(newVal, oldVal) {
+      if (!newVal) return (this.date = oldVal);
+      this.openCalendar = false;
+    },
   },
   methods: {
     addSpend() {
@@ -82,10 +94,12 @@ export default {
       };
       this.$store
         .dispatch("spend/addSpend", data)
-        .then((res) => this.$bus.$emit("sendMessage", res.message, res.state))
+        .then((res) => {
+          this.$bus.$emit("sendMessage", res.message, res.state);
+          this.$emit("getSpendRecord");
+          this.closeSpend();
+        })
         .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
-      this.$emit("getSpendRecord");
-      this.closeSpend();
     },
     closeSpend() {
       this.$emit("update:addSpendPopup", false);
@@ -106,18 +120,13 @@ export default {
       margin-bottom: 10px;
       .datePicker {
         position: relative;
-        border-bottom: rgba(0, 0, 0, 0.1) solid 1px;
         margin-bottom: 10px;
         label {
           display: block;
           margin-bottom: 5px;
         }
-        #date {
-          visibility: hidden;
+        .vcalendar {
           position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
         }
       }
       .typeList {

@@ -33,8 +33,35 @@ const actions = {
   },
   addSpend(context, payload) {
     return new Promise((resolve, reject) => {
+      POST(`${process.env.VUE_APP_API_PATH}/api/spendRecord/addSpend`, payload)
+        .then((res) => {
+          context.dispatch("memberInfo/getMemberInfo", null, { root: true });
+          resolve(res);
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+  },
+  updateSpend(context, payload) {
+    return new Promise((resolve, reject) => {
       POST(
-        `${process.env.VUE_APP_API_PATH}/api/spendRecord/addSpend`,
+        `${process.env.VUE_APP_API_PATH}/api/spendRecord/updateSpend`,
+        payload
+      )
+        .then((res) => {
+          context.dispatch("memberInfo/getMemberInfo", null, { root: true });
+          resolve(res);
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+  },
+  deleteSpend(context, payload) {
+    return new Promise((resolve, reject) => {
+      POST(
+        `${process.env.VUE_APP_API_PATH}/api/spendRecord/deleteSpend`,
         payload
       )
         .then((res) => {
