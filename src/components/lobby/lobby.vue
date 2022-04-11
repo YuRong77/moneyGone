@@ -14,7 +14,7 @@
             @click="openMemo(item)"
           >
             <div class="boxShadow btn"><i class="far fa-sticky-note"></i></div>
-            <p class="font-14">{{ item.title }}</p>
+            <p class="font-12">{{ memoTitleFilter(item.title) }}</p>
           </div>
         </div>
         <div class="spendType">
@@ -123,6 +123,10 @@ export default {
       if (type === 3) return "fas fa-graduation-cap";
       if (type === 4) return "fas fa-comment-dots";
     },
+    memoTitleFilter(title) {
+      if (title.length > 5) return title.split("").slice(0, 4).join("") + "...";
+      return title;
+    },
   },
 };
 </script>
@@ -149,7 +153,7 @@ export default {
           display: none; /* for Chrome, Safari, and Opera */
         }
         .memo {
-          margin-right: 20px;
+          margin-right: 25px;
           div {
             display: flex;
             justify-content: center;
@@ -160,6 +164,7 @@ export default {
           }
           p {
             text-align: center;
+            white-space: nowrap;
             margin-top: 10px;
           }
         }

@@ -123,10 +123,18 @@ export default {
     position: relative;
     .title {
       margin-bottom: 20px;
+      user-select: text;
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
     }
     .content {
       min-height: 275px;
       margin-bottom: 10px;
+      user-select: text;
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
     }
     .memoEdit {
       position: absolute;
