@@ -19,21 +19,21 @@
         </div>
         <div class="spendType">
           <div class="type boxShadow btn" @click="addSpend(1)">
-            <img src="@/assets/img/life.svg" alt="" />
+            <img src="@/assets/img/life.png" alt="" />
             <div class="text font-16">{{ $t("LC_LIFE") }}</div>
           </div>
           <div class="type boxShadow btn" @click="addSpend(2)">
-            <img src="@/assets/img/fun.svg" alt="" />
+            <img src="@/assets/img/fun.png" alt="" />
             <div class="text font-16">{{ $t("LC_FUN") }}</div>
           </div>
         </div>
         <div class="spendType">
           <div class="type boxShadow btn" @click="addSpend(3)">
-            <img src="@/assets/img/study.svg" alt="" />
+            <img src="@/assets/img/study.png" alt="" />
             <div class="text font-16">{{ $t("LC_STUDY") }}</div>
           </div>
           <div class="type boxShadow btn" @click="addSpend(4)">
-            <img src="@/assets/img/other.svg" alt="" />
+            <img src="@/assets/img/other.png" alt="" />
             <div class="text font-16">{{ $t("LC_OTHER") }}</div>
           </div>
         </div>
@@ -59,7 +59,7 @@
           </div>
           <div class="empty" v-if="memberInfo.spendList.length === 0">
             <div>
-              <img src="@/assets/img/rain.svg" alt="" />
+              <img src="@/assets/img/rain.png" alt="" />
               <h3 class="font-18">{{ $t("LC_EMPTY_SPEND") }}</h3>
             </div>
           </div>

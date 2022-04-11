@@ -22,7 +22,7 @@ $title_sub_dark: rgba(255, 255, 255, 0.75);
 $popupBg_dark: rgba(0, 0, 0, 0.7);
 $border_dark: rgba(255, 255, 255, 0.3);
 
-$empty_dark: rgba(102, 124, 146, 0.9);
+$empty_dark: #4d6072;
 
 /* lightMode */
 .lightMode {
@@ -30,7 +30,7 @@ $empty_dark: rgba(102, 124, 146, 0.9);
     background: $bg_light;
   }
   .header {
-    background: linear-gradient(to top, #ffffff, #f2f4f8);
+    background: $bg_sub_light;
     box-shadow: 0 3px 0 0 rgb(237 237 237 / 50%),
       inset 0 -2px 2px 0 rgb(237 237 237 / 50%);
   }
@@ -169,6 +169,9 @@ $empty_dark: rgba(102, 124, 146, 0.9);
     }
     .addSpendPopup {
       background: $popupBg_light;
+      h3 {
+        color: $title_light;
+      }
       .datePicker{
         border-bottom: 1px solid $border_light;
         .date{
@@ -251,7 +254,7 @@ $empty_dark: rgba(102, 124, 146, 0.9);
   .footer {
     box-shadow: 0 0 3px 0 rgb(255 255 255 / 20%),
       inset 0 2px 2px 0 rgb(237 237 237 / 50%);
-    background: linear-gradient(to bottom, #ffffff, #f2f4f8);
+    background: $bg_sub_light;
     .icon,
     .text {
       color: $title_sub_light;
@@ -286,7 +289,7 @@ $empty_dark: rgba(102, 124, 146, 0.9);
     background: $bg_dark;
   }
   .header {
-    background: linear-gradient(to top, #667e95, #677685);
+    background: #4d6072;
     box-shadow: 0 3px 0 0 rgb(57 70 94 / 50%),
       inset 0 -2px 2px 0 rgb(44 61 74 / 50%);
   }
@@ -404,7 +407,7 @@ $empty_dark: rgba(102, 124, 146, 0.9);
           color: $title_dark;
         }
         .detailItem {
-          background: $bg_sub_dark;
+          background: $bg_dark;
           .directions {
             border-bottom: 1px solid $border_dark;
             color: $title_sub_dark;
@@ -421,6 +424,9 @@ $empty_dark: rgba(102, 124, 146, 0.9);
     }
     .addSpendPopup {
       background: $popupBg_dark;
+      h3 {
+        color: $title_dark;
+      }
       .datePicker{
         border-bottom: 1px solid $border_dark;
         .date{
@@ -500,7 +506,7 @@ $empty_dark: rgba(102, 124, 146, 0.9);
   }
   .footer {
     background: $bg_sub_dark;
-    background: linear-gradient(to bottom, #667e95, #677685);
+    background: #4d6072;
     box-shadow: 0 3px 0 0 rgb(57 70 94 / 50%),
       inset 0 2px 2px 0 rgb(44 61 74 / 50%);
     .icon,
@@ -524,8 +530,7 @@ $empty_dark: rgba(102, 124, 146, 0.9);
     color: $title_sub_dark;
   }
   .boxShadow {
-    box-shadow: 0 8px 24px 0 rgb(38 61 89 / 5%),
-      inset -4px -4px 4px 0 rgb(50 67 88 / 75%), inset 4px 4px 4px 0 #93a5b7;
-    background: linear-gradient(96deg, #5e6e7c, #5c7287);
+    box-shadow: 0 8px 24px 0 rgb(38 61 89 / 5%), inset -4px -4px 4px 0 rgb(50 67 88 / 75%), inset 4px 4px 4px 0 #6e7f91;
+    background: linear-gradient(96deg, #4c5c6c, #50677c);
   }
 }

@@ -31,7 +31,7 @@
       </div>
       <div class="emptyList" v-if="spendList.length === 0 && !isLoading">
         <div>
-          <img src="@/assets/img/empty_street.svg" alt="" />
+          <img src="@/assets/img/empty_street.png" alt="" />
           <h3 class="font-16">{{ $t("LC_EMPTY_LIST") }}</h3>
         </div>
       </div>

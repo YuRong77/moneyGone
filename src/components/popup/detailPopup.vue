@@ -60,7 +60,7 @@
               <div class="save" @click="updateSpend()">儲存</div>
             </div>
             <div
-              class="deleteSpend"
+              class="deleteSpend font-16"
               v-show="item.id === currentSpendItem.id"
               @click="deleteSpend()"
             >
@@ -195,7 +195,7 @@ export default {
           .edit {
             display: flex;
             .cancel {
-              margin-right: 5px;
+              margin-right: 10px;
             }
           }
           .deleteSpend {

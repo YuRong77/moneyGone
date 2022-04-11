@@ -39,6 +39,7 @@ textarea {
 //禁止點擊
 img {
   pointer-events: none;
+  max-width: 100%;
 }
 #app {
   position: fixed;

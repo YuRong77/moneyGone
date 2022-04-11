@@ -27,8 +27,8 @@
           <div class="control">
             <input type="checkbox" id="theme" v-model="isLightMode" />
             <label for="theme">
-              <img src="@/assets/img/sun.svg" alt="" />
-              <img src="@/assets/img/moon.svg" alt="" />
+              <img src="@/assets/img/sun.png" alt="" />
+              <img src="@/assets/img/moon.png" alt="" />
               <div class="switchBall"></div>
             </label>
           </div>
@@ -102,7 +102,7 @@ export default {
         .dispatch("setting/changeTheme", data)
         .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
       //change theme color
-      const color = val === "lightMode" ? "#f2f4f8" : "#677685";
+      const color = val === "lightMode" ? "#ffffff" : "#667e95";
       const metaThemeColor = document.querySelector("meta[name=theme-color]");
       metaThemeColor.setAttribute("content", color);
     },
