@@ -55,7 +55,7 @@ export default {
           this.$store.commit("setting/SET_LANG", result.setting.language);
           //set theme color
           const color =
-            result.setting.theme === "lightMode" ? "#ffffff" : "#667e95";
+            result.setting.theme === "lightMode" ? "#ffffff" : "#4d6072";
           const metaThemeColor = document.querySelector(
             "meta[name=theme-color]"
           );

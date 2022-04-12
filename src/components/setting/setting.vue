@@ -102,7 +102,7 @@ export default {
         .dispatch("setting/changeTheme", data)
         .catch((err) => this.$bus.$emit("sendMessage", err.message, err.state));
       //change theme color
-      const color = val === "lightMode" ? "#ffffff" : "#667e95";
+      const color = val === "lightMode" ? "#ffffff" : "#4d6072";
       const metaThemeColor = document.querySelector("meta[name=theme-color]");
       metaThemeColor.setAttribute("content", color);
     },
