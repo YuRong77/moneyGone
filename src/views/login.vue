@@ -1,5 +1,11 @@
 <template>
   <div class="login">
+    <div class="loadingMask" v-if="isLoading">
+      <div class="logoBox">
+        <img class="logo rubber" src="@/assets/img/loading.png" alt="" />
+        <p>大花錢</p>
+      </div>
+    </div>
     <div class="loginBox">
       <h2>登入</h2>
       <div class="loginForm">
@@ -31,21 +37,23 @@ export default {
       password: "",
       testAccount: "testgone@gmail.com",
       testPassword: "testgone123",
-      isLoading: false,
+      isClickLogin: false,
+      isLoading: true,
     };
   },
   methods: {
     login(isTest = false) {
-      if (this.isLoading) return;
+      if (this.isClickLogin) return;
       const data = {
         email: isTest ? this.testAccount : this.account,
         password: isTest ? this.testPassword : this.password,
       };
       localStorage.setItem("a", data.email);
       localStorage.setItem("p", data.password);
-      this.isLoading = true;
+      this.isClickLogin = true;
       POST(`${process.env.VUE_APP_API_PATH}/api/index/login`, data)
         .then((res) => {
+          this.isClickLogin = false;
           this.isLoading = false;
           const result = res.result;
           sessionStorage.setItem("lang", result.setting.language);
@@ -63,6 +71,7 @@ export default {
           this.$router.push("/index/lobby");
         })
         .catch((err) => {
+          this.isClickLogin = false;
           this.isLoading = false;
           this.$bus.$emit("sendMessage", err.message, err.state);
         });
@@ -72,6 +81,7 @@ export default {
     try {
       this.account = localStorage.getItem("a");
       this.password = localStorage.getItem("p");
+      if (!this.account || !this.password) this.isLoading = false;
     } catch {}
     if (this.account && this.password) this.login();
   },
@@ -84,6 +94,28 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100%;
+  .loadingMask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(320deg, #dddddd, #ffffff);
+    .logoBox {
+      width: 30%;
+      text-align: center;
+      .logo {
+        max-width: 100%;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+      }
+    }
+  }
   .loginBox {
     width: 85%;
     max-width: 350px;
