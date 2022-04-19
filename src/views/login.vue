@@ -53,8 +53,8 @@ export default {
       this.isClickLogin = true;
       POST(`${process.env.VUE_APP_API_PATH}/api/index/login`, data)
         .then((res) => {
+          if (res.state !== "success") return (this.isLoading = false);
           this.isClickLogin = false;
-          this.isLoading = false;
           const result = res.result;
           sessionStorage.setItem("lang", result.setting.language);
           sessionStorage.setItem("theme", result.setting.theme);

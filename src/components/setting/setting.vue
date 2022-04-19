@@ -27,8 +27,8 @@
           <div class="control">
             <input type="checkbox" id="theme" v-model="isLightMode" />
             <label for="theme">
-              <img src="@/assets/img/sun.png" alt="" />
-              <img src="@/assets/img/moon.png" alt="" />
+              <img src="@/assets/img/sun.svg" alt="" />
+              <img src="@/assets/img/moon.svg" alt="" />
               <div class="switchBall"></div>
             </label>
           </div>
