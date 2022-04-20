@@ -5,7 +5,7 @@ import router from "./router";
 import store from "./store";
 import "./tools/iNoBounce";
 import "./tools/bus";
-import Calendar from "v-calendar/lib/components/calendar.umd";
+// import Calendar from "v-calendar/lib/components/calendar.umd";
 import DatePicker from "v-calendar/lib/components/date-picker.umd";
 import VueI18n from "vue-i18n";
 import zh_TW from "@/locales/zh_TW.json";
