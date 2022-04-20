@@ -15,7 +15,7 @@ import ja_JP from "@/locales/ja_JP.json";
 
 Vue.use(VueI18n);
 
-Vue.component("calendar", Calendar);
+// Vue.component("calendar", Calendar);
 Vue.component("date-picker", DatePicker);
 
 let messagesObj = {

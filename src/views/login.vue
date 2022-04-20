@@ -2,7 +2,7 @@
   <div class="login">
     <div class="loadingMask" v-if="isLoading">
       <div class="logoBox">
-        <img class="logo rubber" src="@/assets/img/loading.png" alt="" />
+        <img class="logo" src="@/assets/img/loading.png" alt="" />
         <p>大花錢</p>
       </div>
     </div>
