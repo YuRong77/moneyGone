@@ -63,6 +63,7 @@ export default {
       transform: translateX(-50%);
     }
     .myApp {
+      position: relative;
       border: 1px solid #ebebeb;
     }
   }
