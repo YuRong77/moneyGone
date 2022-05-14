@@ -26,7 +26,7 @@ $empty_dark: #4d6072;
 
 /* lightMode */
 .lightMode {
-  &#app {
+  &#app .routeContent {
     background: $bg_light;
   }
   .header {
@@ -285,7 +285,7 @@ $empty_dark: #4d6072;
 
 /* darkMode */
 .darkMode {
-  &#app {
+  &#app .routeContent {
     background: $bg_dark;
   }
   .header {

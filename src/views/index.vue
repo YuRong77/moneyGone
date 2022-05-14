@@ -50,7 +50,13 @@ export default {
 
 <style>
 .routeContent {
-  /* footer */
+  /* 減去footer */
   min-height: calc(100vh - 95px);
+}
+@media (min-width: 900px) {
+  /* 減去border */
+  .routeContent {
+    min-height: calc(100vh - 100px - 95px);
+  }
 }
 </style>

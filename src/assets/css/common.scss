@@ -18,7 +18,8 @@ html body {
     "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
   box-sizing: border-box;
-  background: rgb(235, 235, 235);
+  background-image: url('https://yurong77.github.io/moneyGone/bg.png');
+  background-repeat: repeat;
 }
 input,
 textarea {
@@ -62,7 +63,7 @@ img {
     }
   }
   .loading {
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     right: 0;
@@ -129,7 +130,7 @@ img {
     font-weight: bold;
   }
   .popupMask {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
