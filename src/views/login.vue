@@ -93,7 +93,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  background: #e3e3e3;
+  min-height: calc(100vh);
   .loadingMask {
     position: absolute;
     width: 100%;
@@ -158,6 +159,12 @@ export default {
         border-radius: 3px;
       }
     }
+  }
+}
+@media (min-width: 900px) {
+  /* 減去border */
+  .login {
+    min-height: calc(100vh - 100px);
   }
 }
 </style>
