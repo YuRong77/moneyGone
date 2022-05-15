@@ -14,7 +14,9 @@
     </div>
     <div class="content">
       <div class="monthChart" style="margin-bottom: 20px">
-        <h5 class="font-14">{{ $t("LC_CHART_MONTH") }}</h5>
+        <h5 class="font-14">
+          {{ $t("LC_CHART_MONTH") }}: {{ spendMonth.total }}
+        </h5>
         <div class="spendTypeList">
           <div
             class="spendTypeItem boxShadow"
@@ -48,7 +50,9 @@
         </div>
       </div>
       <div class="yearChart">
-        <h5 class="font-14">{{ $t("LC_CHART_YEAR") }}</h5>
+        <h5 class="font-14">
+          {{ $t("LC_CHART_YEAR") }}: {{ spendYear.total }}
+        </h5>
         <div class="spendTypeList">
           <div
             class="spendTypeItem boxShadow"
