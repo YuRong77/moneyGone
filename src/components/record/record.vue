@@ -113,7 +113,6 @@ export default {
 
 <style lang="scss" scoped>
 .record {
-  position: relative;
   display: flex;
   flex-direction: column;
   .header {
@@ -187,7 +186,7 @@ export default {
   }
   .addSpendBtn {
     position: absolute;
-    bottom: 2%;
+    bottom: calc(2% + 95px);
     right: 4%;
     display: flex;
     justify-content: center;
