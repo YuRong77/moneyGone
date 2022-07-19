@@ -144,7 +144,10 @@ export default {
     flex: 1;
     position: relative;
     .list {
-      padding: 5% 5%;
+      padding: 5%;
+      @media (max-height: 800px) and (min-width: 900px) {
+        padding: 2%;
+      }
       position: absolute;
       left: 0;
       top: 0;

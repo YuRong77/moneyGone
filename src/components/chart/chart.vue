@@ -199,7 +199,10 @@ export default {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 5% 5%;
+    padding: 5%;
+    @media (max-height: 800px) and (min-width: 900px) {
+      padding: 2%;
+    }
     .monthChart,
     .yearChart {
       flex: 1;

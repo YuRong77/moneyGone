@@ -139,11 +139,17 @@ export default {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 5% 5%;
+    padding: 5%;
+    @media (max-height: 800px) and (min-width: 900px) {
+      padding: 2%;
+    }
     .operate {
       .memoList {
         display: flex;
-        margin-bottom: 10%;
+        margin-bottom: 8%;
+        @media (max-height: 800px) {
+          margin-bottom: 2%;
+        }
         overflow-x: scroll;
         -webkit-overflow-scrolling: touch;
         //隱藏scrollbar
@@ -189,6 +195,9 @@ export default {
           height: 60px;
           border-radius: 20px;
           margin-bottom: 30px;
+          @media (max-height: 800px) and (min-width: 900px) {
+            margin-bottom: 20px;
+          }
           img {
             position: absolute;
             bottom: 8px;

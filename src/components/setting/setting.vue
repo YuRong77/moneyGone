@@ -146,6 +146,9 @@ export default {
   .content {
     flex: 1;
     padding: 5%;
+    @media (max-height: 800px) and (min-width: 900px) {
+      padding: 2%;
+    }
     min-height: 100%;
     .setup {
       padding: 5px 20px;
