@@ -1,8 +1,8 @@
 <template>
   <div class="login">
-    <div class="loadingMask" v-if="isLoading">
+    <div class="loadingMask" v-if="isLoading || isClickLogin">
       <div class="logoBox">
-        <img class="logo" src="@/assets/img/loading.png" alt="" />
+        <img class="logo flicker" src="@/assets/img/loading.png" alt="" />
         <p>大花錢</p>
       </div>
     </div>
