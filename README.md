@@ -1,24 +1,3 @@
-# moneygone
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# 大花錢
+#### 使用 Vue.js 開發，搭配 Vue Router 切換路由，Vuex 管理資料。
+#### 使用 i18n 製作多國語系，CSS 深色主題切換。
