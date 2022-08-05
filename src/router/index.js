@@ -49,7 +49,9 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (to.path !== "/login") {
     const uid = sessionStorage.getItem("Authorization");
-    return uid ? next() : next({ path: "/login" });
+    return uid
+      ? next({ replace: true })
+      : next({ path: "/login", replace: true });
   } else {
     next();
   }

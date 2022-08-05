@@ -34,7 +34,7 @@ export default {
     changeViews(path) {
       if (this.currentPath == path) return;
       this.currentPath = path;
-      this.$router.push({ name: path });
+      this.$router.replace({ name: path });
     },
   },
   created() {},

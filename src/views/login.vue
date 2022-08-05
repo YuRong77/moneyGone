@@ -68,7 +68,7 @@ export default {
             "meta[name=theme-color]"
           );
           metaThemeColor.setAttribute("content", color);
-          this.$router.push("/index/lobby");
+          this.$router.replace("/index/lobby");
         })
         .catch((err) => {
           this.isClickLogin = false;
