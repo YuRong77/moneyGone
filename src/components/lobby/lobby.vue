@@ -259,6 +259,18 @@ export default {
           margin-bottom: 20px;
         }
       }
+      @media (max-height: 800px) {
+        .empty div {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          padding: 15px;
+          img {
+            max-height: 100%;
+            margin: 0 20px 0 0;
+          }
+        }
+      }
     }
   }
 }
