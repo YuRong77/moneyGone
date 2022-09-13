@@ -6,7 +6,8 @@ import store from "./store";
 import "./tools/iNoBounce";
 import "./tools/bus";
 // import Calendar from "v-calendar/lib/components/calendar.umd";
-import DatePicker from "v-calendar/lib/components/date-picker.umd";
+// import DatePicker from "v-calendar/lib/components/date-picker.umd";
+import DatePicker from "v-calendar";
 import VueI18n from "vue-i18n";
 import zh_TW from "@/locales/zh_TW.json";
 import zh_CN from "@/locales/zh_CN.json";
@@ -16,7 +17,10 @@ import ja_JP from "@/locales/ja_JP.json";
 Vue.use(VueI18n);
 
 // Vue.component("calendar", Calendar);
-Vue.component("date-picker", DatePicker);
+// Vue.component("date-picker", DatePicker);
+Vue.use(DatePicker, {
+  componentPrefix: "vc",
+});
 
 let messagesObj = {
   "zh-TW": zh_TW,

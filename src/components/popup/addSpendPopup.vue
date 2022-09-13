@@ -10,7 +10,7 @@
           <h4 class="date font-16" @click="openCalendar = true">
             {{ date }}
           </h4>
-          <date-picker
+          <vc-date-picker
             class="vcalendar"
             v-show="openCalendar"
             v-model="date"
