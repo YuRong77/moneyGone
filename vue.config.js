@@ -2,6 +2,7 @@ const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
 
 module.exports = {
   publicPath: "./",
+  productionSourceMap: false,
   pwa: {
     iconPaths: {
       favicon32: "./icon.png",

@@ -82,13 +82,17 @@
 <script>
 import { mapState } from "vuex";
 import Header from "@/components/lobby/header";
-import MemoPopup from "@/components/popup/memoPopup";
-import SpendPopup from "@/components/popup/spendPopup";
 export default {
   components: {
     Header,
-    MemoPopup,
-    SpendPopup,
+    MemoPopup: () =>
+      import(
+        /* webpackChunkName: "memoPopup" */ "@/components/popup/memoPopup.vue"
+      ),
+    SpendPopup: () =>
+      import(
+        /* webpackChunkName: "spendPopup" */ "@/components/popup/spendPopup.vue"
+      ),
   },
   data() {
     return {

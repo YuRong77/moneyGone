@@ -11,34 +11,48 @@ const routes = [
   {
     path: "/index",
     name: "Index",
-    component: () => import("@/views/index.vue"),
+    component: () =>
+      import(/* webpackChunkName: "index" */ "@/views/index.vue"),
     children: [
       {
         path: "lobby",
         name: "Lobby",
-        component: () => import("@/components/lobby/lobby.vue"),
+        component: () =>
+          import(
+            /* webpackChunkName: "lobby" */ "@/components/lobby/lobby.vue"
+          ),
       },
       {
         path: "record",
         name: "Record",
-        component: () => import("@/components/record/record.vue"),
+        component: () =>
+          import(
+            /* webpackChunkName: "record" */ "@/components/record/record.vue"
+          ),
       },
       {
         path: "chart",
         name: "Chart",
-        component: () => import("@/components/chart/chart.vue"),
+        component: () =>
+          import(
+            /* webpackChunkName: "chart" */ "@/components/chart/chart.vue"
+          ),
       },
       {
         path: "setting",
         name: "Setting",
-        component: () => import("@/components/setting/setting.vue"),
+        component: () =>
+          import(
+            /* webpackChunkName: "setting" */ "@/components/setting/setting.vue"
+          ),
       },
     ],
   },
   {
     path: "/login",
     name: "Login",
-    component: () => import("@/views/login.vue"),
+    component: () =>
+      import(/* webpackChunkName: "login" */ "@/views/login.vue"),
   },
 ];
 
